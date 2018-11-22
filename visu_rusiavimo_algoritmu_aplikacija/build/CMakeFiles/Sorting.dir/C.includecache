@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+//home/rolandas/ruslan/build/src/BitonicSort.cl.c
+stdlib.h
+-
+
+//home/rolandas/ruslan/build/src/CountingSort.cl.c
+stdlib.h
+-
+
+//home/rolandas/ruslan/build/src/RadixCounting.cl.c
+stdlib.h
+-
+

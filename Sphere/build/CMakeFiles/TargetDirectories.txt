@@ -1,0 +1,6 @@
+//home/rolandas/Sphere/build/CMakeFiles/rebuild_cache.dir
+//home/rolandas/Sphere/build/CMakeFiles/edit_cache.dir
+//home/rolandas/Sphere/build/CMakeFiles/Sphere.dir
+//home/rolandas/Sphere/build/lib/embed-resource/CMakeFiles/rebuild_cache.dir
+//home/rolandas/Sphere/build/lib/embed-resource/CMakeFiles/edit_cache.dir
+//home/rolandas/Sphere/build/lib/embed-resource/CMakeFiles/embed-resource.dir

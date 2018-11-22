@@ -1,0 +1,237 @@
+Determining if the CL_VERSION_2_2 exist failed with the following output:
+Change Dir: /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_8b278/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_8b278.dir/build.make CMakeFiles/cmTC_8b278.dir/build
+gmake[1]: Entering directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8b278.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include    -o CMakeFiles/cmTC_8b278.dir/CheckSymbolExists.c.o   -c /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_8b278.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_8b278/fast] Error 2
+
+File /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_2
+  return ((int*)(&CL_VERSION_2_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_2_1 exist failed with the following output:
+Change Dir: /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_644a1/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_644a1.dir/build.make CMakeFiles/cmTC_644a1.dir/build
+gmake[1]: Entering directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_644a1.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include    -o CMakeFiles/cmTC_644a1.dir/CheckSymbolExists.c.o   -c /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_644a1.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_644a1/fast] Error 2
+
+File /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_1
+  return ((int*)(&CL_VERSION_2_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_87bb0/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_87bb0.dir/build.make CMakeFiles/cmTC_87bb0.dir/build
+gmake[1]: Entering directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_87bb0.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include    -o CMakeFiles/cmTC_87bb0.dir/CheckSymbolExists.c.o   -c /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_87bb0.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_87bb0/fast] Error 2
+
+File /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_2 exist failed with the following output:
+Change Dir: /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_40cbd/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_40cbd.dir/build.make CMakeFiles/cmTC_40cbd.dir/build
+gmake[1]: Entering directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_40cbd.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include    -o CMakeFiles/cmTC_40cbd.dir/CheckSymbolExists.c.o   -c /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_40cbd.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_40cbd/fast] Error 2
+
+File /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_2
+  return ((int*)(&CL_VERSION_1_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_1 exist failed with the following output:
+Change Dir: /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_94860/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_94860.dir/build.make CMakeFiles/cmTC_94860.dir/build
+gmake[1]: Entering directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_94860.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include    -o CMakeFiles/cmTC_94860.dir/CheckSymbolExists.c.o   -c /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_94860.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_94860/fast] Error 2
+
+File /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_1
+  return ((int*)(&CL_VERSION_1_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_0 exist failed with the following output:
+Change Dir: /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_4a84e/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_4a84e.dir/build.make CMakeFiles/cmTC_4a84e.dir/build
+gmake[1]: Entering directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4a84e.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include    -o CMakeFiles/cmTC_4a84e.dir/CheckSymbolExists.c.o   -c /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_4a84e.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_4a84e/fast] Error 2
+
+File /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_0
+  return ((int*)(&CL_VERSION_1_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_48a52/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_48a52.dir/build.make CMakeFiles/cmTC_48a52.dir/build
+gmake[1]: Entering directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_48a52.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include    -o CMakeFiles/cmTC_48a52.dir/CheckSymbolExists.c.o   -c /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_48a52
+/share/apps/compilers/cmake-3.10.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48a52.dir/link.txt --verbose=1
+/share/apps/compilers/gcc-7.3.0/bin/gcc -I/share/apps/compilers/gcc-7.3.0/include   -L/share/apps/compilers/gcc-7.3.0/lib64  -rdynamic CMakeFiles/cmTC_48a52.dir/CheckSymbolExists.c.o  -o cmTC_48a52 
+CMakeFiles/cmTC_48a52.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_48a52] Error 1
+gmake[1]: Leaving directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_48a52/fast] Error 2
+
+File /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/rolandas/ruslan/src/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_665e3/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_665e3.dir/build.make CMakeFiles/cmTC_665e3.dir/build
+gmake[1]: Entering directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_665e3.dir/CheckFunctionExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_665e3.dir/CheckFunctionExists.c.o   -c /share/apps/compilers/cmake-3.10.3/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_665e3
+/share/apps/compilers/cmake-3.10.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_665e3.dir/link.txt --verbose=1
+/share/apps/compilers/gcc-7.3.0/bin/gcc -I/share/apps/compilers/gcc-7.3.0/include -DCHECK_FUNCTION_EXISTS=pthread_create  -L/share/apps/compilers/gcc-7.3.0/lib64  -rdynamic CMakeFiles/cmTC_665e3.dir/CheckFunctionExists.c.o  -o cmTC_665e3 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_665e3] Error 1
+gmake[1]: Leaving directory `/home/rolandas/ruslan/src/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_665e3/fast] Error 2
+
+

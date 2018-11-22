@@ -1,0 +1,5 @@
+An Lie 31 14:13:52 EEST 2018
+gpu-0-1.local
+/home/rolandas/ruslan/build
+Starting 
+slurmstepd: error: *** JOB 2193 ON gpu-0-1 CANCELLED AT 2018-07-31T14:14:36 ***

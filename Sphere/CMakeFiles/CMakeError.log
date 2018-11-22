@@ -1,0 +1,186 @@
+Determining if the CL_VERSION_2_2 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_60acb/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_60acb.dir/build.make CMakeFiles/cmTC_60acb.dir/build
+gmake[1]: Entering directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_60acb.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_60acb.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_60acb.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_60acb/fast] Error 2
+
+File /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_2
+  return ((int*)(&CL_VERSION_2_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_2_1 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_f897d/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_f897d.dir/build.make CMakeFiles/cmTC_f897d.dir/build
+gmake[1]: Entering directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f897d.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_f897d.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_f897d.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_f897d/fast] Error 2
+
+File /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_1
+  return ((int*)(&CL_VERSION_2_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_89b29/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_89b29.dir/build.make CMakeFiles/cmTC_89b29.dir/build
+gmake[1]: Entering directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89b29.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_89b29.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_89b29.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_89b29/fast] Error 2
+
+File /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_2 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_85b45/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_85b45.dir/build.make CMakeFiles/cmTC_85b45.dir/build
+gmake[1]: Entering directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_85b45.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_85b45.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_85b45.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_85b45/fast] Error 2
+
+File /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_2
+  return ((int*)(&CL_VERSION_1_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_1 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_fc95c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_fc95c.dir/build.make CMakeFiles/cmTC_fc95c.dir/build
+gmake[1]: Entering directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fc95c.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_fc95c.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_fc95c.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_fc95c/fast] Error 2
+
+File /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_1
+  return ((int*)(&CL_VERSION_1_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_0 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_ade02/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_ade02.dir/build.make CMakeFiles/cmTC_ade02.dir/build
+gmake[1]: Entering directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ade02.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_ade02.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_ade02.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Sphere/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_ade02/fast] Error 2
+
+File /home/rolandas/Sphere/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_0
+  return ((int*)(&CL_VERSION_1_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

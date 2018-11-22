@@ -1,0 +1,1 @@
+/share/apps/compilers/gcc-7.3.0/bin/g++   -w  -L/share/apps/compilers/gcc-7.3.0/lib64 -w CMakeFiles/embed-resource.dir/embedresource.cpp.o  -o embed-resource -lstdc++fs /share/apps/devel/boost_1_66_0/lib/libboost_filesystem.so /share/apps/devel/boost_1_66_0/lib/libboost_system.so 

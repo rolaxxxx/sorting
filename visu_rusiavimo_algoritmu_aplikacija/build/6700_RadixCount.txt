@@ -1,0 +1,4 @@
+An Lap 20 12:51:26 EET 2018
+compute-0-7.local
+/home/rolandas/ruslan/build
+RadixCount sortu kiekis 1000 elementu kiekis 100000000 rusiavimo laikas 0.363957

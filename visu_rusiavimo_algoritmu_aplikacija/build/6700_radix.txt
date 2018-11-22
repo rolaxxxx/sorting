@@ -1,0 +1,2 @@
+N TIME
+radix sortu kiekis 1000 elementu kiekis 16777216 rusiavimo laikas 1.2413

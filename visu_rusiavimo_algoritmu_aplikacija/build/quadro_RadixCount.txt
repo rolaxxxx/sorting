@@ -1,0 +1,4 @@
+Tr Lap 21 11:54:49 EET 2018
+gpu-0-1.local
+/home/rolandas/ruslan/build
+slurmstepd: error: *** JOB 9271 ON gpu-0-1 CANCELLED AT 2018-11-21T11:55:00 ***

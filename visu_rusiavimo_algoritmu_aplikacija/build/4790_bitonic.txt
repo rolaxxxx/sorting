@@ -1,0 +1,2 @@
+N TIME
+bitonic sortu kiekis 1000 elementu kiekis 16777216 rusiavimo laikas 3.37604

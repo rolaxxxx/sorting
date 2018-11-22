@@ -1,0 +1,4 @@
+Tr Rgp  8 11:17:12 EEST 2018
+gpu-0-1.local
+/home/rolandas/ruslan/build
+slurmstepd: error: *** JOB 2404 ON gpu-0-1 CANCELLED AT 2018-08-08T11:17:34 ***

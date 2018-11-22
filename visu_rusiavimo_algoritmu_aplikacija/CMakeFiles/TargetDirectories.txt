@@ -1,0 +1,7 @@
+/home/rolandas/ruslan/CMakeFiles/rebuild_cache.dir
+/home/rolandas/ruslan/CMakeFiles/edit_cache.dir
+/home/rolandas/ruslan/CMakeFiles/Sorting.dir
+/home/rolandas/ruslan/CMakeFiles/HEADERS.dir
+/home/rolandas/ruslan/lib/embed-resource/CMakeFiles/rebuild_cache.dir
+/home/rolandas/ruslan/lib/embed-resource/CMakeFiles/edit_cache.dir
+/home/rolandas/ruslan/lib/embed-resource/CMakeFiles/embed-resource.dir

@@ -1,0 +1,439 @@
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/gcc 
+Build flags: -I/share/apps/compilers/gcc-7.3.0/include
+Id flags:  
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/gcc 
+Build flags: -I/share/apps/compilers/gcc-7.3.0/include
+Id flags: -c 
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/gcc 
+Build flags: -I/share/apps/compilers/gcc-7.3.0/include
+Id flags: -Aa 
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/gcc 
+Build flags: -I/share/apps/compilers/gcc-7.3.0/include
+Id flags: -D__CLASSIC_C__ 
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/gcc 
+Build flags: 
+Id flags: -c 
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/gcc 
+Build flags: 
+Id flags: -Aa 
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/gcc 
+Build flags: 
+Id flags: -D__CLASSIC_C__ 
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Checking whether the C compiler is IAR using "" did not match "IAR .+ Compiler":
+gcc: fatal error: no input files
+compilation terminated.
+Checking whether the C compiler is IAR using "" did not match "IAR .+ Compiler":
+gcc: fatal error: no input files
+compilation terminated.
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1plus: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/g++ 
+Build flags: 
+Id flags: -c 
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1plus: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/g++ 
+Build flags: 
+Id flags: --c++ 
+
+The output was:
+1
+g++: error: unrecognized command line option ‘--c++’
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/g++ 
+Build flags: 
+Id flags: --ec++ 
+
+The output was:
+1
+g++: error: unrecognized command line option ‘--ec++’; did you mean ‘-Weffc++’?
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1plus: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/g++ 
+Build flags: 
+Id flags: -c 
+
+The output was:
+1
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1plus: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/g++ 
+Build flags: 
+Id flags: --c++ 
+
+The output was:
+1
+g++: error: unrecognized command line option ‘--c++’
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /share/apps/compilers/gcc-7.3.0/bin/g++ 
+Build flags: 
+Id flags: --ec++ 
+
+The output was:
+1
+g++: error: unrecognized command line option ‘--ec++’; did you mean ‘-Weffc++’?
+
+
+Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+g++: fatal error: no input files
+compilation terminated.
+Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+g++: fatal error: no input files
+compilation terminated.
+Determining if the C compiler works failed with the following output:
+Change Dir: /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_9d9de/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_9d9de.dir/build.make CMakeFiles/cmTC_9d9de.dir/build
+gmake[1]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9d9de.dir/testCCompiler.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include    -o CMakeFiles/cmTC_9d9de.dir/testCCompiler.c.o   -c /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/testCCompiler.c
+/share/apps/compilers/gcc-7.3.0/libexec/gcc/x86_64-pc-linux-gnu/7.3.0/cc1: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+gmake[1]: *** [CMakeFiles/cmTC_9d9de.dir/testCCompiler.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_9d9de/fast] Error 2
+
+
+Determining if the CL_VERSION_2_2 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_89437/fast"
+gmake[1]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_89437.dir/build.make CMakeFiles/cmTC_89437.dir/build
+gmake[2]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89437.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_89437.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/cmTC_89437.dir/CheckSymbolExists.c.o] Error 1
+gmake[2]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_89437/fast] Error 2
+gmake[1]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+
+File /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_2
+  return ((int*)(&CL_VERSION_2_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_2_1 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_063bf/fast"
+gmake[1]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_063bf.dir/build.make CMakeFiles/cmTC_063bf.dir/build
+gmake[2]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_063bf.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_063bf.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/cmTC_063bf.dir/CheckSymbolExists.c.o] Error 1
+gmake[2]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_063bf/fast] Error 2
+gmake[1]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+
+File /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_1
+  return ((int*)(&CL_VERSION_2_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_f005c/fast"
+gmake[1]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_f005c.dir/build.make CMakeFiles/cmTC_f005c.dir/build
+gmake[2]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f005c.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_f005c.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/cmTC_f005c.dir/CheckSymbolExists.c.o] Error 1
+gmake[2]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_f005c/fast] Error 2
+gmake[1]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+
+File /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_2 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_ff463/fast"
+gmake[1]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_ff463.dir/build.make CMakeFiles/cmTC_ff463.dir/build
+gmake[2]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ff463.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_ff463.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/cmTC_ff463.dir/CheckSymbolExists.c.o] Error 1
+gmake[2]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_ff463/fast] Error 2
+gmake[1]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+
+File /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_2
+  return ((int*)(&CL_VERSION_1_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_1 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_808f0/fast"
+gmake[1]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_808f0.dir/build.make CMakeFiles/cmTC_808f0.dir/build
+gmake[2]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_808f0.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_808f0.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/cmTC_808f0.dir/CheckSymbolExists.c.o] Error 1
+gmake[2]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_808f0/fast] Error 2
+gmake[1]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+
+File /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_1
+  return ((int*)(&CL_VERSION_1_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_0 exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_ab67d/fast"
+gmake[1]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_ab67d.dir/build.make CMakeFiles/cmTC_ab67d.dir/build
+gmake[2]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ab67d.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_ab67d.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/cmTC_ab67d.dir/CheckSymbolExists.c.o] Error 1
+gmake[2]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_ab67d/fast] Error 2
+gmake[1]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+
+File /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_0
+  return ((int*)(&CL_VERSION_1_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_746f5/fast"
+gmake[1]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_746f5.dir/build.make CMakeFiles/cmTC_746f5.dir/build
+gmake[2]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_746f5.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include    -o CMakeFiles/cmTC_746f5.dir/CheckSymbolExists.c.o   -c /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_746f5
+/share/apps/compilers/cmake-3.10.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_746f5.dir/link.txt --verbose=1
+/share/apps/compilers/gcc-7.3.0/bin/gcc -I/share/apps/compilers/gcc-7.3.0/include   -L/share/apps/compilers/gcc-7.3.0/lib64  -rdynamic CMakeFiles/cmTC_746f5.dir/CheckSymbolExists.c.o  -o cmTC_746f5 
+CMakeFiles/cmTC_746f5.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [cmTC_746f5] Error 1
+gmake[2]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_746f5/fast] Error 2
+gmake[1]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+
+File /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/rolandas/Sphere/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_76b9b/fast"
+gmake[1]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTC_76b9b.dir/build.make CMakeFiles/cmTC_76b9b.dir/build
+gmake[2]: Entering directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_76b9b.dir/CheckFunctionExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_76b9b.dir/CheckFunctionExists.c.o   -c /share/apps/compilers/cmake-3.10.3/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_76b9b
+/share/apps/compilers/cmake-3.10.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76b9b.dir/link.txt --verbose=1
+/share/apps/compilers/gcc-7.3.0/bin/gcc -I/share/apps/compilers/gcc-7.3.0/include -DCHECK_FUNCTION_EXISTS=pthread_create  -L/share/apps/compilers/gcc-7.3.0/lib64  -rdynamic CMakeFiles/cmTC_76b9b.dir/CheckFunctionExists.c.o  -o cmTC_76b9b -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [cmTC_76b9b] Error 1
+gmake[2]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_76b9b/fast] Error 2
+gmake[1]: Leaving directory `/home/rolandas/Sphere/build/CMakeFiles/CMakeTmp'
+
+

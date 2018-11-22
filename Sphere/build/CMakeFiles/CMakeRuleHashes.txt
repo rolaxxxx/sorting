@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+b9a0330209fac5b9e397f3bb51dc2e64 lib/embed-resource/Kernels.cl.c

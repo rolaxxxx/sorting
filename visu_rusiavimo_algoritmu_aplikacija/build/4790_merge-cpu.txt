@@ -1,0 +1,2 @@
+N TIME
+merge-cpu sortu kiekis 1000 elementu kiekis 16777216 rusiavimo laikas 0.375191

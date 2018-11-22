@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rolandas/ruslan/lib/embed-resource/embedresource.cpp
+iostream
+-
+fstream
+-
+cstdlib
+-
+algorithm
+-
+string
+-
+experimental/filesystem
+-
+

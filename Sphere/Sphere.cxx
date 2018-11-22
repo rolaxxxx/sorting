@@ -1,0 +1,241 @@
+#define MAX_VALUE 256
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <time.h> 
+#include <algorithm>
+#include <ctime>
+#include <chrono>
+#include <sstream>
+#include <fstream>
+#include "Resource.h"
+#include <boost/compute/types.hpp>
+#include <boost/compute/core.hpp>
+#include <boost/compute/container/vector.hpp>
+#include <boost/compute/detail/sha1.hpp>
+#include <boost/compute/utility/source.hpp>
+#include <boost/compute/utility/program_cache.hpp>
+#include <boost/lockfree/queue.hpp>
+#include <experimental/filesystem>
+#include <iostream>
+#include <boost/compute/utility/wait_list.hpp>
+#include <vector>
+#include <math.h>
+#include <boost/compute/system.hpp>
+#include <boost/compute/algorithm/copy.hpp>
+#include <boost/compute/algorithm/sort.hpp>
+#include <boost/compute/container/vector.hpp>
+#include <boost/compute/algorithm/stable_sort_by_key.hpp>
+#include <cstddef>
+#include <algorithm>
+#include <boost/assert.hpp>
+#include <ctime>
+#include <ratio>
+#include <stdlib.h> 
+#include <boost/compute/system.hpp>
+#include <boost/compute/algorithm/is_sorted.hpp>
+#include <boost/compute/core.hpp>
+#include <boost/compute/device.hpp>
+#include <boost/compute/algorithm/detail/insertion_sort.hpp>
+#include <boost/compute/async/future.hpp>
+#include <boost/compute/event.hpp>
+#include <boost/compute/algorithm/detail/radix_sort.hpp>
+#include <boost/compute/algorithm/copy.hpp>
+#include <boost/compute/container/vector.hpp>
+#include <boost/sort/spreadsort/spreadsort.hpp>
+#include <boost/compute/core.hpp>
+#include <boost/assert.hpp>
+#include <algorithm>
+#include <boost/compute/algorithm/stable_sort.hpp>
+#include <boost/compute/algorithm/detail/merge_sort_on_gpu.hpp>
+#include <boost/compute/algorithm/sort.hpp>
+#include <boost/compute/algorithm/transform.hpp>
+#include <boost/compute/container/vector.hpp>
+#include <boost/compute/functional/math.hpp>
+#include <chrono>" 
+#include <CL/cl.h> 
+using boost::compute::int_;
+#include <boost/compute/algorithm/sort_by_key.hpp>
+namespace compute = boost::compute;
+using namespace std;
+#include "vtkDataSetReader.h"
+#include "vtkPointData.h"
+#include <iterator> 
+#include "vtkPolyData.h"
+#include <vtkPolyData.h>
+#include "boost/multi_array.hpp"
+#include "vtkDataSet.h"
+#include <vtkDataSet.h>
+#include "vtkDataArray.h"
+#include "vtkDataSetWriter.h"
+#include "vtkCellArray.h"
+#include "vtkDoubleArray.h"
+#include "vtkCellData.h"
+#include <map>
+#include <boost/compute/algorithm/unique.hpp>
+#include<stdio.h>
+#include <CL/cl.h>
+#include <string.h>
+#include <stdlib.h>
+int main(int, char *[])
+{   
+
+	compute::device device = compute::system::default_device();
+	Resource sourceCode = LOAD_RESOURCE(Kernels_cl);
+	std::stringstream source;
+	//source<<"__constant double x_koef="<<5;
+	source << std::string(sourceCode.data(), sourceCode.size());
+	boost::compute::system::default_queue().finish();
+	boost::compute::program program =
+   	boost::compute::program::create_with_source(source.str(), boost::compute::system::default_context());
+    	program.build("-I../ ");///////////////////// programa luzta sitoje vietoje /////////////////////////
+	boost::compute::kernel kernel(program, "morton3D");
+	boost::compute::kernel kernel2(program, "nodeKurimas");
+	boost::compute::kernel kernel3(program, "nodeHierarhija");
+	using compute::int2_;
+
+    	vtkDataSetReader* reader=vtkDataSetReader::New();
+    	reader->SetFileName("input.vtk");
+    	reader->Update();
+
+	double *bounds;
+	bounds=reader->GetOutput()->GetBounds();
+
+	int kiekis=reader->GetOutput()->GetNumberOfPoints();
+	//cout << kiekis << endl;
+	vector<boost::compute::float4_>coords(kiekis*4);
+	compute::vector<boost::compute::float4_>device_coords(kiekis*4);
+	compute::vector<int>mortoncodes(kiekis);
+	vector<int>mortoncodes_from_device(kiekis);
+	compute::vector<double>device_bounds(6);
+		for(int i=0;i<kiekis;i+=4) // po keturis kad neperasyti jau buvusiu daleliu 
+			    {
+        	 double  p[3]; // ar galima sitaip castinti nuskaitant elementus
+        	reader->GetOutput()->GetPoint(i,p);
+		coords[i]  =(boost::compute::float4_)p[0];
+		coords[i+1]=(boost::compute::float4_)p[1];
+		coords[i+2]=(boost::compute::float4_)p[2];
+		coords[i+3]=(boost::compute::float4_)reader->GetOutput()->GetPointData()->GetArray("RADIUS")->GetTuple1(0); // radiusas ketvirtame elemente;
+		//cout <<  coords[i] <<  " " << coords[i+1] << " " << coords[i+2] << " " << coords[i+3] <<  endl;
+	    		    	}
+	vector<int>particle_indexes(kiekis); //host vektorius formuoti pirmaji masyva 
+	compute::vector<int>device_particle_indexes(kiekis*2-1);// du masyvai skirti saugoti medi  
+	compute::vector<int>device_tree_with_connections(kiekis*7-4); // kiekvienas node gales buti skaidomas i 10 lygiu ;;; koks dydis turetu buti sito masyvo kad tiksliai atitaikyti bendra dydi i kiek issiskaido  
+////kopijavimas i device
+	vector<int>particle_indexes_from_device(kiekis*2-1);
+	vector<int>host_tree_with_connections(kiekis*7-4);
+	//uzpildome daleliu masyva ju id
+    compute::copy(coords.begin(), coords.end(), device_coords.begin(), compute::system::default_queue());
+    compute::system::default_queue().finish();
+
+    compute::copy(bounds, bounds+6, device_bounds.begin(), compute::system::default_queue());
+    compute::system::default_queue().finish(); 
+
+    // x y z daleliu koordinates atskiruose vektoriuose
+
+    kernel.set_arg(0, device_coords);
+    kernel.set_arg(1, mortoncodes);
+    kernel.set_arg(2, device_bounds);
+    kernel.set_arg(3, device_particle_indexes);
+    
+	//mortoncode kernel
+    boost::compute::system::default_queue().enqueue_1d_range_kernel(kernel, 0, kiekis, 0).wait();
+    
+	srand(time(0));       
+    compute::stable_sort_by_key(mortoncodes.begin(), mortoncodes.end(), device_particle_indexes.begin(),  compute::system::default_queue()); // rusiavimas 2*kiekis-1 ir kiekis
+    compute::system::default_queue().finish();
+
+    //pradiniu node kurimas 
+    kernel2.set_arg(0, device_coords);
+    kernel2.set_arg(1, mortoncodes);
+    kernel2.set_arg(2, device_particle_indexes);
+    kernel2.set_arg(3, kiekis);
+    
+    compute::system::default_queue().enqueue_1d_range_kernel(kernel2, 0, kiekis, 0).wait();    
+    //cout << kiekis << endl;
+    compute::stable_sort_by_key(mortoncodes.begin(), mortoncodes.end(),  device_particle_indexes.begin(),  compute::system::default_queue()); // rusiavimas 2*kiekis$
+    compute::system::default_queue().finish();
+    
+    //cout << distance(device_particle_indexes.begin(), device_particle_indexes.end()) << endl;
+    compute::vector<int>::iterator iter=compute::unique(device_particle_indexes.begin(), device_particle_indexes.end(),  compute::system::default_queue());
+    kiekis=distance(device_particle_indexes.begin(), iter); //perrasau kieki su nauja pabaiga
+    //cout << kiekis << endl;
+
+    compute::copy(device_particle_indexes.begin(), iter, device_tree_with_connections.begin()); // perkopijuoju visa device particle indexes
+    compute::system::default_queue().finish();
+    
+    compute::copy(device_particle_indexes.begin(), iter , particle_indexes_from_device.begin()); //perkopijuoju elementus su nauja pabaiga
+    compute::system::default_queue().finish();
+
+    kernel3.set_arg(0, device_particle_indexes);
+    kernel3.set_arg(1, device_tree_with_connections);
+    kernel3.set_arg(2, kiekis);
+    boost::compute::system::default_queue().enqueue_1d_range_kernel(kernel3, 0, kiekis*2, 0).wait();
+
+    iter=compute::unique(device_tree_with_connections.begin(), device_tree_with_connections.end(),  compute::system::default_queue());
+    kiekis=distance(device_tree_with_connections.begin(), iter); //perrasau kieki su nauja pabaiga
+
+    compute::stable_sort_by_key(mortoncodes.begin(), mortoncodes.end(),  device_tree_with_connections.begin(),  compute::system::default_queue()); // rusiavimas 2*kiekis$
+    compute::system::default_queue().finish();
+
+    compute::copy(device_tree_with_connections.begin(), device_tree_with_connections.end() , host_tree_with_connections.begin()); //perkopijuoju elementus su nauja pabaiga
+    compute::system::default_queue().finish();
+
+    for(int i=0;i<kiekis*7-4;i++){
+          cout << host_tree_with_connections[i] << " " ;
+}    
+
+
+    /////////////// rasymas i faila ///////////////////////////////
+    vtkPolyData*poly=vtkPolyData::New();
+    vtkPoints*points=vtkPoints::New();
+    //points->SetNumberOfPoints(kiekis);
+    points->SetDataTypeToDouble();
+    vtkDoubleArray*radius=vtkDoubleArray::New();
+    radius->SetNumberOfComponents(1);
+    radius->SetNumberOfTuples(kiekis);
+    radius->SetName("RADIUS");
+    vtkCellArray*lines=vtkCellArray::New();
+    lines->Allocate(100,100);
+    for(int i=0;i<kiekis;i++)
+    {
+        double p[3];
+        reader->GetOutput()->GetPoint(i,p);
+        points->InsertNextPoint(p[0],p[1],p[2]);
+        radius->SetTuple1(i,reader->GetOutput()->GetPointData()->GetArray("RADIUS")->GetTuple1(i));
+    }
+
+
+
+    vtkDoubleArray*ilgis=vtkDoubleArray::New();
+    ilgis->SetNumberOfComponents(1);
+    ilgis->SetName("ilgis");
+    
+
+    // tarkim savo algoritmu gavai kontaktus
+    std::vector<std::pair<int,int>> kontaktuSarasas;
+    kontaktuSarasas.push_back(std::make_pair(0,1));
+    kontaktuSarasas.push_back(std::make_pair(2,3));
+    for(int i=0;i<kontaktuSarasas.size();i++)
+    {
+        lines->InsertNextCell(2);
+        std::pair<int,int> pora=kontaktuSarasas[i];
+        lines->InsertCellPoint(pora.first);
+        lines->InsertCellPoint(pora.second);
+        ilgis->InsertNextTuple1(111);
+    }
+
+    poly->SetPoints(points);
+    poly->GetPointData()->SetScalars(radius);
+    poly->SetLines(lines);
+    poly->GetCellData()->SetScalars(ilgis);
+    vtkDataSetWriter*writer=vtkDataSetWriter::New();
+    writer->SetFileName("output.vtk");
+    writer->SetInputData(poly);
+    writer->Write();
+
+
+
+
+  return EXIT_SUCCESS;
+
+}

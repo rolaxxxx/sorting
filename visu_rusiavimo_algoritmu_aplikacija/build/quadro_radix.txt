@@ -1,0 +1,9 @@
+N TIME
+radix sortu kiekis 1000 elementu kiekis 1048576 rusiavimo laikas 0.0381146
+radix sortu kiekis 1000 elementu kiekis 2097152 rusiavimo laikas 0.0708685
+radix sortu kiekis 1000 elementu kiekis 4194304 rusiavimo laikas 0.135128
+radix sortu kiekis 1000 elementu kiekis 8388608 rusiavimo laikas 0.263695
+radix sortu kiekis 1000 elementu kiekis 16777216 rusiavimo laikas 0.521503
+radix sortu kiekis 1000 elementu kiekis 33554432 rusiavimo laikas 1.03405
+radix sortu kiekis 1000 elementu kiekis 67108864 rusiavimo laikas 2.06004
+radix sortu kiekis 1000 elementu kiekis 134217728 rusiavimo laikas 4.11149

@@ -1,0 +1,9 @@
+N TIME
+bitonic sortu kiekis 1000 elementu kiekis 1048576 rusiavimo laikas 0.0278009
+bitonic sortu kiekis 1000 elementu kiekis 2097152 rusiavimo laikas 0.0586275
+bitonic sortu kiekis 1000 elementu kiekis 4194304 rusiavimo laikas 0.125473
+bitonic sortu kiekis 1000 elementu kiekis 8388608 rusiavimo laikas 0.270915
+bitonic sortu kiekis 1000 elementu kiekis 16777216 rusiavimo laikas 0.585105
+bitonic sortu kiekis 1000 elementu kiekis 33554432 rusiavimo laikas 1.26306
+bitonic sortu kiekis 1000 elementu kiekis 67108864 rusiavimo laikas 2.72307
+bitonic sortu kiekis 1000 elementu kiekis 134217728 rusiavimo laikas 5.85845

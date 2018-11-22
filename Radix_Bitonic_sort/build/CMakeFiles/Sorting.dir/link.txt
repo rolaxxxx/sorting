@@ -1,0 +1,1 @@
+/share/apps/compilers/gcc-7.3.0/bin/g++   -w  -L/share/apps/compilers/gcc-7.3.0/lib64 -w -rdynamic CMakeFiles/Sorting.dir/src/main.cxx.o CMakeFiles/Sorting.dir/src/Radix_Counting.cl.c.o Sorting -lpthread -lboost_log -lstdc++fs -lOpenCL 
