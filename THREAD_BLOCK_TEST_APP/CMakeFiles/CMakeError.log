@@ -1,0 +1,237 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_80b33/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_80b33.dir/build.make CMakeFiles/cmTC_80b33.dir/build
+gmake[1]: Entering directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_80b33.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include    -o CMakeFiles/cmTC_80b33.dir/CheckSymbolExists.c.o   -c /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_80b33
+/share/apps/compilers/cmake-3.10.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80b33.dir/link.txt --verbose=1
+/share/apps/compilers/gcc-7.3.0/bin/gcc -I/share/apps/compilers/gcc-7.3.0/include   -L/share/apps/compilers/gcc-7.3.0/lib64  -rdynamic CMakeFiles/cmTC_80b33.dir/CheckSymbolExists.c.o  -o cmTC_80b33 
+CMakeFiles/cmTC_80b33.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_80b33] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_80b33/fast] Error 2
+
+File /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_cd453/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_cd453.dir/build.make CMakeFiles/cmTC_cd453.dir/build
+gmake[1]: Entering directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd453.dir/CheckFunctionExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_cd453.dir/CheckFunctionExists.c.o   -c /share/apps/compilers/cmake-3.10.3/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cd453
+/share/apps/compilers/cmake-3.10.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd453.dir/link.txt --verbose=1
+/share/apps/compilers/gcc-7.3.0/bin/gcc -I/share/apps/compilers/gcc-7.3.0/include -DCHECK_FUNCTION_EXISTS=pthread_create  -L/share/apps/compilers/gcc-7.3.0/lib64  -rdynamic CMakeFiles/cmTC_cd453.dir/CheckFunctionExists.c.o  -o cmTC_cd453 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_cd453] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_cd453/fast] Error 2
+
+
+Determining if the CL_VERSION_2_2 exist failed with the following output:
+Change Dir: /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_2650c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_2650c.dir/build.make CMakeFiles/cmTC_2650c.dir/build
+gmake[1]: Entering directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2650c.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_2650c.dir/CheckSymbolExists.c.o   -c /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_2650c.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_2650c/fast] Error 2
+
+File /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_2
+  return ((int*)(&CL_VERSION_2_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_2_1 exist failed with the following output:
+Change Dir: /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_c3ddc/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_c3ddc.dir/build.make CMakeFiles/cmTC_c3ddc.dir/build
+gmake[1]: Entering directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c3ddc.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_c3ddc.dir/CheckSymbolExists.c.o   -c /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_c3ddc.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_c3ddc/fast] Error 2
+
+File /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_1
+  return ((int*)(&CL_VERSION_2_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_8fc6e/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_8fc6e.dir/build.make CMakeFiles/cmTC_8fc6e.dir/build
+gmake[1]: Entering directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8fc6e.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_8fc6e.dir/CheckSymbolExists.c.o   -c /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_8fc6e.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_8fc6e/fast] Error 2
+
+File /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_2 exist failed with the following output:
+Change Dir: /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_bac36/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_bac36.dir/build.make CMakeFiles/cmTC_bac36.dir/build
+gmake[1]: Entering directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bac36.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_bac36.dir/CheckSymbolExists.c.o   -c /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_bac36.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_bac36/fast] Error 2
+
+File /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_2
+  return ((int*)(&CL_VERSION_1_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_1 exist failed with the following output:
+Change Dir: /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_f7bb4/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_f7bb4.dir/build.make CMakeFiles/cmTC_f7bb4.dir/build
+gmake[1]: Entering directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f7bb4.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_f7bb4.dir/CheckSymbolExists.c.o   -c /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_f7bb4.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_f7bb4/fast] Error 2
+
+File /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_1
+  return ((int*)(&CL_VERSION_1_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the CL_VERSION_1_0 exist failed with the following output:
+Change Dir: /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_ada9f/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_ada9f.dir/build.make CMakeFiles/cmTC_ada9f.dir/build
+gmake[1]: Entering directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ada9f.dir/CheckSymbolExists.c.o
+/share/apps/compilers/gcc-7.3.0/bin/gcc   -I/share/apps/compilers/gcc-7.3.0/include     -o CMakeFiles/cmTC_ada9f.dir/CheckSymbolExists.c.o   -c /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
+ #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_ada9f.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory `/home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_ada9f/fast] Error 2
+
+File /home/rolandas/Radix_Count_Sort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_0
+  return ((int*)(&CL_VERSION_1_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

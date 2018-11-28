@@ -65,7 +65,6 @@ using namespace std::chrono;
 #ifndef _RADIXSORT_H_
 #define _RADIXSORT_H_
 
-#include <host_defines.h>
 
 #define SYNCIT __syncthreads()
 
@@ -73,14 +72,6 @@ using namespace std::chrono;
 typedef unsigned int uint;
 typedef unsigned short ushort;
 
-typedef struct __align__(16) {
-    int key;
-    int value;
-} KeyValuePair;
-
-extern "C" {
-    void RadixSort(KeyValuePair *pData0, KeyValuePair *pData1, uint elements, uint bits);
-}
 
 #endif // #ifndef _RADIXSORT_H_
 
