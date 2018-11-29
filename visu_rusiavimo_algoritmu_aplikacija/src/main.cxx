@@ -44,10 +44,10 @@ int main(int argc, char* argv[])
 	int n=atoi(argv[1]);
         int elements=atoi(argv[2]); // visi rusiuojami elementai
 
-	 const size_t NUM_SMS = elements;
-         const size_t NUM_THREADS_PER_SM = 1;
+	 const size_t NUM_SMS = 16;
+         const size_t NUM_THREADS_PER_SM = 192;
          const size_t NUM_THREADS_PER_BLOCK = 64;
-	 const size_t NUM_BLOCKS = NUM_SMS / NUM_THREADS_PER_BLOCK; 
+	 const size_t NUM_BLOCKS = (NUM_THREADS_PER_SM / NUM_THREADS_PER_BLOCK)*NUM_SMS; 
  
 	 const size_t RADIX=8; // pakeiciau i 32 bitus                                                         // Number of bits per radix sort pass
 	 const size_t RADICES=1 << RADIX;
@@ -73,10 +73,10 @@ int main(int argc, char* argv[])
 	 const size_t SHUFFLE_GRFSIZE = SHUFFLE_GRFELEMENTS * sizeof(uint);		
 	 const size_t RAD_PREFIX=(RADICES/PREFIX_NUM_BLOCKS)*TOTALRADIXGROUPS;
 
-	source3 <<"__constant int NUM_SMS="<<elements<<";\n";
-	source3 <<"__constant int NUM_THREADS_PER_SM="<<1<<";\n";
+	source3 <<"__constant int NUM_SMS="<<16<<";\n";
+	source3 <<"__constant int NUM_THREADS_PER_SM="<<192<<";\n";
 	source3 <<"__constant int NUM_THREADS_PER_BLOCK="<<64<<";\n";	
-	source3 <<"__constant int NUM_BLOCKS="<<NUM_SMS/NUM_THREADS_PER_BLOCK<<";\n";
+	source3 <<"__constant int NUM_BLOCKS="<<(NUM_THREADS_PER_SM / NUM_THREADS_PER_BLOCK)*NUM_SMS<<";\n";
 	source3 <<"__constant int PREFIX_NUM_THREADS_PER_SM="<<NUM_THREADS_PER_SM<<";\n";
 	source3 <<"__constant int PREFIX_NUM_THREADS_PER_BLOCK="<<PREFIX_NUM_THREADS_PER_SM<<";\n";
 	source3 <<"__constant int RADICES="<<(1 << RADIX)<<";\n";  
@@ -231,9 +231,9 @@ int main(int argc, char* argv[])
 					kernel4.set_arg(4, shift);
 					kernel6.set_arg(6, shift);
 
- 						compute::system::default_queue().enqueue_1d_range_kernel(kernel4, 0, NUM_BLOCKS, 	64).wait();    
-						compute::system::default_queue().enqueue_1d_range_kernel(kernel5, 0, PREFIX_NUM_BLOCKS, 192).wait();
-						compute::system::default_queue().enqueue_1d_range_kernel(kernel6, 0, NUM_BLOCKS, 	64).wait();
+ 						compute::system::default_queue().enqueue_nd_range_kernel(kernel4, size_t(1), 0, NUM_BLOCKS, 	0).wait();    
+						compute::system::default_queue().enqueue_nd_range_kernel(kernel5, size_t(1), 0, PREFIX_NUM_BLOCKS, 0  ).wait();
+						compute::system::default_queue().enqueue_nd_range_kernel(kernel6, size_t(1), 0, NUM_BLOCKS, 	NUM_THREADS_PER_BLOCK   ).wait();
 
 					temp_device_key_vector = device_key_vector;
 					device_key_vector = out_device_key_vector;

@@ -2,6 +2,7 @@
 #include <ctime>
 #include <chrono>
 #include <sstream>
+#include <math.h> 
 #include <boost/compute/types.hpp>
 #include <boost/compute/core.hpp>
 #include <boost/compute/container/vector.hpp>
@@ -27,6 +28,7 @@
 #include <boost/assert.hpp>
 #include <ctime>
 #include <ratio>
+#include <CL/cl.h>
 #include <stdlib.h> 
 #include <boost/compute/system.hpp>
 #include <boost/compute/algorithm/is_sorted.hpp>
@@ -38,6 +40,7 @@
 #include <boost/compute/algorithm/copy.hpp>
 #include <boost/compute/container/vector.hpp>
 #include <boost/sort/spreadsort/spreadsort.hpp>
+ #include <CL/cl.hpp>
 #include <boost/assert.hpp>
 #include <algorithm>
 #include <boost/compute/algorithm/stable_sort.hpp>
@@ -126,3 +129,69 @@ void radixSortByKey(compute::vector<int> device_vector, compute::vector<int> dev
         compute::detail::radix_sort_by_key(device_key_vector.begin(), device_key_vector.end(), device_vector.begin(),compute::system::default_queue());
         compute::system::default_queue().finish();
 }
+
+
+void InsertParticlesCUDA ( uint* gcell, uint* ccell, int* gcnt )
+{
+	cudaMemset ( fbuf.mgridcnt, 0,			fcuda.gridTotal * sizeof(int));
+
+	insertParticles<<< fcuda.numBlocks, fcuda.numThreads>>> ( fbuf, fcuda.pnum );
+	cudaError_t error = cudaGetLastError();
+	if (error != cudaSuccess) {
+		fprintf ( stderr,  "CUDA ERROR: InsertParticlesCUDA: %s\n", cudaGetErrorString(error) );
+	}  
+	cudaThreadSynchronize ();
+	// Transfer data back if requested (for validation)
+	if (gcell != 0x0) {
+		CUDA_SAFE_CALL( cudaMemcpy ( gcell,	fbuf.mgcell,	fcuda.pnum*sizeof(uint),		cudaMemcpyDeviceToHost ) );		
+		CUDA_SAFE_CALL( cudaMemcpy ( gcnt,	fbuf.mgridcnt,	fcuda.gridTotal*sizeof(int),	cudaMemcpyDeviceToHost ) );
+		//CUDA_SAFE_CALL( cudaMemcpy ( ccell,	fbuf.mcluster,	fcuda.pnum*sizeof(uint),		cudaMemcpyDeviceToHost ) );
+	}
+	
+}
+void PrefixSumCellsCUDA ( int* goff )
+{
+	// Prefix Sum - determine grid offsets
+    prescanArrayRecursiveInt ( fbuf.mgridoff, fbuf.mgridcnt, fcuda.gridTotal, 0);
+	cudaThreadSynchronize ();
+
+	// Transfer data back if requested
+	if ( goff != 0x0 ) {
+		CUDA_SAFE_CALL( cudaMemcpy ( goff,	fbuf.mgridoff, fcuda.gridTotal * sizeof(int),  cudaMemcpyDeviceToHost ) );
+	}
+}
+
+void CountingSortIndexCUDA ( uint* ggrid )
+{	
+	// Counting Sort - pass one, determine grid counts
+	cudaMemset ( fbuf.mgrid,	GRID_UCHAR,	fcuda.pnum * sizeof(int) );
+
+	countingSortIndex <<< fcuda.numBlocks, fcuda.numThreads>>> ( fbuf, fcuda.pnum );		
+	cudaThreadSynchronize ();
+
+	// Transfer data back if requested
+	if ( ggrid != 0x0 ) {
+		CUDA_SAFE_CALL( cudaMemcpy ( ggrid,	fbuf.mgrid, fcuda.pnum * sizeof(uint), cudaMemcpyDeviceToHost ) );
+	}
+}
+void CountingSortFullCUDA ( uint* ggrid )
+{
+	// Transfer particle data to temp buffers
+	int n = fcuda.pnum;
+	cudaMemcpy ( fbuf.msortbuf + n*BUF_POS,		fbuf.mpos,		n*sizeof(float)*3,	cudaMemcpyDeviceToDevice );
+	cudaMemcpy ( fbuf.msortbuf + n*BUF_VEL,		fbuf.mvel,		n*sizeof(float)*3,	cudaMemcpyDeviceToDevice );
+	cudaMemcpy ( fbuf.msortbuf + n*BUF_VELEVAL,	fbuf.mveleval,	n*sizeof(float)*3,	cudaMemcpyDeviceToDevice );
+	cudaMemcpy ( fbuf.msortbuf + n*BUF_FORCE,	fbuf.mforce,	n*sizeof(float)*3,	cudaMemcpyDeviceToDevice );
+	cudaMemcpy ( fbuf.msortbuf + n*BUF_PRESS,	fbuf.mpress,	n*sizeof(float),	cudaMemcpyDeviceToDevice );
+	cudaMemcpy ( fbuf.msortbuf + n*BUF_DENS,	fbuf.mdensity,	n*sizeof(float),	cudaMemcpyDeviceToDevice );
+	cudaMemcpy ( fbuf.msortbuf + n*BUF_GCELL,	fbuf.mgcell,	n*sizeof(uint),		cudaMemcpyDeviceToDevice );
+	cudaMemcpy ( fbuf.msortbuf + n*BUF_GNDX,	fbuf.mgndx,		n*sizeof(uint),		cudaMemcpyDeviceToDevice );
+	cudaMemcpy ( fbuf.msortbuf + n*BUF_CLR,		fbuf.mclr,		n*sizeof(uint),		cudaMemcpyDeviceToDevice );
+
+	// Counting Sort - pass one, determine grid counts
+	cudaMemset ( fbuf.mgrid,	GRID_UCHAR,	fcuda.pnum * sizeof(int) );
+
+	countingSortFull <<< fcuda.numBlocks, fcuda.numThreads>>> ( fbuf, fcuda.pnum );		
+	cudaThreadSynchronize ();
+}
+

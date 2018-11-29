@@ -1,3 +1,8 @@
+void InsertParticlesCUDA ( uint* gcell, uint* ccell, int* gcnt );	
+void PrefixSumCellsCUDA ( int* goff );
+void CountingSortIndexCUDA ( uint* ggrid );	
+void CountingSortFullCUDA ( uint* ggrid );
+
 __global__ void insertParticles ( bufList buf, int pnum )
 __global__ void countingSortIndex ( bufList buf, int pnum )		
 __global__ void countingSortFull ( bufList buf, int pnum )
@@ -51,6 +56,17 @@ __global__ void insertParticles ( bufList buf, int pnum )
 	} else {
 		buf.mgcell[i] = GRID_UNDEF;
 		//buf.mcluster[i] = GRID_UNDEF;		-- make sure it is allocated!
+	}
+}
+void PrefixSumCellsCUDA ( int* goff )
+{
+	// Prefix Sum - determine grid offsets
+    prescanArrayRecursiveInt ( fbuf.mgridoff, fbuf.mgridcnt, fcuda.gridTotal, 0);
+	cudaThreadSynchronize ();
+
+	// Transfer data back if requested
+	if ( goff != 0x0 ) {
+		CUDA_SAFE_CALL( cudaMemcpy ( goff,	fbuf.mgridoff, fcuda.gridTotal * sizeof(int),  cudaMemcpyDeviceToHost ) );
 	}
 }
 

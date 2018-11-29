@@ -2266,5 +2266,9 @@ CMakeFiles/Sorting.dir/src/main.cxx.o
  /share/apps/devel/boost_1_66_0/include/boost/winapi/time.hpp
  /share/apps/devel/boost_1_66_0/include/boost/winapi/wait.hpp
  /share/apps/devel/intel-opencl-SRB5.0/include/CL/cl.h
+ /share/apps/devel/intel-opencl-SRB5.0/include/CL/cl.hpp
  /share/apps/devel/intel-opencl-SRB5.0/include/CL/cl_ext.h
+ /share/apps/devel/intel-opencl-SRB5.0/include/CL/cl_gl.h
+ /share/apps/devel/intel-opencl-SRB5.0/include/CL/cl_gl_ext.h
  /share/apps/devel/intel-opencl-SRB5.0/include/CL/cl_platform.h
+ /share/apps/devel/intel-opencl-SRB5.0/include/CL/opencl.h
