@@ -1,2 +1,3 @@
 # Hashes of file build rules.
-361130663884cf04f9021232b062d2a3 lib/embed-resource/Kernels.cl.c
+9af066786f1ef7561763960a2f4da8d0 lib/embed-resource/Kernels.cl.c
+5245b8a39050303bd6051c5b802ef424 src/Kernel.cl.c

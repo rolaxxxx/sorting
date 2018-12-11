@@ -22,18 +22,23 @@ find_package(OpenCL)
 include_directories(${OpenCL_INCLUDE_DIR})   
 include_directories(lib/embed-resource)
 add_subdirectory(lib/embed-resource)
+set(OPENCL_SOURCES
+    src/Kernel.cl
+)
 
-embed_resources(MyResources lib/embed-resource/Kernels.cl)
+set(SOURCE_FILES
+    src/main.cxx
+    src/main.h
+)
+embed_resources(MyResources ${OPENCL_SOURCES})
 
-add_executable(main MACOSX_BUNDLE main.cxx ${SOURCE_FILES} ${MyResources})
+add_executable(main MACOSX_BUNDLE  ${SOURCE_FILES} ${MyResources} ${OPENCL_SOURCES})
 
 SET(MY_GCC_COMPILE_FLAGS "-w")
 add_definitions(${MY_GCC_COMPILE_FLAGS})
 SET( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${MY_GCC_COMPILE_FLAGS}" )
 SET( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${MY_GCC_COMPILE_FLAGS}" )
 
-set(OPENCL_SOURCES
-    src/Kernels.cl
-)
+
  
 target_link_libraries(main ${VTK_LIBRARIES} -lOpenCL )

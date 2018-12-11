@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/rolandas/CountingSort/build/lib/embed-resource/Kernels.cl.c
+/home/rolandas/Desktop/CountingSort/build/src/Kernel.cl.c
 stdlib.h
 -
 

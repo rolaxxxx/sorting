@@ -1,6 +1,6 @@
-/home/rolandas/CountingSort/build/CMakeFiles/rebuild_cache.dir
-/home/rolandas/CountingSort/build/CMakeFiles/edit_cache.dir
-/home/rolandas/CountingSort/build/CMakeFiles/main.dir
-/home/rolandas/CountingSort/build/lib/embed-resource/CMakeFiles/rebuild_cache.dir
-/home/rolandas/CountingSort/build/lib/embed-resource/CMakeFiles/edit_cache.dir
-/home/rolandas/CountingSort/build/lib/embed-resource/CMakeFiles/embed-resource.dir
+/home/rolandas/Desktop/CountingSort/build/CMakeFiles/rebuild_cache.dir
+/home/rolandas/Desktop/CountingSort/build/CMakeFiles/main.dir
+/home/rolandas/Desktop/CountingSort/build/CMakeFiles/edit_cache.dir
+/home/rolandas/Desktop/CountingSort/build/lib/embed-resource/CMakeFiles/rebuild_cache.dir
+/home/rolandas/Desktop/CountingSort/build/lib/embed-resource/CMakeFiles/embed-resource.dir
+/home/rolandas/Desktop/CountingSort/build/lib/embed-resource/CMakeFiles/edit_cache.dir

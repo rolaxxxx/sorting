@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /share/apps/compilers/cmake-3.10.3/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /share/apps/compilers/cmake-3.10.3/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rolandas/CountingSort
+CMAKE_SOURCE_DIR = /home/rolandas/Desktop/CountingSort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rolandas/CountingSort/build
+CMAKE_BINARY_DIR = /home/rolandas/Desktop/CountingSort/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/rolandas/CountingSort/build
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/share/apps/compilers/cmake-3.10.3/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/share/apps/compilers/cmake-3.10.3/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/CountingSort/build/CMakeFiles /home/rolandas/CountingSort/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/Desktop/CountingSort/build/CMakeFiles /home/rolandas/Desktop/CountingSort/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/CountingSort/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/Desktop/CountingSort/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -136,59 +136,59 @@ embed-resource/fast:
 	$(MAKE) -f lib/embed-resource/CMakeFiles/embed-resource.dir/build.make lib/embed-resource/CMakeFiles/embed-resource.dir/build
 .PHONY : embed-resource/fast
 
-lib/embed-resource/Kernels.cl.o: lib/embed-resource/Kernels.cl.c.o
+src/Kernel.cl.o: src/Kernel.cl.c.o
 
-.PHONY : lib/embed-resource/Kernels.cl.o
-
-# target to build an object file
-lib/embed-resource/Kernels.cl.c.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o
-.PHONY : lib/embed-resource/Kernels.cl.c.o
-
-lib/embed-resource/Kernels.cl.i: lib/embed-resource/Kernels.cl.c.i
-
-.PHONY : lib/embed-resource/Kernels.cl.i
-
-# target to preprocess a source file
-lib/embed-resource/Kernels.cl.c.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.i
-.PHONY : lib/embed-resource/Kernels.cl.c.i
-
-lib/embed-resource/Kernels.cl.s: lib/embed-resource/Kernels.cl.c.s
-
-.PHONY : lib/embed-resource/Kernels.cl.s
-
-# target to generate assembly for a file
-lib/embed-resource/Kernels.cl.c.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.s
-.PHONY : lib/embed-resource/Kernels.cl.c.s
-
-main.o: main.cxx.o
-
-.PHONY : main.o
+.PHONY : src/Kernel.cl.o
 
 # target to build an object file
-main.cxx.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cxx.o
-.PHONY : main.cxx.o
+src/Kernel.cl.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Kernel.cl.c.o
+.PHONY : src/Kernel.cl.c.o
 
-main.i: main.cxx.i
+src/Kernel.cl.i: src/Kernel.cl.c.i
 
-.PHONY : main.i
+.PHONY : src/Kernel.cl.i
 
 # target to preprocess a source file
-main.cxx.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cxx.i
-.PHONY : main.cxx.i
+src/Kernel.cl.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Kernel.cl.c.i
+.PHONY : src/Kernel.cl.c.i
 
-main.s: main.cxx.s
+src/Kernel.cl.s: src/Kernel.cl.c.s
 
-.PHONY : main.s
+.PHONY : src/Kernel.cl.s
 
 # target to generate assembly for a file
-main.cxx.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cxx.s
-.PHONY : main.cxx.s
+src/Kernel.cl.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Kernel.cl.c.s
+.PHONY : src/Kernel.cl.c.s
+
+src/main.o: src/main.cxx.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cxx.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cxx.o
+.PHONY : src/main.cxx.o
+
+src/main.i: src/main.cxx.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cxx.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cxx.i
+.PHONY : src/main.cxx.i
+
+src/main.s: src/main.cxx.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cxx.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cxx.s
+.PHONY : src/main.cxx.s
 
 # Help Target
 help:
@@ -197,15 +197,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... main"
+	@echo "... edit_cache"
 	@echo "... embed-resource"
-	@echo "... lib/embed-resource/Kernels.cl.o"
-	@echo "... lib/embed-resource/Kernels.cl.i"
-	@echo "... lib/embed-resource/Kernels.cl.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/Kernel.cl.o"
+	@echo "... src/Kernel.cl.i"
+	@echo "... src/Kernel.cl.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

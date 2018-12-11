@@ -77,6 +77,8 @@ using namespace std;
 #include "vtkCellArray.h"
 #include "vtkDoubleArray.h"
 #include "vtkCellData.h"
+#include "vtkIOInfovisModule.h"
+#include "vtkTableAlgorithm.h"
 #include <boost/compute/utility/source.hpp>
 #include <boost/compute/utility/program_cache.hpp>
 #include <boost/lockfree/queue.hpp>
@@ -137,35 +139,75 @@ public:
   INT_ARRAY NN_COUNT;
   INT_ARRAY NN_IDS;
   INT PARTICLE_AMOUNT;
-  void FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT);
+  REAL_ARRAY GRID_COUNT;
+  REAL_ARRAY DEVICE_BOUNDS;
+  REAL RMAX;
+  REAL CELLSIZE;
+  REAL Nx, Ny, Nz;
+
+  void FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX,  REAL CELLSIZE, REAL_ARRAY DEVICE_BOUNDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT);
+  void KernelsEnqeue(REAL4_ARRAY POSITIONS, REAL_ARRAY DEVICE_BOUNDS, REAL_ARRAY GRID_COUNT, REAL CELLSIZE, INT PARTICLE_AMOUNT);
+
 };
 
-void ParticleArrays::FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT){
+void ParticleArrays::FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX, REAL CELLSIZE, REAL_ARRAY DEVICE_BOUNDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT){
 	
 	compute::device device = compute::system::default_device();
-        Resource sourceCode = LOAD_RESOURCE(Kernels_cl);
-        std::stringstream source;
-        //source<<"__constant double x_koef="<<5;
-        source << std::string(sourceCode.data(), sourceCode.size());
-        boost::compute::system::default_queue().finish();
-        boost::compute::program program = boost::compute::program::create_with_source(source.str(), boost::compute::system::default_context());
-        program.build("-I../ ");///////////////////// programa luzta sitoje vietoje /////////////////////////
+        RMAX=0;
         using compute::int2_;
-
         vtkDataSetReader* reader=vtkDataSetReader::New();
         reader->SetFileName("input.vtk");
         reader->Update();
+        double* BOUNDS;
+        BOUNDS=reader->GetOutput()->GetBounds();
+        compute::copy(BOUNDS, BOUNDS+6, DEVICE_BOUNDS.begin(), compute::system::default_queue());
+        compute::system::default_queue().finish();
 
         PARTICLE_AMOUNT=reader->GetOutput()->GetNumberOfPoints();
-	
+        POSITIONS.resize(PARTICLE_AMOUNT*4);
                 for(int i=0;i<PARTICLE_AMOUNT;i+=4) // po keturis kad neperasyti jau buvusiu daleliu
                 {
-                REAL4  p[3]; // ar galima sitaip castinti nuskaitant elementus
-                reader->GetOutput()->GetPoint(i,p);
-                POSITIONS[i]   =(REAL4)p[0];
-                POSITIONS[i+1] =(REAL4)p[1];
-                POSITIONS[i+2] =(REAL4)p[2];
-                POSITIONS[i+3] =(REAL4)reader->GetOutput()->GetPointData()->GetArray("RADIUS")->GetTuple1(0); // radiusas ketvirtame elemente;
+                double  p[4];
+            reader->GetOutput()->GetPoint(i,p);
+                POSITIONS[i]   =(boost::compute::float4_)p[0];
+                POSITIONS[i+1] =(boost::compute::float4_)p[1];
+                POSITIONS[i+2] =(boost::compute::float4_)p[2];
+                //
+                 p[3]=reader->GetOutput()->GetPointData()->GetArray("RADIUS")->GetTuple1(0); // radiusas ketvirtame elemente;
                 cout <<  POSITIONS[i] <<  " " << POSITIONS[i+1] << " " << POSITIONS[i+2] << " " << POSITIONS[i+3] <<  endl;
-                }	
+                if(RMAX<p[3])
+                    RMAX=p[3];
+                POSITIONS[i+3] =(boost::compute::float4_)p[3];
+                }
+        CELLSIZE=2*RMAX;
+        Nx=ceil((BOUNDS[3]-BOUNDS[0])/CELLSIZE);
+        Ny=ceil((BOUNDS[4]-BOUNDS[1])/CELLSIZE);
+        Nz=ceil((BOUNDS[5]-BOUNDS[2])/CELLSIZE);
+        GRID_COUNT.resize(Nx*Ny*Nz);
+        GRID_COUNT={0};
+}
+
+
+void ParticleArrays::KernelsEnqeue(REAL4_ARRAY POSITIONS, REAL_ARRAY DEVICE_BOUNDS, REAL_ARRAY GRID_COUNT, REAL CELLSIZE, INT PARTICLE_AMOUNT){
+
+    compute::device device = compute::system::default_device();
+    Resource sourceCode = LOAD_RESOURCE(Kernel_cl);
+    std::stringstream source;
+    //source<<"__constant double x_koef="<<5;
+    source << std::string(sourceCode.data(), sourceCode.size());
+    boost::compute::system::default_queue().finish();
+    boost::compute::program program =
+    boost::compute::program::create_with_source(source.str(), boost::compute::system::default_context());
+    program.build("-I../ ");
+    boost::compute::kernel kernel(program, "GridAddition");
+    kernel.set_arg(0, POSITIONS);
+    kernel.set_arg(1, DEVICE_BOUNDS);
+    kernel.set_arg(2, GRID_COUNT);
+    kernel.set_arg(3, CELLSIZE);
+    compute::system::default_queue().enqueue_1d_range_kernel(kernel, 0, PARTICLE_AMOUNT, 0).wait();
+
+    //boost::compute::kernel kernel2(program, "nodeKurimas");
+   // boost::compute::kernel kernel3(program, "nodeHierarhija");
+
+
 }

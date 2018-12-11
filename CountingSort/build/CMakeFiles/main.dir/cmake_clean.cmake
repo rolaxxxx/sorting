@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "lib/embed-resource/Kernels.cl.c"
-  "CMakeFiles/main.dir/main.cxx.o"
-  "CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o"
+  "src/Kernel.cl.c"
+  "CMakeFiles/main.dir/src/main.cxx.o"
+  "CMakeFiles/main.dir/src/Kernel.cl.c.o"
   "main.pdb"
   "main"
 )

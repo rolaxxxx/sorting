@@ -54,6 +54,7 @@
 #include <algorithm>
 #include <boost/compute/algorithm/stable_sort.hpp>
 #include <boost/compute/algorithm/detail/merge_sort_on_gpu.hpp>
+
 #include <boost/compute/algorithm/sort.hpp>
 #include <boost/compute/algorithm/transform.hpp>
 #include <boost/compute/container/vector.hpp>
@@ -107,11 +108,30 @@ int main()
         //boost::compute::kernel kernel2(program, "nodeKurimas");
         //boost::compute::kernel kernel3(program, "nodeHierarhija");
         using compute::int2_;
-	
-	REAL4_ARRAY POSITIONS;
-	INT PARTICLE_AMOUNT;
-	
+
+        vtkDataSetReader* reader=vtkDataSetReader::New();
+        reader->SetFileName("input.vtk");
+        reader->Update();
+double bounds[6];
+reader->GetOutput()->GetBounds(bounds);
+double * radius_range=reader->GetOutput()->GetArray("Radius")->GetRange(0);
+
+REAL4_ARRAY POSITIONS;
+std::vector<REAL4> hostPost;
+hostPos.resize(reader->GetOutput()->Getnumbeofpoints());
+for(int i=0;i<numbosfooffs)
+{
+double p[3];
+reader->GetOutput->GetPoibnt(im,p);
+REAL4 aa;
+aa[0]=p[0];
+
+}
+
+
 	ParticleArrays coordinates;
-	coordinates.FILL(coordinates.POSITIONS, coordinates.PARTICLE_AMOUNT);
-	          
+	coordinates.FILL(coordinates.POSITIONS, coordinates.PARTICLE_AMOUNT, coordinates.RMAX);
+
+
+
 }

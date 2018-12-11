@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/rolandas/CountingSort/lib/embed-resource/embedresource.cpp
+/home/rolandas/Desktop/CountingSort/lib/embed-resource/embedresource.cpp
 iostream
 -
 fstream

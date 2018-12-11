@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /share/apps/compilers/cmake-3.10.3/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /share/apps/compilers/cmake-3.10.3/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rolandas/CountingSort
+CMAKE_SOURCE_DIR = /home/rolandas/Desktop/CountingSort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rolandas/CountingSort/build
+CMAKE_BINARY_DIR = /home/rolandas/Desktop/CountingSort/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -57,195 +57,208 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-lib/embed-resource/Kernels.cl.c: ../lib/embed-resource/Kernels.cl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rolandas/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building binary file for embedding /home/rolandas/CountingSort/build/lib/embed-resource/Kernels.cl.c"
-	cd /home/rolandas/CountingSort && /home/rolandas/CountingSort/build/lib/embed-resource/embed-resource /home/rolandas/CountingSort/build/lib/embed-resource/Kernels.cl.c lib/embed-resource/Kernels.cl
+src/Kernel.cl.c: ../src/Kernel.cl
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rolandas/Desktop/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building binary file for embedding /home/rolandas/Desktop/CountingSort/build/src/Kernel.cl.c"
+	cd /home/rolandas/Desktop/CountingSort && /home/rolandas/Desktop/CountingSort/build/lib/embed-resource/embed-resource /home/rolandas/Desktop/CountingSort/build/src/Kernel.cl.c src/Kernel.cl
 
-CMakeFiles/main.dir/main.cxx.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/main.cxx.o: ../main.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/main.cxx.o"
-	/share/apps/compilers/gcc-7.3.0/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cxx.o -c /home/rolandas/CountingSort/main.cxx
+CMakeFiles/main.dir/src/main.cxx.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/main.cxx.o: ../src/main.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/Desktop/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/main.cxx.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/main.cxx.o -c /home/rolandas/Desktop/CountingSort/src/main.cxx
 
-CMakeFiles/main.dir/main.cxx.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cxx.i"
-	/share/apps/compilers/gcc-7.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/CountingSort/main.cxx > CMakeFiles/main.dir/main.cxx.i
+CMakeFiles/main.dir/src/main.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/main.cxx.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Desktop/CountingSort/src/main.cxx > CMakeFiles/main.dir/src/main.cxx.i
 
-CMakeFiles/main.dir/main.cxx.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cxx.s"
-	/share/apps/compilers/gcc-7.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/CountingSort/main.cxx -o CMakeFiles/main.dir/main.cxx.s
+CMakeFiles/main.dir/src/main.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cxx.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Desktop/CountingSort/src/main.cxx -o CMakeFiles/main.dir/src/main.cxx.s
 
-CMakeFiles/main.dir/main.cxx.o.requires:
+CMakeFiles/main.dir/src/main.cxx.o.requires:
 
-.PHONY : CMakeFiles/main.dir/main.cxx.o.requires
+.PHONY : CMakeFiles/main.dir/src/main.cxx.o.requires
 
-CMakeFiles/main.dir/main.cxx.o.provides: CMakeFiles/main.dir/main.cxx.o.requires
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cxx.o.provides.build
-.PHONY : CMakeFiles/main.dir/main.cxx.o.provides
+CMakeFiles/main.dir/src/main.cxx.o.provides: CMakeFiles/main.dir/src/main.cxx.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cxx.o.provides.build
+.PHONY : CMakeFiles/main.dir/src/main.cxx.o.provides
 
-CMakeFiles/main.dir/main.cxx.o.provides.build: CMakeFiles/main.dir/main.cxx.o
+CMakeFiles/main.dir/src/main.cxx.o.provides.build: CMakeFiles/main.dir/src/main.cxx.o
 
 
-CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o: lib/embed-resource/Kernels.cl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o"
-	/share/apps/compilers/gcc-7.3.0/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o   -c /home/rolandas/CountingSort/build/lib/embed-resource/Kernels.cl.c
+CMakeFiles/main.dir/src/Kernel.cl.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/Kernel.cl.c.o: src/Kernel.cl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/Desktop/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/Kernel.cl.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/Kernel.cl.c.o   -c /home/rolandas/Desktop/CountingSort/build/src/Kernel.cl.c
 
-CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.i"
-	/share/apps/compilers/gcc-7.3.0/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/rolandas/CountingSort/build/lib/embed-resource/Kernels.cl.c > CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.i
+CMakeFiles/main.dir/src/Kernel.cl.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/Kernel.cl.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/rolandas/Desktop/CountingSort/build/src/Kernel.cl.c > CMakeFiles/main.dir/src/Kernel.cl.c.i
 
-CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.s"
-	/share/apps/compilers/gcc-7.3.0/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/rolandas/CountingSort/build/lib/embed-resource/Kernels.cl.c -o CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.s
+CMakeFiles/main.dir/src/Kernel.cl.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/Kernel.cl.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/rolandas/Desktop/CountingSort/build/src/Kernel.cl.c -o CMakeFiles/main.dir/src/Kernel.cl.c.s
 
-CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o.requires:
+CMakeFiles/main.dir/src/Kernel.cl.c.o.requires:
 
-.PHONY : CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o.requires
+.PHONY : CMakeFiles/main.dir/src/Kernel.cl.c.o.requires
 
-CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o.provides: CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o.requires
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o.provides.build
-.PHONY : CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o.provides
+CMakeFiles/main.dir/src/Kernel.cl.c.o.provides: CMakeFiles/main.dir/src/Kernel.cl.c.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Kernel.cl.c.o.provides.build
+.PHONY : CMakeFiles/main.dir/src/Kernel.cl.c.o.provides
 
-CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o.provides.build: CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o
+CMakeFiles/main.dir/src/Kernel.cl.c.o.provides.build: CMakeFiles/main.dir/src/Kernel.cl.c.o
 
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/main.cxx.o" \
-"CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o"
+"CMakeFiles/main.dir/src/main.cxx.o" \
+"CMakeFiles/main.dir/src/Kernel.cl.c.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/main.cxx.o
-main: CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o
+main: CMakeFiles/main.dir/src/main.cxx.o
+main: CMakeFiles/main.dir/src/Kernel.cl.c.o
 main: CMakeFiles/main.dir/build.make
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkDomainsChemistryOpenGL2-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersFlowPaths-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersGeneric-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersHyperTree-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersParallelImaging-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersPoints-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersProgrammable-8.1.so.1
-main: /usr/lib64/libpython2.7.so
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkWrappingTools-8.1.a
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersPython-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersSMP-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersSelection-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersTexture-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersTopology-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersVerdict-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkGeovisCore-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOAMR-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOEnSight-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOExodus-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOExportOpenGL2-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOImport-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOInfovis-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOLSDyna-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOMINC-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOMovie-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOPLY-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOParallel-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOParallelXML-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOSQL-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOTecplotTable-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOVideo-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingMorphological-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingStatistics-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingStencil-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkInteractionImage-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingContextOpenGL2-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingImage-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingLOD-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingVolumeOpenGL2-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkViewsContext2D-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkViewsInfovis-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkDomainsChemistry-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkWrappingPython27Core-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkverdict-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkproj4-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersAMR-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOExport-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingGL2PSOpenGL2-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkgl2ps-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtklibharu-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtklibxml2-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkoggtheora-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersParallel-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkexoIIc-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOGeometry-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIONetCDF-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtknetcdfcpp-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkNetCDF-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkhdf5_hl-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkhdf5-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkjsoncpp-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkParallelCore-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOLegacy-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtksqlite-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingOpenGL2-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkglew-8.1.so.1
-main: /usr/lib64/libSM.so
-main: /usr/lib64/libICE.so
-main: /usr/lib64/libX11.so
-main: /usr/lib64/libXext.so
-main: /usr/lib64/libXt.so
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingMath-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkChartsCore-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingContext2D-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersImaging-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkInfovisLayout-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkInfovisCore-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkViewsCore-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkInteractionWidgets-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersHybrid-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingGeneral-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingSources-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersModeling-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingHybrid-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOImage-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkDICOMParser-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkmetaio-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkpng-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtktiff-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkjpeg-8.1.so.1
-main: /usr/lib64/libm.so
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkInteractionStyle-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersExtraction-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersStatistics-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingFourier-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkalglib-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingAnnotation-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingColor-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingVolume-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingCore-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOXML-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOXMLParser-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOCore-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtklz4-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkexpat-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingLabel-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingFreeType-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingCore-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonColor-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersGeometry-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersSources-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersGeneral-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonComputationalGeometry-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersCore-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonExecutionModel-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonDataModel-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonMisc-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonSystem-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtksys-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonTransforms-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonMath-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonCore-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkfreetype-8.1.so.1
-main: /share/apps/graphical/vtk-8.1.0/lib/libvtkzlib-8.1.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOInfovis-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingContextOpenGL2-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkTestingRendering-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkViewsContext2D-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersProgrammable-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersVerdict-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersGeneric-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkTestingGenericBridge-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkDomainsChemistryOpenGL2-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOAMR-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOExodus-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingVolumeOpenGL2-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersFlowPaths-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersHyperTree-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkImagingStencil-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersParallelImaging-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersPoints-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersSMP-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersSelection-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOParallel-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersTopology-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkGUISupportQtSQL-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkGeovisCore-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOAsynchronous-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOCityGML-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOEnSight-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOExportOpenGL2-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkInteractionImage-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOExportPDF-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOImport-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOLSDyna-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOMINC-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOMovie-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOPLY-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOParallelXML-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkTestingIOSQL-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOSegY-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOTecplotTable-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOVeraOut-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOVideo-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkImagingStatistics-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingImage-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkImagingMorphological-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingLOD-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingQt-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkViewsQt-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtklibxml2-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkverdict-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkDomainsChemistry-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersAMR-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkImagingMath-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOGeometry-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkexodusII-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersParallel-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIONetCDF-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOSQL-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtksqlite-8.2.so.1
+main: /usr/lib/x86_64-linux-gnu/libQt5Sql.so.5.9.5
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkproj-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkpugixml-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOExport-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkjsoncpp-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingGL2PSOpenGL2-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkgl2ps-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtklibharu-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkNetCDF-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtktheora-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkogg-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkParallelCore-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOLegacy-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkhdf5-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkhdf5_hl-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersTexture-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkGUISupportQt-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingOpenGL2-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkglew-8.2.so.1
+main: /usr/lib/x86_64-linux-gnu/libSM.so
+main: /usr/lib/x86_64-linux-gnu/libICE.so
+main: /usr/lib/x86_64-linux-gnu/libX11.so
+main: /usr/lib/x86_64-linux-gnu/libXext.so
+main: /usr/lib/x86_64-linux-gnu/libXt.so
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkViewsInfovis-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkChartsCore-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingContext2D-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkViewsCore-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkInteractionWidgets-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersHybrid-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkInteractionStyle-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingAnnotation-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkImagingColor-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingVolume-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOXML-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOXMLParser-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOCore-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkdoubleconversion-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtklz4-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtklzma-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkexpat-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersImaging-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkImagingGeneral-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkImagingSources-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingLabel-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingFreeType-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkRenderingCore-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkCommonColor-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersGeometry-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkfreetype-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkInfovisLayout-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkInfovisCore-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersExtraction-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersStatistics-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkImagingFourier-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersModeling-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersSources-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersGeneral-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkCommonComputationalGeometry-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkFiltersCore-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkImagingHybrid-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkImagingCore-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkIOImage-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkCommonExecutionModel-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkCommonDataModel-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkCommonMisc-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkCommonSystem-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtksys-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkCommonTransforms-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkCommonMath-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkCommonCore-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkDICOMParser-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkmetaio-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkzlib-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkjpeg-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtkpng-8.2.so.1
+main: /home/rolandas/Desktop/VTK/VTK-build/lib/libvtktiff-8.2.so.1
+main: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.9.5
+main: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.9.5
+main: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.9.5
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rolandas/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rolandas/Desktop/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -253,8 +266,8 @@ CMakeFiles/main.dir/build: main
 
 .PHONY : CMakeFiles/main.dir/build
 
-CMakeFiles/main.dir/requires: CMakeFiles/main.dir/main.cxx.o.requires
-CMakeFiles/main.dir/requires: CMakeFiles/main.dir/lib/embed-resource/Kernels.cl.c.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/main.cxx.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/Kernel.cl.c.o.requires
 
 .PHONY : CMakeFiles/main.dir/requires
 
@@ -262,7 +275,7 @@ CMakeFiles/main.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/main.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/main.dir/clean
 
-CMakeFiles/main.dir/depend: lib/embed-resource/Kernels.cl.c
-	cd /home/rolandas/CountingSort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rolandas/CountingSort /home/rolandas/CountingSort /home/rolandas/CountingSort/build /home/rolandas/CountingSort/build /home/rolandas/CountingSort/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+CMakeFiles/main.dir/depend: src/Kernel.cl.c
+	cd /home/rolandas/Desktop/CountingSort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rolandas/Desktop/CountingSort /home/rolandas/Desktop/CountingSort /home/rolandas/Desktop/CountingSort/build /home/rolandas/Desktop/CountingSort/build /home/rolandas/Desktop/CountingSort/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 
