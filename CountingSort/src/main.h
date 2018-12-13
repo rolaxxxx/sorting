@@ -48,6 +48,7 @@
 #include <boost/compute/algorithm/detail/radix_sort.hpp>
 #include <boost/compute/algorithm/copy.hpp>
 #include <boost/compute/container/vector.hpp>
+#include <boost/compute/algorithm/inclusive_scan.hpp>
 #include <boost/sort/spreadsort/spreadsort.hpp>
 #include <boost/compute/core.hpp>
 #include <boost/assert.hpp>
@@ -144,13 +145,16 @@ public:
   REAL RMAX;
   REAL CELLSIZE;
   REAL Nx, Ny, Nz;
+  REAL_ARRAY OFFSET;
+  REAL_ARRAY IDS;
+  REAL NN_MAX;
 
-  void FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX,  REAL CELLSIZE, REAL_ARRAY DEVICE_BOUNDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT);
-  void KernelsEnqeue(REAL4_ARRAY POSITIONS, REAL_ARRAY DEVICE_BOUNDS, REAL_ARRAY GRID_COUNT, REAL CELLSIZE, INT PARTICLE_AMOUNT);
+  void FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX, REAL CELLSIZE, REAL_ARRAY DEVICE_BOUNDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT, REAL_ARRAY OFFSET, REAL_ARRAY IDS, INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS, REAL NN_MAX);
+  void KernelsEnqeue(REAL_ARRAY IDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT, REAL_ARRAY OFFSET, REAL4_ARRAY POSITIONS,  REAL_ARRAY DEVICE_BOUNDS, REAL CELLSIZE, INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS);
 
 };
 
-void ParticleArrays::FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX, REAL CELLSIZE, REAL_ARRAY DEVICE_BOUNDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT){
+void ParticleArrays::FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX, REAL CELLSIZE, REAL_ARRAY DEVICE_BOUNDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT, REAL_ARRAY OFFSET, REAL_ARRAY IDS, INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS, REAL NN_MAX){
 	
 	compute::device device = compute::system::default_device();
         RMAX=0;
@@ -185,10 +189,14 @@ void ParticleArrays::FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX,
         Nz=ceil((BOUNDS[5]-BOUNDS[2])/CELLSIZE);
         GRID_COUNT.resize(Nx*Ny*Nz);
         GRID_COUNT={0};
+        OFFSET.resize(Nx*Ny*Nz);
+        IDS.resize(PARTICLE_AMOUNT);
+        NN_COUNT.resize(PARTICLE_AMOUNT);
+        NN_IDS.resize(PARTICLE_AMOUNT*NN_MAX);
 }
 
 
-void ParticleArrays::KernelsEnqeue(REAL4_ARRAY POSITIONS, REAL_ARRAY DEVICE_BOUNDS, REAL_ARRAY GRID_COUNT, REAL CELLSIZE, INT PARTICLE_AMOUNT){
+void ParticleArrays::KernelsEnqeue( REAL_ARRAY IDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT, REAL_ARRAY OFFSET, REAL4_ARRAY POSITIONS,  REAL_ARRAY DEVICE_BOUNDS, REAL CELLSIZE, INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS){
 
     compute::device device = compute::system::default_device();
     Resource sourceCode = LOAD_RESOURCE(Kernel_cl);
@@ -200,14 +208,37 @@ void ParticleArrays::KernelsEnqeue(REAL4_ARRAY POSITIONS, REAL_ARRAY DEVICE_BOUN
     boost::compute::program::create_with_source(source.str(), boost::compute::system::default_context());
     program.build("-I../ ");
     boost::compute::kernel kernel(program, "GridAddition");
+    boost::compute::kernel kernel2(program, "GridCountSort");
+    boost::compute::kernel kernel3(program, "NeighbourSearch");
     kernel.set_arg(0, POSITIONS);
     kernel.set_arg(1, DEVICE_BOUNDS);
     kernel.set_arg(2, GRID_COUNT);
     kernel.set_arg(3, CELLSIZE);
-    compute::system::default_queue().enqueue_1d_range_kernel(kernel, 0, PARTICLE_AMOUNT, 0).wait();
+    kernel.set_arg(4, Nx);
+    kernel.set_arg(5, Ny);
+    kernel.set_arg(6, Nz);
 
-    //boost::compute::kernel kernel2(program, "nodeKurimas");
-   // boost::compute::kernel kernel3(program, "nodeHierarhija");
+    boost::compute::inclusive_scan(GRID_COUNT.begin(), GRID_COUNT.end(), OFFSET.begin());
+
+    kernel2.set_arg(0, OFFSET);
+    kernel2.set_arg(1, IDS);
+    kernel2.set_arg(2, POSITIONS);
+    kernel2.set_arg(3, Nx);
+    kernel2.set_arg(4, Ny);
+    kernel2.set_arg(5, Nz);
+    kernel2.set_arg(6, GRID_COUNT);
+    kernel2.set_arg(7, DEVICE_BOUNDS);
+    kernel2.set_arg(8, CELLSIZE);
+
+    kernel3.set_arg(0, POSITIONS);
+    kernel3.set_arg(1, GRID_COUNT);
+    kernel3.set_arg(2, OFFSET);
+    kernel3.set_arg(3, NN_COUNT);
+    kernel3.set_arg(4, NN_IDS);
+
+    compute::system::default_queue().enqueue_1d_range_kernel(kernel , 0, PARTICLE_AMOUNT, 0).wait();
+    compute::system::default_queue().enqueue_1d_range_kernel(kernel2, 0, PARTICLE_AMOUNT, 0).wait();
+    compute::system::default_queue().enqueue_1d_range_kernel(kernel3, 0, PARTICLE_AMOUNT, 0).wait();
 
 
 }

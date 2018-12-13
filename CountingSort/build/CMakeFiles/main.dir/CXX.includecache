@@ -117,6 +117,8 @@ boost/compute/algorithm/copy.hpp
 -
 boost/compute/container/vector.hpp
 -
+boost/compute/algorithm/inclusive_scan.hpp
+-
 boost/sort/spreadsort/spreadsort.hpp
 -
 boost/compute/core.hpp
