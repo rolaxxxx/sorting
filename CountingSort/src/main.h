@@ -140,36 +140,41 @@ public:
   INT_ARRAY NN_COUNT;
   INT_ARRAY NN_IDS;
   INT PARTICLE_AMOUNT;
-  REAL_ARRAY GRID_COUNT;
+  INT_ARRAY GRID_COUNT;
   REAL_ARRAY DEVICE_BOUNDS;
   REAL RMAX;
   REAL CELLSIZE;
   REAL Nx, Ny, Nz;
-  REAL_ARRAY OFFSET;
+  INT_ARRAY OFFSET;
   REAL_ARRAY IDS;
   REAL NN_MAX;
 
-  void FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX, REAL CELLSIZE, REAL_ARRAY DEVICE_BOUNDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT, REAL_ARRAY OFFSET, REAL_ARRAY IDS, INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS, REAL NN_MAX);
-  void KernelsEnqeue(REAL_ARRAY IDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT, REAL_ARRAY OFFSET, REAL4_ARRAY POSITIONS,  REAL_ARRAY DEVICE_BOUNDS, REAL CELLSIZE, INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS);
+  void FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX, REAL CELLSIZE, REAL_ARRAY DEVICE_BOUNDS,
+            REAL Nx, REAL Ny, REAL Nz, INT_ARRAY GRID_COUNT, INT_ARRAY OFFSET, REAL_ARRAY IDS,
+            INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS, REAL NN_MAX);
+  void KernelsEnqeue(REAL_ARRAY IDS, REAL Nx, REAL Ny, REAL Nz, INT_ARRAY GRID_COUNT,
+                     INT_ARRAY OFFSET, REAL4_ARRAY POSITIONS,  REAL_ARRAY DEVICE_BOUNDS, REAL CELLSIZE, INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS,
+                     INT NN_MAX);
 
 };
 
-void ParticleArrays::FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX, REAL CELLSIZE, REAL_ARRAY DEVICE_BOUNDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT, REAL_ARRAY OFFSET, REAL_ARRAY IDS, INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS, REAL NN_MAX){
+void ParticleArrays::FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX, REAL CELLSIZE, REAL_ARRAY DEVICE_BOUNDS, REAL Nx, REAL Ny, REAL Nz, INT_ARRAY GRID_COUNT, INT_ARRAY OFFSET, REAL_ARRAY IDS, INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS, REAL NN_MAX){
 	
-	compute::device device = compute::system::default_device();
+    compute::device device = compute::system::default_device();
         RMAX=0;
         using compute::int2_;
         vtkDataSetReader* reader=vtkDataSetReader::New();
+        DEVICE_BOUNDS.resize(6);
         reader->SetFileName("input.vtk");
         reader->Update();
         double* BOUNDS;
-        BOUNDS=reader->GetOutput()->GetBounds();
+       BOUNDS=reader->GetOutput()->GetBounds();
         compute::copy(BOUNDS, BOUNDS+6, DEVICE_BOUNDS.begin(), compute::system::default_queue());
         compute::system::default_queue().finish();
 
         PARTICLE_AMOUNT=reader->GetOutput()->GetNumberOfPoints();
         POSITIONS.resize(PARTICLE_AMOUNT*4);
-                for(int i=0;i<PARTICLE_AMOUNT;i+=4) // po keturis kad neperasyti jau buvusiu daleliu
+                for(int i=0;i<PARTICLE_AMOUNT;i+=4)
                 {
                 double  p[4];
             reader->GetOutput()->GetPoint(i,p);
@@ -193,10 +198,12 @@ void ParticleArrays::FILL(REAL4_ARRAY POSITIONS, INT PARTICLE_AMOUNT, REAL RMAX,
         IDS.resize(PARTICLE_AMOUNT);
         NN_COUNT.resize(PARTICLE_AMOUNT);
         NN_IDS.resize(PARTICLE_AMOUNT*NN_MAX);
+
+
 }
 
 
-void ParticleArrays::KernelsEnqeue( REAL_ARRAY IDS, REAL Nx, REAL Ny, REAL Nz, REAL_ARRAY GRID_COUNT, REAL_ARRAY OFFSET, REAL4_ARRAY POSITIONS,  REAL_ARRAY DEVICE_BOUNDS, REAL CELLSIZE, INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS){
+void ParticleArrays::KernelsEnqeue( REAL_ARRAY IDS, REAL Nx, REAL Ny, REAL Nz, INT_ARRAY GRID_COUNT, INT_ARRAY OFFSET, REAL4_ARRAY POSITIONS,  REAL_ARRAY DEVICE_BOUNDS, REAL CELLSIZE, INT_ARRAY NN_COUNT, INT_ARRAY NN_IDS, INT NN_MAX){
 
     compute::device device = compute::system::default_device();
     Resource sourceCode = LOAD_RESOURCE(Kernel_cl);
@@ -235,6 +242,14 @@ void ParticleArrays::KernelsEnqeue( REAL_ARRAY IDS, REAL Nx, REAL Ny, REAL Nz, R
     kernel3.set_arg(2, OFFSET);
     kernel3.set_arg(3, NN_COUNT);
     kernel3.set_arg(4, NN_IDS);
+    kernel3.set_arg(5, CELLSIZE);
+    kernel3.set_arg(6, Nx);
+    kernel3.set_arg(7, Ny);
+    kernel3.set_arg(8, Nz);
+    kernel3.set_arg(9, NN_MAX);
+    kernel3.set_arg(10, DEVICE_BOUNDS);
+    kernel3.set_arg(11, IDS);
+
 
     compute::system::default_queue().enqueue_1d_range_kernel(kernel , 0, PARTICLE_AMOUNT, 0).wait();
     compute::system::default_queue().enqueue_1d_range_kernel(kernel2, 0, PARTICLE_AMOUNT, 0).wait();

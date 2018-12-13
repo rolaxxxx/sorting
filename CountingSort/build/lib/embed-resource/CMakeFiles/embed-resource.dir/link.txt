@@ -1,1 +1,1 @@
-/usr/bin/c++       CMakeFiles/embed-resource.dir/embedresource.cpp.o  -o embed-resource -lstdc++fs /usr/lib/x86_64-linux-gnu/libboost_filesystem.so /usr/lib/x86_64-linux-gnu/libboost_system.so 
+/usr/bin/c++    -g    CMakeFiles/embed-resource.dir/embedresource.cpp.o  -o embed-resource -lstdc++fs /usr/lib/x86_64-linux-gnu/libboost_filesystem.so /usr/lib/x86_64-linux-gnu/libboost_system.so 

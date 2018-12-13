@@ -88,7 +88,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -257,25 +257,13 @@ EmbedResource_BINARY_DIR:STATIC=/home/rolandas/Desktop/CountingSort/build/lib/em
 EmbedResource_SOURCE_DIR:STATIC=/home/rolandas/Desktop/CountingSort/lib/embed-resource
 
 //Path to a file.
-OpenCL_INCLUDE_DIR:PATH=/usr/include
+OpenCL_INCLUDE_DIR:PATH=/opt/intel/opencl/include
 
 //Path to a library.
-OpenCL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libOpenCL.so
-
-//The directory containing a CMake configuration file for Qt5Core.
-Qt5Core_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Core
-
-//The directory containing a CMake configuration file for Qt5Gui.
-Qt5Gui_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui
-
-//The directory containing a CMake configuration file for Qt5Sql.
-Qt5Sql_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Sql
-
-//The directory containing a CMake configuration file for Qt5Widgets.
-Qt5Widgets_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets
+OpenCL_LIBRARY:FILEPATH=/opt/intel/opencl/libOpenCL.so
 
 //The directory containing a CMake configuration file for VTK.
-VTK_DIR:PATH=/home/rolandas/Desktop/VTK/VTK-build
+VTK_DIR:PATH=/usr/lib/cmake/vtk-7.1
 
 //Value Computed by CMake
 main_BINARY_DIR:STATIC=/home/rolandas/Desktop/CountingSort/build
@@ -334,6 +322,8 @@ Boost_THREAD_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 Boost_THREAD_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: CMAKE_BUILD_TYPE
+CMAKE_BUILD_TYPE-MODIFIED:INTERNAL=ON
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/home/rolandas/Desktop/CountingSort/build
 //Major version of cmake used to create the current loaded cache
@@ -478,17 +468,19 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding OpenCL
-FIND_PACKAGE_MESSAGE_DETAILS_OpenCL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libOpenCL.so][/usr/include][v2.2()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCL:INTERNAL=[/opt/intel/opencl/libOpenCL.so][/opt/intel/opencl/include][v2.2()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Have symbol CL_VERSION_2_2
 OPENCL_VERSION_2_2:INTERNAL=1
 //ADVANCED property for variable: OpenCL_INCLUDE_DIR
 OpenCL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: OpenCL_INCLUDE_DIR
+OpenCL_INCLUDE_DIR-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: OpenCL_LIBRARY
 OpenCL_LIBRARY-ADVANCED:INTERNAL=1
-//MODIFIED property for variable: VTK_DIR
-VTK_DIR-MODIFIED:INTERNAL=ON
+//MODIFIED property for variable: OpenCL_LIBRARY
+OpenCL_LIBRARY-MODIFIED:INTERNAL=ON
 //Components requested for this build tree.
 _Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;filesystem;log;log_setup;regex;system;thread
 //Last used Boost_INCLUDE_DIR value.
