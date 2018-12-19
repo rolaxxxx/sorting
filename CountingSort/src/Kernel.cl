@@ -1,80 +1,76 @@
 __kernel
-void GridAddition(__global float4* POSITIONS, __global float* DEVICE_BOUNDS,  __global int * GRID_COUNT, float CELLSIZE, uint PARTICLE_AMOUNT, float Nx, float Ny, float Nz)
+void GridAddition(constant double4* POSITIONS,  double4 DEVICE_BOUNDS_MIN,  double4 DEVICE_BOUNDS_MAX,  __global int* GRID_COUNT,  double CELLSIZE, int Nx,  int Ny,   int Nz)
 {
         uint idx=get_global_id(0);
-
-         __local float ix, jy, kz;
-
-        ix=(POSITIONS[idx].x-DEVICE_BOUNDS[0]) / CELLSIZE;
-        jy=(POSITIONS[idx].y-DEVICE_BOUNDS[2]) / CELLSIZE;
-        kz=(POSITIONS[idx].z-DEVICE_BOUNDS[4]) / CELLSIZE;
-       // printf(" %f %f %f \n",  ix, jy, kz);
-        //printf("%f %f %f  device bounds min x y z  %f %f %f  CELLSIZE IS MAINO %f\n",ix, jy, kz, DEVICE_BOUNDS[0], DEVICE_BOUNDS[2], DEVICE_BOUNDS[4], CELLSIZE);
-        uint BENDRAS_ID=ix+jy*Nx+kz*Nx*Ny;
-        //printf("%d \n", BENDRAS_ID);
-        //printf("%d %f %f %f \n", BENDRAS_ID, temp.x, temp.y, temp.z);
-        //printf("%d", GRID_COUNT[BENDRAS_ID]);
+        double4 coords;
+        coords=floor((POSITIONS[idx]-DEVICE_BOUNDS_MIN)/CELLSIZE);
+        uint BENDRAS_ID=coords.x+coords.y*Nx+coords.z*Nx*Ny;
+        //printf("bendras ID %d \n" , BENDRAS_ID);
         atomic_add(&GRID_COUNT[BENDRAS_ID],1);
-
 }
 
 __kernel
-void GridCountSort(__global uint* OFFSET, __global float* IDS, __global float4* POSITIONS,  float Nx,  float Ny,  float Nz, __global int* GRID_COUNT, __global float* DEVICE_BOUNDS, float CELLSIZE)
+void GridCountSort(__global uint* OFFSET, __global double* IDS,  __constant double4* POSITIONS,    int Nx,   int Ny,  int Nz,  __global int* GRID_COUNT,  double4 DEVICE_BOUNDS_MIN,  double4 DEVICE_BOUNDS_MAX,  double CELLSIZE)
 {
-       uint idx=get_global_id(0);
-        __local float4 temp;
+
+        uint idx=get_global_id(0);
+        double4 temp, bounds_temp;
         temp=POSITIONS[idx];
-
-
-        __local float ix, jy, kz;
-
-        ix=(POSITIONS[idx].x-DEVICE_BOUNDS[0]) / CELLSIZE;
-        jy=(POSITIONS[idx].y-DEVICE_BOUNDS[2]) / CELLSIZE;
-        kz=(POSITIONS[idx].z-DEVICE_BOUNDS[4]) / CELLSIZE;
-        uint BENDRAS_ID=ix+jy*Nx+kz*Nx*Ny;
+        double4 coords;
+        coords=floor((POSITIONS[idx]-DEVICE_BOUNDS_MIN)/CELLSIZE);
+         uint BENDRAS_ID=coords.x+coords.y*Nx+coords.z*Nx*Ny;
         uint sena_reiksme=atom_add(&GRID_COUNT[BENDRAS_ID],1);
         IDS[OFFSET[BENDRAS_ID]+sena_reiksme]=idx;
+
 }
 
 __kernel
-void NeighbourSearch(__global float4* POSITIONS, __global int* GRID_COUNT, __global uint* OFFSET, __global uint* NN_COUNT, __global uint* NN_IDS,  float CELLSIZE, float Nx, float Ny,  float Nz,  uint NN_MAX, __global float* DEVICE_BOUNDS, __global float* IDS)
+void NeighbourSearch(__constant double4 *POSITIONS,  __constant int* GRID_COUNT, __constant uint* OFFSET, __global uint* NN_COUNT, __global uint* NN_IDS,   double CELLSIZE,  int Nx,  int Ny,   int Nz,   int NN_MAX, double4 DEVICE_BOUNDS_MIN,  double4 DEVICE_BOUNDS_MAX, __global double* IDS)
 {
     uint idx=get_global_id(0);
-    float4 temp, tempPID;
-
-
-
-    float ix, jy, kz, c, tempCurrentRadius, tempPIdRadius,L, tempIlgis;
-
+    double4 temp, tempPID;
+    double  tempCurrentRadius, tempPIdRadius,L, tempIlgis;
+    uint c;
     uint pid, ID, offset;
     uint kiekis=0;
-    ix=(POSITIONS[idx].x-DEVICE_BOUNDS[0]) / CELLSIZE;
-    jy=(POSITIONS[idx].y-DEVICE_BOUNDS[2]) / CELLSIZE;
-    kz=(POSITIONS[idx].z-DEVICE_BOUNDS[4]) / CELLSIZE;
+    double4 coords;
+    temp=POSITIONS[idx];
+    coords=floor((POSITIONS[idx]-DEVICE_BOUNDS_MIN)/CELLSIZE);
     tempCurrentRadius=temp.w;
     temp.w=0;
-    for(uint x=ix-1;x<=ix+1;x++){
-        for(uint y=jy-1;y<=jy+1;y++){
-            for(uint k=kz-1;k<=kz+1;k++){
-                    if(x<Nx&&y<Ny&&k<Nz&&x>0&&y>0&&k>0)
+    //printf("koordinates idx daleles %f  %f  %f  %f  ",temp.x,temp.y,temp.z,temp.w);
+    for(int x=coords.x-1;x<=coords.x+1;x++){
+        for(int y=coords.y-1;y<=coords.y+1;y++){
+            for(int k=coords.z-1;k<=coords.z+1;k++){
+                    if(x<Nx&&y<Ny&&k<Nz&&x>=0&&y>=0&&k>=0)
                         {
-                          ID=x+y*Nx+k*Nx*Ny;
-                           c=GRID_COUNT[ID];
-                           offset=OFFSET[ID];
-                           for(int k=0;k<c;k++){
+                           ID=x+y*Nx+k*Nx*Ny;
+                             c=GRID_COUNT[ID];
+                               offset=OFFSET[ID];
+                              // printf("offsetas  % d  ir c indexas %d ",c, offset);
+                                 for(int k=0;k<c;k++){
                                     pid=IDS[offset+k];
-                                    tempPID=POSITIONS[pid];
+                                      tempPID=POSITIONS[pid];
+                                     // printf("indexo pid numeris %d" , pid );
+                                      //printf("koordinates idx daleles %f  %f  %f  %f  ",tempPID.x,tempPID.y,tempPID.z,tempPID.w);
                                         if(pid!=idx){
-                                            tempPIdRadius=POSITIONS[pid].w;
-                                                POSITIONS[pid].w=0;
+                                            tempPIdRadius=tempPID.w;
+                                                tempPID.w=0;
                                                   tempIlgis=distance(temp,tempPID);
-                                                     L=tempIlgis-tempCurrentRadius+tempPIdRadius;
-                                                        if(L<0){
-                                                            NN_IDS[idx*NN_MAX+kiekis]=pid;
-                                                                kiekis++;
+                                                  printf("%f temp ilgio reiksme", tempIlgis);
+                                                    // L=tempIlgis-tempCurrentRadius+tempPIdRadius;
+                                                        //printf("ilgis tarp dvieju vektoriu %f  idx daleles radius %f  pid indexo daleles radius %f /n", tempIlgis, tempCurrentRadius, tempPIdRadius);
+                                                            //printf("ilgis tarp dvieju vektoriu %d ", L);
+                                                                if(L<0){
+                                                                    NN_IDS[idx*NN_MAX+kiekis]=pid;
+                                                                       kiekis++;
+                                                                       // printf("indexo pid numeris %d" , pid );
+                                                                    //printf("indeksas %d max kaimynu skaicius %d, uzpildymo kiekis kiekvienoje celeje %d" , idx, NN_MAX, kiekis);
+
                                                                      }
             }
             NN_COUNT[idx]=kiekis;
+           // printf("idx daleles indexas %d ir kiekis kiek kaimynu ji turi %d \n",idx, kiekis);
         }
 
     }
