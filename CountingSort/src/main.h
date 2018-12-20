@@ -144,21 +144,25 @@ public:
   REAL CELLSIZE;
   INT Nx, Ny, Nz;
   INT_ARRAY OFFSET;
-  REAL_ARRAY IDS;
+  INT_ARRAY IDS;
   INT NN_MAX;
 
 
   void FILL(REAL4_ARRAY &POSITIONS, INT &PARTICLE_AMOUNT, REAL &RMAX, REAL &CELLSIZE,
             REAL4 &DEVICE_BOUNDS_MIN, REAL4 &DEVICE_BOUNDS_MAX,
-            INT &Nx, INT &Ny, INT &Nz, INT_ARRAY &GRID_COUNT, INT_ARRAY &OFFSET, REAL_ARRAY &IDS,
+            INT &Nx, INT &Ny, INT &Nz, INT_ARRAY &GRID_COUNT, INT_ARRAY &OFFSET, INT_ARRAY &IDS,
             INT_ARRAY &NN_COUNT, INT_ARRAY &NN_IDS, INT &NN_MAX);
-  void KernelsEnqeue(REAL_ARRAY IDS, INT &Nx, INT &Ny, INT &Nz, INT_ARRAY GRID_COUNT,
-                     INT_ARRAY OFFSET, REAL4_ARRAY POSITIONS,  REAL4 DEVICE_BOUNDS_MIN, REAL4 DEVICE_BOUNDS_MAX, REAL CELLSIZE, INT_ARRAY &NN_COUNT, INT_ARRAY &NN_IDS,
+  void KernelsEnqeue(INT_ARRAY &IDS, INT &Nx, INT &Ny, INT &Nz, INT_ARRAY &GRID_COUNT,
+                     INT_ARRAY &OFFSET, REAL4_ARRAY POSITIONS,  REAL4 DEVICE_BOUNDS_MIN,
+                     REAL4 DEVICE_BOUNDS_MAX, REAL CELLSIZE, INT_ARRAY &NN_COUNT, INT_ARRAY &NN_IDS,
                      INT NN_MAX, INT PARTICLE_AMOUNT);
 
 };
 
-void ParticleArrays::FILL(REAL4_ARRAY &POSITIONS, INT &PARTICLE_AMOUNT, REAL &RMAX, REAL &CELLSIZE, REAL4 &DEVICE_BOUNDS_MIN, REAL4 &DEVICE_BOUNDS_MAX ,INT &Nx, INT &Ny, INT &Nz, INT_ARRAY &GRID_COUNT, INT_ARRAY &OFFSET, REAL_ARRAY &IDS, INT_ARRAY &NN_COUNT, INT_ARRAY &NN_IDS, INT &NN_MAX){
+void ParticleArrays::FILL(REAL4_ARRAY &POSITIONS, INT &PARTICLE_AMOUNT, REAL &RMAX, REAL &CELLSIZE,
+                          REAL4 &DEVICE_BOUNDS_MIN, REAL4 &DEVICE_BOUNDS_MAX ,INT &Nx, INT &Ny, INT &Nz,
+                          INT_ARRAY &GRID_COUNT, INT_ARRAY &OFFSET, INT_ARRAY &IDS, INT_ARRAY &NN_COUNT,
+                          INT_ARRAY &NN_IDS, INT &NN_MAX){
 
     compute::device device = compute::system::default_device();
         RMAX=0;
@@ -182,7 +186,7 @@ void ParticleArrays::FILL(REAL4_ARRAY &POSITIONS, INT &PARTICLE_AMOUNT, REAL &RM
 
         PARTICLE_AMOUNT=reader->GetOutput()->GetNumberOfPoints();
        // cout << PARTICLE_AMOUNT << endl;
-        POSITIONS.resize(PARTICLE_AMOUNT*4);
+        POSITIONS.resize(PARTICLE_AMOUNT);
                 for(int i=0;i<PARTICLE_AMOUNT;i+=4)
                 {
                 double  p[4];
@@ -213,13 +217,21 @@ void ParticleArrays::FILL(REAL4_ARRAY &POSITIONS, INT &PARTICLE_AMOUNT, REAL &RM
         //std::fill(GRID_COUNT.begin(), GRID_COUNT.end(), 0);
         OFFSET.resize(Nx*Ny*Nz);
         IDS.resize(PARTICLE_AMOUNT);
+       // cout << IDS.size() << endl;
         NN_COUNT.resize(PARTICLE_AMOUNT);
         NN_IDS.resize(PARTICLE_AMOUNT*NN_MAX);
-
+        //fill(IDS.begin(), IDS.end(), 0);
+        for(int i=0;i<IDS.size();i++)
+        {
+           IDS[i]=0;
+           //cout << IDS[i] << endl;
+        }
 
 }
 
-void ParticleArrays::KernelsEnqeue( REAL_ARRAY IDS, INT &Nx, INT  &Ny, INT &Nz, INT_ARRAY GRID_COUNT, INT_ARRAY OFFSET, REAL4_ARRAY POSITIONS,  REAL4 DEVICE_BOUNDS_MIN, REAL4 DEVICE_BOUNDS_MAX, REAL CELLSIZE, INT_ARRAY &NN_COUNT, INT_ARRAY &NN_IDS, INT NN_MAX, INT PARTICLE_AMOUNT){
+void ParticleArrays::KernelsEnqeue( INT_ARRAY &IDS, INT &Nx, INT  &Ny, INT &Nz, INT_ARRAY &GRID_COUNT, INT_ARRAY &OFFSET,
+                                    REAL4_ARRAY POSITIONS,  REAL4 DEVICE_BOUNDS_MIN, REAL4 DEVICE_BOUNDS_MAX, REAL CELLSIZE,
+                                    INT_ARRAY &NN_COUNT, INT_ARRAY &NN_IDS, INT NN_MAX, INT PARTICLE_AMOUNT){
 
     //cout << PARTICLE_AMOUNT << " " << CELLSIZE << endl;
     compute::device device = compute::system::default_device();
@@ -275,11 +287,26 @@ void ParticleArrays::KernelsEnqeue( REAL_ARRAY IDS, INT &Nx, INT  &Ny, INT &Nz, 
    compute::system::default_queue().enqueue_1d_range_kernel(kernel , 0, PARTICLE_AMOUNT , 0).wait();
    for(int i=0;i<GRID_COUNT.size();i++)
    {
-       cout << GRID_COUNT[i] << endl;
+  //     cout << GRID_COUNT[i] << endl;
    }
    GRID_COUNT.resize(Nx*Ny*Nz);
-   cout << GRID_COUNT.size() << endl;
+   for(int i=0;i<IDS.size();i++)
+   {
+       //cout << IDS[i]<< endl;
+   }
    compute::system::default_queue().enqueue_1d_range_kernel(kernel2, 0, PARTICLE_AMOUNT, 0).wait();
+
+   vector<int>IDS_host;
+   IDS_host.resize(IDS.size());
+
+  // copy(IDS.begin(), IDS.end(), IDS_host.begin(),compute::system::default_queue());
+   //compute::system::default_queue().finish();
+
+   for(int i=0;i<IDS.size();i++)
+   {
+      // cout << IDS[i] << endl;
+   }
+
    compute::system::default_queue().enqueue_1d_range_kernel(kernel3, 0, PARTICLE_AMOUNT, 0).wait();
 
 
@@ -292,13 +319,22 @@ void ParticleArrays::KernelsEnqeue( REAL_ARRAY IDS, INT &Nx, INT  &Ny, INT &Nz, 
    compute::system::default_queue().finish();
    copy(NN_IDS.begin(), NN_IDS.end(), HOST_NN_IDS.begin() ,compute::system::default_queue());
    compute::system::default_queue().finish();
+   int tempIndex=0;
+   int tempIndexFrom=0;
    for(int i=0;i<HOST_NN_COUNT.size();i++)
    {
        //cout <<"kaimynu kiekis konkreciose celese" << HOST_NN_COUNT[i] << endl;
+       /*tempIndex=HOST_NN_COUNT[i];
+             for(int j=tempIndexFrom;j<tempIndex+tempIndexFrom;j++){
+                 cout <<
+                    cout <<"       konkretus kaimynu indexai" << HOST_NN_IDS[j] << endl;
+         }
+             tempIndexFrom+=tempIndex;
+             */
    }
    for(int i=0;i<HOST_NN_IDS.size();i++)
    {
-       //cout <<"konkretus kaimynu indexai" << HOST_NN_IDS[i] << endl;
+       cout <<"konkretus kaimynu indexai" << HOST_NN_IDS[i] << endl;
    }
 
 
