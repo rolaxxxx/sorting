@@ -41,4 +41,4 @@ SET( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${MY_GCC_COMPILE_FLAGS}"
 
 
  
-target_link_libraries(main ${VTK_LIBRARIES} -lOpenCL)
+target_link_libraries(main ${VTK_LIBRARIES} -lpthread -lboost_log -lstdc++fs  -lOpenCL)

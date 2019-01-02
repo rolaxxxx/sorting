@@ -7,6 +7,7 @@
 #include <boost/compute/container/vector.hpp>
 #include <boost/compute/detail/sha1.hpp>
 #include <stdio.h>
+#include <boost/chrono/duration.hpp>
 #include <stdlib.h>
 #include <time.h>
 #include <algorithm>
@@ -88,6 +89,7 @@ using namespace std;
 #include <iostream>
 #include <boost/compute/utility/wait_list.hpp>
 #include <vector>
+#include <chrono>
 #include <math.h>
 #include <boost/compute/system.hpp>
 #include <boost/compute/algorithm/copy.hpp>
@@ -98,6 +100,9 @@ using namespace std;
 #include <boost/compute/types.hpp>
 
 #define PI_VALUE 3.141592653589793238
+namespace compute = boost::compute;
+using namespace std;
+using namespace std::chrono;
 
 
 typedef boost::compute::double_ REAL;
@@ -171,6 +176,7 @@ void ParticleArrays::FILL(REAL4_ARRAY &POSITIONS, INT &PARTICLE_AMOUNT, REAL &RM
         vtkDataSetReader* reader=vtkDataSetReader::New();
         reader->SetFileName("input.vtk");
         reader->Update();
+        //reader->GetOutput()->Print(std::cout);
         double* BOUNDS;
        BOUNDS=reader->GetOutput()->GetBounds();
         REAL4 BOUNDS_MIN, BOUNDS_MAX;
@@ -184,24 +190,33 @@ void ParticleArrays::FILL(REAL4_ARRAY &POSITIONS, INT &PARTICLE_AMOUNT, REAL &RM
         DEVICE_BOUNDS_MIN=BOUNDS_MIN;
         DEVICE_BOUNDS_MAX=BOUNDS_MAX;
 
+        //cout << BOUNDS_MIN << endl;
+       // cout << BOUNDS_MAX << endl;
+
         PARTICLE_AMOUNT=reader->GetOutput()->GetNumberOfPoints();
-       // cout << PARTICLE_AMOUNT << endl;
+        //cout << PARTICLE_AMOUNT << endl;
         POSITIONS.resize(PARTICLE_AMOUNT);
-                for(int i=0;i<PARTICLE_AMOUNT;i+=4)
+        std::vector<REAL4> hosto;
+        hosto.resize(PARTICLE_AMOUNT);
+                for(int i=0;i<PARTICLE_AMOUNT;i++)
                 {
                 double  p[4];
             reader->GetOutput()->GetPoint(i,p);
-                POSITIONS[i]   =(boost::compute::double4_)p[0];
-                POSITIONS[i+1] =(boost::compute::double4_)p[1];
-                POSITIONS[i+2] =(boost::compute::double4_)p[2];
+            REAL4 aaa;
+                aaa[0]   =p[0];
+                aaa[1] =p[1];
+                aaa[2] =p[2];
                 //
                  p[3]=reader->GetOutput()->GetPointData()->GetArray("RADIUS")->GetTuple1(0); // radiusas ketvirtame elemente;
                 //cout <<  POSITIONS[i] <<  " " << POSITIONS[i+1] << " " << POSITIONS[i+2] << " " << POSITIONS[i+3] <<  endl;
                 if(RMAX<p[3])
                     RMAX=p[3];
-                POSITIONS[i+3] =(boost::compute::double4_)p[3];
-
+                aaa[3] =p[3];
+hosto[i]=aaa;
                 }
+
+         boost::compute::copy(hosto.begin(),hosto.end(),POSITIONS.begin())       ;
+         boost::compute::system::default_queue().finish();
         CELLSIZE=2*RMAX;
         Nx=ceil((BOUNDS[1]-BOUNDS[0])/CELLSIZE);
         Ny=ceil((BOUNDS[3]-BOUNDS[2])/CELLSIZE);
@@ -221,11 +236,8 @@ void ParticleArrays::FILL(REAL4_ARRAY &POSITIONS, INT &PARTICLE_AMOUNT, REAL &RM
         NN_COUNT.resize(PARTICLE_AMOUNT);
         NN_IDS.resize(PARTICLE_AMOUNT*NN_MAX);
         //fill(IDS.begin(), IDS.end(), 0);
-        for(int i=0;i<IDS.size();i++)
-        {
-           IDS[i]=0;
-           //cout << IDS[i] << endl;
-        }
+        //boost::compute::fill(IDS.begin(), IDS.end(),0);
+        boost::compute::system::default_queue().finish();
 
 }
 
@@ -234,6 +246,9 @@ void ParticleArrays::KernelsEnqeue( INT_ARRAY &IDS, INT &Nx, INT  &Ny, INT &Nz, 
                                     INT_ARRAY &NN_COUNT, INT_ARRAY &NN_IDS, INT NN_MAX, INT PARTICLE_AMOUNT){
 
     //cout << PARTICLE_AMOUNT << " " << CELLSIZE << endl;
+
+    boost::chrono::seconds bendrasLaikas;
+
     compute::device device = compute::system::default_device();
     Resource sourceCode = LOAD_RESOURCE(Kernel_cl);
     std::stringstream source;
@@ -256,7 +271,7 @@ void ParticleArrays::KernelsEnqeue( INT_ARRAY &IDS, INT &Nx, INT  &Ny, INT &Nz, 
     kernel.set_arg(7, Nz);
 
     //cout <<  POSITIONS[0] <<  endl;
-    boost::compute::inclusive_scan(GRID_COUNT.begin(), GRID_COUNT.end(), OFFSET.begin());
+ //
 
     kernel2.set_arg(0, OFFSET);
     kernel2.set_arg(1, IDS);
@@ -282,39 +297,36 @@ void ParticleArrays::KernelsEnqeue( INT_ARRAY &IDS, INT &Nx, INT  &Ny, INT &Nz, 
     kernel3.set_arg(10, DEVICE_BOUNDS_MIN);
     kernel3.set_arg(11, DEVICE_BOUNDS_MAX);
     kernel3.set_arg(12, IDS);
-
-   // cout << PARTICLE_AMOUNT << endl;
+    double timer=0;
+for(int i=0;i<1000;i++){
+cout << i << endl;
+   auto t1 = chrono::high_resolution_clock::now();
+    // rusiavimo kernel
    compute::system::default_queue().enqueue_1d_range_kernel(kernel , 0, PARTICLE_AMOUNT , 0).wait();
-   for(int i=0;i<GRID_COUNT.size();i++)
-   {
-  //     cout << GRID_COUNT[i] << endl;
-   }
-   GRID_COUNT.resize(Nx*Ny*Nz);
-   for(int i=0;i<IDS.size();i++)
-   {
-       //cout << IDS[i]<< endl;
-   }
+
+     boost::compute::inclusive_scan(GRID_COUNT.begin(), GRID_COUNT.end(), OFFSET.begin());
+     boost::compute::system::default_queue().finish();
+
+     boost::compute::fill(GRID_COUNT.begin(),GRID_COUNT.end(),0);
+     boost::compute::system::default_queue().finish();
+
+     // rusiavimo kernel2
    compute::system::default_queue().enqueue_1d_range_kernel(kernel2, 0, PARTICLE_AMOUNT, 0).wait();
 
-   vector<int>IDS_host;
-   IDS_host.resize(IDS.size());
+   auto t2 = chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diff = t2-t1;
+    timer+=diff.count();
+}
+   cout << timer/1000 << " sekundziu" << endl;
 
-  // copy(IDS.begin(), IDS.end(), IDS_host.begin(),compute::system::default_queue());
-   //compute::system::default_queue().finish();
-
-   for(int i=0;i<IDS.size();i++)
-   {
-      // cout << IDS[i] << endl;
-   }
-
-   compute::system::default_queue().enqueue_1d_range_kernel(kernel3, 0, PARTICLE_AMOUNT, 0).wait();
-
-
-
+   //kaimynu paieska
+   //compute::system::default_queue().enqueue_1d_range_kernel(kernel3, 0, PARTICLE_AMOUNT, 0).wait();
 
    //NN_COUNT[N]  NN_IDS[N*NN_MAX]
    vector<int> HOST_NN_COUNT(PARTICLE_AMOUNT);
+
    vector<int> HOST_NN_IDS(PARTICLE_AMOUNT*NN_MAX);
+
    copy(NN_COUNT.begin(), NN_COUNT.end(), HOST_NN_COUNT.begin() ,compute::system::default_queue());
    compute::system::default_queue().finish();
    copy(NN_IDS.begin(), NN_IDS.end(), HOST_NN_IDS.begin() ,compute::system::default_queue());
@@ -323,20 +335,14 @@ void ParticleArrays::KernelsEnqeue( INT_ARRAY &IDS, INT &Nx, INT  &Ny, INT &Nz, 
    int tempIndexFrom=0;
    for(int i=0;i<HOST_NN_COUNT.size();i++)
    {
-       //cout <<"kaimynu kiekis konkreciose celese" << HOST_NN_COUNT[i] << endl;
-       /*tempIndex=HOST_NN_COUNT[i];
-             for(int j=tempIndexFrom;j<tempIndex+tempIndexFrom;j++){
-                 cout <<
-                    cout <<"       konkretus kaimynu indexai" << HOST_NN_IDS[j] << endl;
-         }
-             tempIndexFrom+=tempIndex;
-             */
-   }
-   for(int i=0;i<HOST_NN_IDS.size();i++)
-   {
-       cout <<"konkretus kaimynu indexai" << HOST_NN_IDS[i] << endl;
+      // cout <<"kaimynu kiekis konkreciose celese " << HOST_NN_COUNT[i] << endl;
+         //cout <<"       konkretus kaimynu indexai" << HOST_NN_IDS[i] << endl;
    }
 
+   for(int i=0;i<HOST_NN_IDS.size();i++){
+       //cout <<"konkretus kaimynu indexai " << HOST_NN_IDS[i] << endl;
+
+}
 
 
 }

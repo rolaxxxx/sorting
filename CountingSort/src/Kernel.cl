@@ -5,8 +5,11 @@ void GridAddition(constant double4* POSITIONS,  double4 DEVICE_BOUNDS_MIN,  doub
         uint idx=get_global_id(0);
         double4 coords;
         coords=floor((POSITIONS[idx]-DEVICE_BOUNDS_MIN)/CELLSIZE);
+        //printf("atimties koordinates %d %f %f %f %f %f %f \n",idx, POSITIONS[idx].x, POSITIONS[idx].y, POSITIONS[idx].z, DEVICE_BOUNDS_MIN.x, DEVICE_BOUNDS_MIN.y, DEVICE_BOUNDS_MIN.z);
         int BENDRAS_ID=coords.x+coords.y*Nx+coords.z*Nx*Ny;
+        //printf("suskaiciuotas bendras ID is koordinaciu %f %f %f \n", coords.x, coords.y, coords.z);
         //printf("coords.y  %f Nx %d  sudauginta bendra reiksme %f \n" ,coords.y, Nx, coords.y*Nx);
+        //printf("suskaiciuotas bendras ID is koordinaciu %d ", BENDRAS_ID);
         atomic_add(&GRID_COUNT[BENDRAS_ID],1);
 }
 
@@ -73,7 +76,7 @@ void NeighbourSearch(__constant double4 *POSITIONS,  __constant int* GRID_COUNT,
                                          tempPID.w=0;
                                          tempIlgis=distance(temp,tempPID);
 
-                                       // printf(" temp ilgio reiksme", tempIlgis);
+                                        //printf(" temp ilgio reiksme  %f  ", tempIlgis);
                                         L=tempIlgis-(tempCurrentRadius+tempPIdRadius);
 
                                                         //printf("ilgis tarp dvieju vektoriu %f  idx daleles radius %f  pid indexo daleles radius %f \n", tempIlgis, tempCurrentRadius, tempPIdRadius);
@@ -81,7 +84,7 @@ void NeighbourSearch(__constant double4 *POSITIONS,  __constant int* GRID_COUNT,
                                                               if(L<0){
                                                                     NN_IDS[idx*NN_MAX+kiekis]=pid;
                                                                        kiekis++;
-                                                                        //printf("indexo pid numeris %d" , pid );
+                                                                        //printf("indexo pid numeris %d \n" , pid );
                                                                     //printf("indeksas %d max kaimynu skaicius %d, uzpildymo kiekis kiekvienoje celeje %d" , idx, NN_MAX, kiekis);
                                                                 }
            NN_COUNT[idx]=kiekis;

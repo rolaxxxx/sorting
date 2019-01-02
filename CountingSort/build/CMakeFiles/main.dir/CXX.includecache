@@ -35,6 +35,8 @@ boost/compute/detail/sha1.hpp
 -
 stdio.h
 -
+boost/chrono/duration.hpp
+-
 stdlib.h
 -
 time.h
@@ -190,6 +192,8 @@ iostream
 boost/compute/utility/wait_list.hpp
 -
 vector
+-
+chrono
 -
 math.h
 -

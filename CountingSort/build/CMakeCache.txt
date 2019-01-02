@@ -83,17 +83,22 @@ Boost_THREAD_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_thread.so
 //Boost thread library (release)
 Boost_THREAD_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_thread.so
 
+//Boost timer library (debug)
+Boost_TIMER_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_timer.so
+
+//Boost timer library (release)
+Boost_TIMER_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_timer.so
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
-//Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
-// CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
+//No help, variable specified on the command line.
 CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
-//CXX compiler
+//No help, variable specified on the command line.
 CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
@@ -120,7 +125,7 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the compiler during release builds with debug info.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//C compiler
+//No help, variable specified on the command line.
 CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
@@ -198,6 +203,9 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 //Path to a program.
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
+//No help, variable specified on the command line.
+CMAKE_PREFIX_PATH:STRING=%{Qt:QT_INSTALL_PREFIX}
+
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=main
 
@@ -262,6 +270,9 @@ OpenCL_INCLUDE_DIR:PATH=/opt/intel/opencl/include
 //Path to a library.
 OpenCL_LIBRARY:FILEPATH=/opt/intel/opencl/libOpenCL.so
 
+//No help, variable specified on the command line.
+QT_QMAKE_EXECUTABLE:STRING=
+
 //The directory containing a CMake configuration file for VTK.
 VTK_DIR:PATH=/usr/lib/cmake/vtk-7.1
 
@@ -320,6 +331,10 @@ Boost_SYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 Boost_THREAD_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_THREAD_LIBRARY_RELEASE
 Boost_THREAD_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_TIMER_LIBRARY_DEBUG
+Boost_TIMER_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_TIMER_LIBRARY_RELEASE
+Boost_TIMER_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
 //MODIFIED property for variable: CMAKE_BUILD_TYPE
@@ -482,7 +497,7 @@ OpenCL_LIBRARY-ADVANCED:INTERNAL=1
 //MODIFIED property for variable: OpenCL_LIBRARY
 OpenCL_LIBRARY-MODIFIED:INTERNAL=ON
 //Components requested for this build tree.
-_Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;filesystem;log;log_setup;regex;system;thread
+_Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;filesystem;log;log_setup;regex;system;thread;timer
 //Last used Boost_INCLUDE_DIR value.
 _Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
 //Last used Boost_LIBRARY_DIR_DEBUG value.
