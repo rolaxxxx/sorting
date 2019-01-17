@@ -1,0 +1,4 @@
+Thu Jan 10 18:00:11 EET 2019
+compute-0-2.local
+/home/rolandas/CountingSort/build
+laikas sekundemis 0.332136

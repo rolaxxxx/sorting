@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /share/apps/compilers/cmake-3.10.3/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E remove -f
+RM = /share/apps/compilers/cmake-3.10.3/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rolandas/Desktop/CountingSort
+CMAKE_SOURCE_DIR = /home/rolandas/CountingSort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rolandas/Desktop/CountingSort/build
+CMAKE_BINARY_DIR = /home/rolandas/CountingSort/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/rolandas/Desktop/CountingSort/build
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/share/apps/compilers/cmake-3.10.3/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/share/apps/compilers/cmake-3.10.3/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/Desktop/CountingSort/build/CMakeFiles /home/rolandas/Desktop/CountingSort/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/CountingSort/build/CMakeFiles /home/rolandas/CountingSort/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/Desktop/CountingSort/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/CountingSort/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -197,8 +197,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... main"
 	@echo "... edit_cache"
+	@echo "... main"
 	@echo "... embed-resource"
 	@echo "... src/Kernel.cl.o"
 	@echo "... src/Kernel.cl.i"

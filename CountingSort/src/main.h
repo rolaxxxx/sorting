@@ -151,6 +151,7 @@ public:
   INT_ARRAY OFFSET;
   INT_ARRAY IDS;
   INT NN_MAX;
+  INT KIEKIS;
 
 
   void FILL(REAL4_ARRAY &POSITIONS, INT &PARTICLE_AMOUNT, REAL &RMAX, REAL &CELLSIZE,
@@ -160,7 +161,7 @@ public:
   void KernelsEnqeue(INT_ARRAY &IDS, INT &Nx, INT &Ny, INT &Nz, INT_ARRAY &GRID_COUNT,
                      INT_ARRAY &OFFSET, REAL4_ARRAY POSITIONS,  REAL4 DEVICE_BOUNDS_MIN,
                      REAL4 DEVICE_BOUNDS_MAX, REAL CELLSIZE, INT_ARRAY &NN_COUNT, INT_ARRAY &NN_IDS,
-                     INT NN_MAX, INT PARTICLE_AMOUNT);
+                     INT NN_MAX, INT PARTICLE_AMOUNT, INT &KIEKIS);
 
 };
 
@@ -172,7 +173,7 @@ void ParticleArrays::FILL(REAL4_ARRAY &POSITIONS, INT &PARTICLE_AMOUNT, REAL &RM
     compute::device device = compute::system::default_device();
         RMAX=0;
         using compute::int2_;
-        NN_MAX=2;
+        NN_MAX=12;
         vtkDataSetReader* reader=vtkDataSetReader::New();
         reader->SetFileName("input.vtk");
         reader->Update();
@@ -234,7 +235,12 @@ hosto[i]=aaa;
         IDS.resize(PARTICLE_AMOUNT);
        // cout << IDS.size() << endl;
         NN_COUNT.resize(PARTICLE_AMOUNT);
+	//for(int i=0;i<PARTICLE_AMOUNT;i++)
+	//	cout << NN_COUNT[i] << " ";
         NN_IDS.resize(PARTICLE_AMOUNT*NN_MAX);
+
+
+
         //fill(IDS.begin(), IDS.end(), 0);
         //boost::compute::fill(IDS.begin(), IDS.end(),0);
         boost::compute::system::default_queue().finish();
@@ -243,12 +249,12 @@ hosto[i]=aaa;
 
 void ParticleArrays::KernelsEnqeue( INT_ARRAY &IDS, INT &Nx, INT  &Ny, INT &Nz, INT_ARRAY &GRID_COUNT, INT_ARRAY &OFFSET,
                                     REAL4_ARRAY POSITIONS,  REAL4 DEVICE_BOUNDS_MIN, REAL4 DEVICE_BOUNDS_MAX, REAL CELLSIZE,
-                                    INT_ARRAY &NN_COUNT, INT_ARRAY &NN_IDS, INT NN_MAX, INT PARTICLE_AMOUNT){
+                                    INT_ARRAY &NN_COUNT, INT_ARRAY &NN_IDS, INT NN_MAX, INT PARTICLE_AMOUNT, INT &KIEKIS){
 
     //cout << PARTICLE_AMOUNT << " " << CELLSIZE << endl;
 
     boost::chrono::seconds bendrasLaikas;
-
+    KIEKIS=0;
     compute::device device = compute::system::default_device();
     Resource sourceCode = LOAD_RESOURCE(Kernel_cl);
     std::stringstream source;
@@ -261,6 +267,7 @@ void ParticleArrays::KernelsEnqeue( INT_ARRAY &IDS, INT &Nx, INT  &Ny, INT &Nz, 
     boost::compute::kernel kernel(program, "GridAddition");
     boost::compute::kernel kernel2(program, "GridCountSort");
     boost::compute::kernel kernel3(program, "NeighbourSearch");
+   
     kernel.set_arg(0, POSITIONS);
     kernel.set_arg(1, DEVICE_BOUNDS_MIN);
     kernel.set_arg(2, DEVICE_BOUNDS_MAX);
@@ -270,8 +277,6 @@ void ParticleArrays::KernelsEnqeue( INT_ARRAY &IDS, INT &Nx, INT  &Ny, INT &Nz, 
     kernel.set_arg(6, Ny);
     kernel.set_arg(7, Nz);
 
-    //cout <<  POSITIONS[0] <<  endl;
- //
 
     kernel2.set_arg(0, OFFSET);
     kernel2.set_arg(1, IDS);
@@ -297,35 +302,42 @@ void ParticleArrays::KernelsEnqeue( INT_ARRAY &IDS, INT &Nx, INT  &Ny, INT &Nz, 
     kernel3.set_arg(10, DEVICE_BOUNDS_MIN);
     kernel3.set_arg(11, DEVICE_BOUNDS_MAX);
     kernel3.set_arg(12, IDS);
+    kernel3.set_arg(13, KIEKIS);
     double timer=0;
-for(int i=0;i<1000;i++){
-cout << i << endl;
+for(int i=0;i<1;i++){
+//cout << i << endl;
+   boost::compute::fill(GRID_COUNT.begin(),GRID_COUNT.end(),0);
+   boost::compute::system::default_queue().finish();
+
    auto t1 = chrono::high_resolution_clock::now();
-    // rusiavimo kernel
    compute::system::default_queue().enqueue_1d_range_kernel(kernel , 0, PARTICLE_AMOUNT , 0).wait();
 
-     boost::compute::inclusive_scan(GRID_COUNT.begin(), GRID_COUNT.end(), OFFSET.begin());
+     boost::compute::exclusive_scan(GRID_COUNT.begin(), GRID_COUNT.end(), OFFSET.begin());
      boost::compute::system::default_queue().finish();
 
      boost::compute::fill(GRID_COUNT.begin(),GRID_COUNT.end(),0);
      boost::compute::system::default_queue().finish();
 
-     // rusiavimo kernel2
    compute::system::default_queue().enqueue_1d_range_kernel(kernel2, 0, PARTICLE_AMOUNT, 0).wait();
-
+      
+   compute::system::default_queue().enqueue_1d_range_kernel(kernel3, 0, PARTICLE_AMOUNT, 0).wait();
    auto t2 = chrono::high_resolution_clock::now();
+   
     std::chrono::duration<double> diff = t2-t1;
     timer+=diff.count();
 }
-   cout << timer/1000 << " sekundziu" << endl;
+	timer/=1;
+	cout << "laikas sekundemis "  << timer << endl;
 
-   //kaimynu paieska
-   //compute::system::default_queue().enqueue_1d_range_kernel(kernel3, 0, PARTICLE_AMOUNT, 0).wait();
+//kaimynu paieska
+  // compute::system::default_queue().enqueue_1d_range_kernel(kernel3, 0, PARTICLE_AMOUNT, 0).wait();
 
    //NN_COUNT[N]  NN_IDS[N*NN_MAX]
    vector<int> HOST_NN_COUNT(PARTICLE_AMOUNT);
 
    vector<int> HOST_NN_IDS(PARTICLE_AMOUNT*NN_MAX);
+    //boost::compute::fill(HOST_NN_IDS.begin(),HOST_NN_IDS.end(),0);
+    // boost::compute::system::default_queue().finish();
 
    copy(NN_COUNT.begin(), NN_COUNT.end(), HOST_NN_COUNT.begin() ,compute::system::default_queue());
    compute::system::default_queue().finish();
@@ -333,16 +345,13 @@ cout << i << endl;
    compute::system::default_queue().finish();
    int tempIndex=0;
    int tempIndexFrom=0;
+//cout << KIEKIS << endl;
    for(int i=0;i<HOST_NN_COUNT.size();i++)
    {
-      // cout <<"kaimynu kiekis konkreciose celese " << HOST_NN_COUNT[i] << endl;
-         //cout <<"       konkretus kaimynu indexai" << HOST_NN_IDS[i] << endl;
-   }
-
-   for(int i=0;i<HOST_NN_IDS.size();i++){
-       //cout <<"konkretus kaimynu indexai " << HOST_NN_IDS[i] << endl;
-
+	//cout << HOST_NN_COUNT[i] << endl;
+	if(HOST_NN_COUNT[i]){
+	tempIndex+=HOST_NN_COUNT[i];
+ }  
 }
-
-
+cout << "kaimynu skaicius celese " << tempIndex <<   endl;
 }

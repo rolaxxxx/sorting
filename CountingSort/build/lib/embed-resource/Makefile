@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /share/apps/compilers/cmake-3.10.3/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E remove -f
+RM = /share/apps/compilers/cmake-3.10.3/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rolandas/Desktop/CountingSort
+CMAKE_SOURCE_DIR = /home/rolandas/CountingSort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rolandas/Desktop/CountingSort/build
+CMAKE_BINARY_DIR = /home/rolandas/CountingSort/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/rolandas/Desktop/CountingSort/build
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/share/apps/compilers/cmake-3.10.3/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/share/apps/compilers/cmake-3.10.3/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/rolandas/Desktop/CountingSort/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/Desktop/CountingSort/build/CMakeFiles /home/rolandas/Desktop/CountingSort/build/lib/embed-resource/CMakeFiles/progress.marks
-	cd /home/rolandas/Desktop/CountingSort/build && $(MAKE) -f CMakeFiles/Makefile2 lib/embed-resource/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/Desktop/CountingSort/build/CMakeFiles 0
+	cd /home/rolandas/CountingSort/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/CountingSort/build/CMakeFiles /home/rolandas/CountingSort/build/lib/embed-resource/CMakeFiles/progress.marks
+	cd /home/rolandas/CountingSort/build && $(MAKE) -f CMakeFiles/Makefile2 lib/embed-resource/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rolandas/CountingSort/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/rolandas/Desktop/CountingSort/build && $(MAKE) -f CMakeFiles/Makefile2 lib/embed-resource/clean
+	cd /home/rolandas/CountingSort/build && $(MAKE) -f CMakeFiles/Makefile2 lib/embed-resource/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/rolandas/Desktop/CountingSort/build && $(MAKE) -f CMakeFiles/Makefile2 lib/embed-resource/preinstall
+	cd /home/rolandas/CountingSort/build && $(MAKE) -f CMakeFiles/Makefile2 lib/embed-resource/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/rolandas/Desktop/CountingSort/build && $(MAKE) -f CMakeFiles/Makefile2 lib/embed-resource/preinstall
+	cd /home/rolandas/CountingSort/build && $(MAKE) -f CMakeFiles/Makefile2 lib/embed-resource/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/rolandas/Desktop/CountingSort/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/rolandas/CountingSort/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/embed-resource/CMakeFiles/embed-resource.dir/rule:
-	cd /home/rolandas/Desktop/CountingSort/build && $(MAKE) -f CMakeFiles/Makefile2 lib/embed-resource/CMakeFiles/embed-resource.dir/rule
+	cd /home/rolandas/CountingSort/build && $(MAKE) -f CMakeFiles/Makefile2 lib/embed-resource/CMakeFiles/embed-resource.dir/rule
 .PHONY : lib/embed-resource/CMakeFiles/embed-resource.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ embed-resource: lib/embed-resource/CMakeFiles/embed-resource.dir/rule
 
 # fast build rule for target.
 embed-resource/fast:
-	cd /home/rolandas/Desktop/CountingSort/build && $(MAKE) -f lib/embed-resource/CMakeFiles/embed-resource.dir/build.make lib/embed-resource/CMakeFiles/embed-resource.dir/build
+	cd /home/rolandas/CountingSort/build && $(MAKE) -f lib/embed-resource/CMakeFiles/embed-resource.dir/build.make lib/embed-resource/CMakeFiles/embed-resource.dir/build
 .PHONY : embed-resource/fast
 
 embedresource.o: embedresource.cpp.o
@@ -131,7 +131,7 @@ embedresource.o: embedresource.cpp.o
 
 # target to build an object file
 embedresource.cpp.o:
-	cd /home/rolandas/Desktop/CountingSort/build && $(MAKE) -f lib/embed-resource/CMakeFiles/embed-resource.dir/build.make lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.o
+	cd /home/rolandas/CountingSort/build && $(MAKE) -f lib/embed-resource/CMakeFiles/embed-resource.dir/build.make lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.o
 .PHONY : embedresource.cpp.o
 
 embedresource.i: embedresource.cpp.i
@@ -140,7 +140,7 @@ embedresource.i: embedresource.cpp.i
 
 # target to preprocess a source file
 embedresource.cpp.i:
-	cd /home/rolandas/Desktop/CountingSort/build && $(MAKE) -f lib/embed-resource/CMakeFiles/embed-resource.dir/build.make lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.i
+	cd /home/rolandas/CountingSort/build && $(MAKE) -f lib/embed-resource/CMakeFiles/embed-resource.dir/build.make lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.i
 .PHONY : embedresource.cpp.i
 
 embedresource.s: embedresource.cpp.s
@@ -149,7 +149,7 @@ embedresource.s: embedresource.cpp.s
 
 # target to generate assembly for a file
 embedresource.cpp.s:
-	cd /home/rolandas/Desktop/CountingSort/build && $(MAKE) -f lib/embed-resource/CMakeFiles/embed-resource.dir/build.make lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.s
+	cd /home/rolandas/CountingSort/build && $(MAKE) -f lib/embed-resource/CMakeFiles/embed-resource.dir/build.make lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.s
 .PHONY : embedresource.cpp.s
 
 # Help Target
@@ -159,8 +159,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... embed-resource"
 	@echo "... edit_cache"
+	@echo "... embed-resource"
 	@echo "... embedresource.o"
 	@echo "... embedresource.i"
 	@echo "... embedresource.s"
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/rolandas/Desktop/CountingSort/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/rolandas/CountingSort/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

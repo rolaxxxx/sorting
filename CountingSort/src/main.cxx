@@ -12,7 +12,7 @@ int main()
 
         coordinates.KernelsEnqeue(coordinates.IDS, coordinates.Nx, coordinates.Ny, coordinates.Nz, coordinates.GRID_COUNT,
                                     coordinates.OFFSET, coordinates.POSITIONS, coordinates.DEVICE_BOUNDS_MIN, coordinates.DEVICE_BOUNDS_MAX,
-                                   coordinates.CELLSIZE, coordinates.NN_COUNT, coordinates.NN_IDS, coordinates.NN_MAX, coordinates.PARTICLE_AMOUNT);
+                                   coordinates.CELLSIZE, coordinates.NN_COUNT, coordinates.NN_IDS, coordinates.NN_MAX, coordinates.PARTICLE_AMOUNT, coordinates.KIEKIS);
 
 }
 

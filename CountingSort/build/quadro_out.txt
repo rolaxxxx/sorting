@@ -1,0 +1,5 @@
+Kt Sau 17 13:42:32 EET 2019
+gpu-0-1.local
+/home/rolandas/CountingSort/build
+laikas sekundemis 0.911964
+kaimynu skaicius celese 20430628

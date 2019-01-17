@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /share/apps/compilers/cmake-3.10.3/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E remove -f
+RM = /share/apps/compilers/cmake-3.10.3/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rolandas/Desktop/CountingSort
+CMAKE_SOURCE_DIR = /home/rolandas/CountingSort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rolandas/Desktop/CountingSort/build
+CMAKE_BINARY_DIR = /home/rolandas/CountingSort/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -58,21 +58,21 @@ include CMakeFiles/main.dir/progress.make
 include CMakeFiles/main.dir/flags.make
 
 src/Kernel.cl.c: ../src/Kernel.cl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rolandas/Desktop/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building binary file for embedding /home/rolandas/Desktop/CountingSort/build/src/Kernel.cl.c"
-	cd /home/rolandas/Desktop/CountingSort && /home/rolandas/Desktop/CountingSort/build/lib/embed-resource/embed-resource /home/rolandas/Desktop/CountingSort/build/src/Kernel.cl.c src/Kernel.cl
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rolandas/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building binary file for embedding /home/rolandas/CountingSort/build/src/Kernel.cl.c"
+	cd /home/rolandas/CountingSort && /home/rolandas/CountingSort/build/lib/embed-resource/embed-resource /home/rolandas/CountingSort/build/src/Kernel.cl.c src/Kernel.cl
 
 CMakeFiles/main.dir/src/main.cxx.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.cxx.o: ../src/main.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/Desktop/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/main.cxx.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/main.cxx.o -c /home/rolandas/Desktop/CountingSort/src/main.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/main.cxx.o"
+	/share/apps/compilers/gcc-7.3.0/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/main.cxx.o -c /home/rolandas/CountingSort/src/main.cxx
 
 CMakeFiles/main.dir/src/main.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/main.cxx.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Desktop/CountingSort/src/main.cxx > CMakeFiles/main.dir/src/main.cxx.i
+	/share/apps/compilers/gcc-7.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/CountingSort/src/main.cxx > CMakeFiles/main.dir/src/main.cxx.i
 
 CMakeFiles/main.dir/src/main.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cxx.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Desktop/CountingSort/src/main.cxx -o CMakeFiles/main.dir/src/main.cxx.s
+	/share/apps/compilers/gcc-7.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/CountingSort/src/main.cxx -o CMakeFiles/main.dir/src/main.cxx.s
 
 CMakeFiles/main.dir/src/main.cxx.o.requires:
 
@@ -87,16 +87,16 @@ CMakeFiles/main.dir/src/main.cxx.o.provides.build: CMakeFiles/main.dir/src/main.
 
 CMakeFiles/main.dir/src/Kernel.cl.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/Kernel.cl.c.o: src/Kernel.cl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/Desktop/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/Kernel.cl.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/Kernel.cl.c.o   -c /home/rolandas/Desktop/CountingSort/build/src/Kernel.cl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/Kernel.cl.c.o"
+	/share/apps/compilers/gcc-7.3.0/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/main.dir/src/Kernel.cl.c.o   -c /home/rolandas/CountingSort/build/src/Kernel.cl.c
 
 CMakeFiles/main.dir/src/Kernel.cl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/Kernel.cl.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/rolandas/Desktop/CountingSort/build/src/Kernel.cl.c > CMakeFiles/main.dir/src/Kernel.cl.c.i
+	/share/apps/compilers/gcc-7.3.0/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/rolandas/CountingSort/build/src/Kernel.cl.c > CMakeFiles/main.dir/src/Kernel.cl.c.i
 
 CMakeFiles/main.dir/src/Kernel.cl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/Kernel.cl.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/rolandas/Desktop/CountingSort/build/src/Kernel.cl.c -o CMakeFiles/main.dir/src/Kernel.cl.c.s
+	/share/apps/compilers/gcc-7.3.0/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/rolandas/CountingSort/build/src/Kernel.cl.c -o CMakeFiles/main.dir/src/Kernel.cl.c.s
 
 CMakeFiles/main.dir/src/Kernel.cl.c.o.requires:
 
@@ -120,186 +120,132 @@ main_EXTERNAL_OBJECTS =
 main: CMakeFiles/main.dir/src/main.cxx.o
 main: CMakeFiles/main.dir/src/Kernel.cl.c.o
 main: CMakeFiles/main.dir/build.make
-main: /usr/lib/x86_64-linux-gnu/libfreetype.so
-main: /usr/lib/x86_64-linux-gnu/libz.so
-main: /usr/lib/x86_64-linux-gnu/libexpat.so
-main: /usr/lib/x86_64-linux-gnu/libvtkDomainsChemistryOpenGL2-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libjpeg.so
-main: /usr/lib/x86_64-linux-gnu/libpng.so
-main: /usr/lib/x86_64-linux-gnu/libtiff.so
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersGeneric-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersHyperTree-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersParallelDIY2-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersParallelFlowPaths-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersParallelGeometry-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersParallelImaging-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersParallelMPI-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersParallelStatistics-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersPoints-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersProgrammable-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersPython-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libpython3.6m.so
-main: /usr/lib/libvtkWrappingTools-7.1.a
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersReebGraph-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersSMP-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersSelection-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersTexture-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersVerdict-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkverdict-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libproj.so
-main: /usr/lib/x86_64-linux-gnu/libvtkIOAMR-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/hdf5/openmpi/libhdf5.so
-main: /usr/lib/x86_64-linux-gnu/libsz.so
-main: /usr/lib/x86_64-linux-gnu/libdl.so
-main: /usr/lib/x86_64-linux-gnu/libm.so
-main: /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so
-main: /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so
-main: /usr/lib/x86_64-linux-gnu/hdf5/openmpi/libhdf5_hl.so
-main: /usr/lib/x86_64-linux-gnu/libvtkIOEnSight-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libnetcdf_c++.so
-main: /usr/lib/x86_64-linux-gnu/libnetcdf.so
-main: /usr/lib/x86_64-linux-gnu/libvtkIOExport-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingGL2PSOpenGL2-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libgl2ps.so
-main: /usr/lib/x86_64-linux-gnu/libvtkIOFFMPEG-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOMovie-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libtheoraenc.so
-main: /usr/lib/x86_64-linux-gnu/libtheoradec.so
-main: /usr/lib/x86_64-linux-gnu/libogg.so
-main: /usr/lib/x86_64-linux-gnu/libvtkIOGDAL-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOGeoJSON-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libjsoncpp.so
-main: /usr/lib/x86_64-linux-gnu/libvtkIOImport-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOInfovis-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libxml2.so
-main: /usr/lib/x86_64-linux-gnu/libvtkIOMINC-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOMPIImage-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOMPIParallel-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOParallel-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIONetCDF-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOMySQL-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOODBC-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOPLY-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOParallelExodus-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOParallelLSDyna-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOParallelNetCDF-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOParallelXML-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOPostgreSQL-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOTecplotTable-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOVPIC-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkVPIC-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOVideo-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOXdmf2-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkxdmf2-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkImagingMorphological-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkImagingStatistics-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkImagingStencil-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkInfovisBoostGraphAlgorithms-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkInteractionImage-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkLocalExample-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkParallelMPI4Py-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingContextOpenGL2-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingExternal-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingFreeTypeFontConfig-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingImage-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingLOD-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingMatplotlib-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingParallel-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingParallelLIC-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingSceneGraph-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingVolumeAMR-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingVolumeOpenGL2-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkTestingGenericBridge-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkTestingIOSQL-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkTestingRendering-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkViewsContext2D-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkViewsGeovis-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkViewsInfovis-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkWrappingJava-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkDomainsChemistry-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersFlowPaths-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOGeometry-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOExodus-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkexoIIc-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libnetcdf_c++.so
-main: /usr/lib/x86_64-linux-gnu/libnetcdf.so
-main: /usr/lib/x86_64-linux-gnu/libvtkIOLSDyna-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOSQL-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/hdf5/openmpi/libhdf5.so
-main: /usr/lib/x86_64-linux-gnu/libsz.so
-main: /usr/lib/x86_64-linux-gnu/libdl.so
-main: /usr/lib/x86_64-linux-gnu/libm.so
-main: /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so
-main: /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so
-main: /usr/lib/x86_64-linux-gnu/hdf5/openmpi/libhdf5_hl.so
-main: /usr/lib/x86_64-linux-gnu/libxml2.so
-main: /usr/lib/x86_64-linux-gnu/libvtkWrappingPython36Core-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkPythonInterpreter-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libpython3.6m.so
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersParallel-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkParallelMPI-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingLICOpenGL2-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersAMR-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkParallelCore-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOLegacy-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingOpenGL2-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libGLEW.so
-main: /usr/lib/x86_64-linux-gnu/libSM.so
-main: /usr/lib/x86_64-linux-gnu/libICE.so
-main: /usr/lib/x86_64-linux-gnu/libX11.so
-main: /usr/lib/x86_64-linux-gnu/libXext.so
-main: /usr/lib/x86_64-linux-gnu/libXt.so
-main: /usr/lib/x86_64-linux-gnu/libvtkImagingMath-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkGeovisCore-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libproj.so
-main: /usr/lib/x86_64-linux-gnu/libvtkChartsCore-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingContext2D-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersImaging-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkInfovisLayout-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkInfovisCore-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkViewsCore-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkInteractionWidgets-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersHybrid-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkImagingGeneral-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkImagingSources-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersModeling-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkImagingHybrid-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOImage-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkDICOMParser-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkmetaio-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libz.so
-main: /usr/lib/x86_64-linux-gnu/libvtkInteractionStyle-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersExtraction-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersStatistics-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkImagingFourier-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkalglib-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingAnnotation-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkImagingColor-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingVolume-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkImagingCore-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOXML-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOXMLParser-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkIOCore-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingLabel-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingFreeType-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkRenderingCore-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkCommonColor-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersGeometry-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersSources-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersGeneral-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkCommonComputationalGeometry-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkFiltersCore-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkCommonExecutionModel-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkCommonDataModel-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkCommonTransforms-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkCommonMisc-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkCommonMath-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtkCommonSystem-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libvtksys-7.1.so.7.1.1
-main: /usr/lib/x86_64-linux-gnu/libfreetype.so
-main: /usr/lib/x86_64-linux-gnu/libvtkCommonCore-7.1.so.7.1.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkDomainsChemistryOpenGL2-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersFlowPaths-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersGeneric-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersHyperTree-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersParallelImaging-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersPoints-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersProgrammable-8.1.so.1
+main: /usr/lib64/libpython2.7.so
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkWrappingTools-8.1.a
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersPython-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersSMP-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersSelection-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersTexture-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersTopology-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersVerdict-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkGeovisCore-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOAMR-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOEnSight-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOExodus-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOExportOpenGL2-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOImport-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOInfovis-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOLSDyna-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOMINC-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOMovie-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOPLY-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOParallel-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOParallelXML-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOSQL-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOTecplotTable-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOVideo-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingMorphological-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingStatistics-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingStencil-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkInteractionImage-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingContextOpenGL2-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingImage-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingLOD-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingVolumeOpenGL2-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkViewsContext2D-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkViewsInfovis-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkDomainsChemistry-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkWrappingPython27Core-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkverdict-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkproj4-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersAMR-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOExport-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingGL2PSOpenGL2-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkgl2ps-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtklibharu-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtklibxml2-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkoggtheora-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersParallel-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkexoIIc-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOGeometry-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIONetCDF-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtknetcdfcpp-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkNetCDF-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkhdf5_hl-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkhdf5-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkjsoncpp-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkParallelCore-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOLegacy-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtksqlite-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingOpenGL2-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkglew-8.1.so.1
+main: /usr/lib64/libSM.so
+main: /usr/lib64/libICE.so
+main: /usr/lib64/libX11.so
+main: /usr/lib64/libXext.so
+main: /usr/lib64/libXt.so
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingMath-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkChartsCore-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingContext2D-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersImaging-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkInfovisLayout-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkInfovisCore-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkViewsCore-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkInteractionWidgets-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersHybrid-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingGeneral-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingSources-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersModeling-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingHybrid-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOImage-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkDICOMParser-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkmetaio-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkpng-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtktiff-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkjpeg-8.1.so.1
+main: /usr/lib64/libm.so
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkInteractionStyle-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersExtraction-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersStatistics-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingFourier-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkalglib-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingAnnotation-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingColor-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingVolume-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkImagingCore-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOXML-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOXMLParser-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkIOCore-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtklz4-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkexpat-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingLabel-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingFreeType-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkRenderingCore-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonColor-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersGeometry-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersSources-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersGeneral-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonComputationalGeometry-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkFiltersCore-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonExecutionModel-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonDataModel-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonMisc-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonSystem-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtksys-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonTransforms-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonMath-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkCommonCore-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkfreetype-8.1.so.1
+main: /share/apps/graphical/vtk-8.1.0/lib/libvtkzlib-8.1.so.1
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rolandas/Desktop/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rolandas/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -317,6 +263,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend: src/Kernel.cl.c
-	cd /home/rolandas/Desktop/CountingSort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rolandas/Desktop/CountingSort /home/rolandas/Desktop/CountingSort /home/rolandas/Desktop/CountingSort/build /home/rolandas/Desktop/CountingSort/build /home/rolandas/Desktop/CountingSort/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/rolandas/CountingSort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rolandas/CountingSort /home/rolandas/CountingSort /home/rolandas/CountingSort/build /home/rolandas/CountingSort/build /home/rolandas/CountingSort/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 

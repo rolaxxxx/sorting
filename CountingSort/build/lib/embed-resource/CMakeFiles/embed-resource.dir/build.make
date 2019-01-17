@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /share/apps/compilers/cmake-3.10.3/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E remove -f
+RM = /share/apps/compilers/cmake-3.10.3/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rolandas/Desktop/CountingSort
+CMAKE_SOURCE_DIR = /home/rolandas/CountingSort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rolandas/Desktop/CountingSort/build
+CMAKE_BINARY_DIR = /home/rolandas/CountingSort/build
 
 # Include any dependencies generated for this target.
 include lib/embed-resource/CMakeFiles/embed-resource.dir/depend.make
@@ -59,16 +59,16 @@ include lib/embed-resource/CMakeFiles/embed-resource.dir/flags.make
 
 lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.o: lib/embed-resource/CMakeFiles/embed-resource.dir/flags.make
 lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.o: ../lib/embed-resource/embedresource.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/Desktop/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.o"
-	cd /home/rolandas/Desktop/CountingSort/build/lib/embed-resource && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/embed-resource.dir/embedresource.cpp.o -c /home/rolandas/Desktop/CountingSort/lib/embed-resource/embedresource.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.o"
+	cd /home/rolandas/CountingSort/build/lib/embed-resource && /share/apps/compilers/gcc-7.3.0/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/embed-resource.dir/embedresource.cpp.o -c /home/rolandas/CountingSort/lib/embed-resource/embedresource.cpp
 
 lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/embed-resource.dir/embedresource.cpp.i"
-	cd /home/rolandas/Desktop/CountingSort/build/lib/embed-resource && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Desktop/CountingSort/lib/embed-resource/embedresource.cpp > CMakeFiles/embed-resource.dir/embedresource.cpp.i
+	cd /home/rolandas/CountingSort/build/lib/embed-resource && /share/apps/compilers/gcc-7.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/CountingSort/lib/embed-resource/embedresource.cpp > CMakeFiles/embed-resource.dir/embedresource.cpp.i
 
 lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/embed-resource.dir/embedresource.cpp.s"
-	cd /home/rolandas/Desktop/CountingSort/build/lib/embed-resource && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Desktop/CountingSort/lib/embed-resource/embedresource.cpp -o CMakeFiles/embed-resource.dir/embedresource.cpp.s
+	cd /home/rolandas/CountingSort/build/lib/embed-resource && /share/apps/compilers/gcc-7.3.0/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/CountingSort/lib/embed-resource/embedresource.cpp -o CMakeFiles/embed-resource.dir/embedresource.cpp.s
 
 lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.o.requires:
 
@@ -90,11 +90,11 @@ embed__resource_EXTERNAL_OBJECTS =
 
 lib/embed-resource/embed-resource: lib/embed-resource/CMakeFiles/embed-resource.dir/embedresource.cpp.o
 lib/embed-resource/embed-resource: lib/embed-resource/CMakeFiles/embed-resource.dir/build.make
-lib/embed-resource/embed-resource: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-lib/embed-resource/embed-resource: /usr/lib/x86_64-linux-gnu/libboost_system.so
+lib/embed-resource/embed-resource: /share/apps/devel/boost_1_66_0/lib/libboost_filesystem.so
+lib/embed-resource/embed-resource: /share/apps/devel/boost_1_66_0/lib/libboost_system.so
 lib/embed-resource/embed-resource: lib/embed-resource/CMakeFiles/embed-resource.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rolandas/Desktop/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable embed-resource"
-	cd /home/rolandas/Desktop/CountingSort/build/lib/embed-resource && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/embed-resource.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rolandas/CountingSort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable embed-resource"
+	cd /home/rolandas/CountingSort/build/lib/embed-resource && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/embed-resource.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/embed-resource/CMakeFiles/embed-resource.dir/build: lib/embed-resource/embed-resource
@@ -106,10 +106,10 @@ lib/embed-resource/CMakeFiles/embed-resource.dir/requires: lib/embed-resource/CM
 .PHONY : lib/embed-resource/CMakeFiles/embed-resource.dir/requires
 
 lib/embed-resource/CMakeFiles/embed-resource.dir/clean:
-	cd /home/rolandas/Desktop/CountingSort/build/lib/embed-resource && $(CMAKE_COMMAND) -P CMakeFiles/embed-resource.dir/cmake_clean.cmake
+	cd /home/rolandas/CountingSort/build/lib/embed-resource && $(CMAKE_COMMAND) -P CMakeFiles/embed-resource.dir/cmake_clean.cmake
 .PHONY : lib/embed-resource/CMakeFiles/embed-resource.dir/clean
 
 lib/embed-resource/CMakeFiles/embed-resource.dir/depend:
-	cd /home/rolandas/Desktop/CountingSort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rolandas/Desktop/CountingSort /home/rolandas/Desktop/CountingSort/lib/embed-resource /home/rolandas/Desktop/CountingSort/build /home/rolandas/Desktop/CountingSort/build/lib/embed-resource /home/rolandas/Desktop/CountingSort/build/lib/embed-resource/CMakeFiles/embed-resource.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/rolandas/CountingSort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rolandas/CountingSort /home/rolandas/CountingSort/lib/embed-resource /home/rolandas/CountingSort/build /home/rolandas/CountingSort/build/lib/embed-resource /home/rolandas/CountingSort/build/lib/embed-resource/CMakeFiles/embed-resource.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/embed-resource/CMakeFiles/embed-resource.dir/depend
 

@@ -1,0 +1,4 @@
+An Sau  8 11:41:58 EET 2019
+compute-0-7.local
+/home/rolandas/CountingSort/build
+0.0139289 sekundziu
