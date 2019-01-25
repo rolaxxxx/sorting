@@ -1,5 +1,4 @@
-Kt Sau 17 13:42:32 EET 2019
+Pn Sau 25 13:37:39 EET 2019
 gpu-0-1.local
 /home/rolandas/CountingSort/build
-laikas sekundemis 0.911964
-kaimynu skaicius celese 20430628
+slurmstepd: error: *** JOB 10625 ON gpu-0-1 CANCELLED AT 2019-01-25T13:45:23 ***
