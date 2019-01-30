@@ -102,27 +102,31 @@ int main(int, char *[])
 
 	int kiekis=reader->GetOutput()->GetNumberOfPoints();
 	//cout << kiekis << endl;
-	vector<boost::compute::float4_>coords(kiekis*4);
-	compute::vector<boost::compute::float4_>device_coords(kiekis*4);
+	vector<boost::compute::double4_>coords(kiekis);
+	compute::vector<boost::compute::double4_>device_coords(kiekis);
 	compute::vector<int>mortoncodes(kiekis);
 	vector<int>mortoncodes_from_device(kiekis);
 	compute::vector<double>device_bounds(6);
-		for(int i=0;i<kiekis;i+=4) // po keturis kad neperasyti jau buvusiu daleliu 
+		for(int i=0;i<kiekis;i++)  
 			    {
-        	 double  p[3]; // ar galima sitaip castinti nuskaitant elementus
+        	 double  p[4]; // ar galima sitaip castinti nuskaitant elementus
         	reader->GetOutput()->GetPoint(i,p);
-		coords[i]  =(boost::compute::float4_)p[0];
-		coords[i+1]=(boost::compute::float4_)p[1];
-		coords[i+2]=(boost::compute::float4_)p[2];
-		coords[i+3]=(boost::compute::float4_)reader->GetOutput()->GetPointData()->GetArray("RADIUS")->GetTuple1(0); // radiusas ketvirtame elemente;
-		//cout <<  coords[i] <<  " " << coords[i+1] << " " << coords[i+2] << " " << coords[i+3] <<  endl;
+		boost::compute::double4_ tempCoords;
+
+		tempCoords[0]=p[0];
+		tempCoords[1]=p[1];
+		tempCoords[2]=p[2];
+		//coords[i+3]=reader->GetOutput()->GetPointData()->GetArray("RADIUS")->GetTuple1(0); // radiusas ketvirtame elemente;
+		p[3]=reader->GetOutput()->GetPointData()->GetArray("RADIUS")->GetTuple1(0); 
+		tempCoords[3]=p[3];
+		coords[i]=tempCoords;
 	    		    	}
 	vector<int>particle_indexes(kiekis); //host vektorius formuoti pirmaji masyva 
-	compute::vector<int>device_particle_indexes(kiekis*2-1);// du masyvai skirti saugoti medi  
-	compute::vector<int>device_tree_with_connections(kiekis*7-4); // kiekvienas node gales buti skaidomas i 10 lygiu ;;; koks dydis turetu buti sito masyvo kad tiksliai atitaikyti bendra dydi i kiek issiskaido  
+	compute::vector<int>device_particle_indexes(kiekis*2+1);// du masyvai skirti saugoti medi  
+	compute::vector<int>device_tree_with_connections(kiekis); // kiekvienas node gales buti skaidomas i 10 lygiu ;;; koks dydis turetu buti sito masyvo kad tiksliai atitaikyti bendra dydi i kiek issiskaido  
 ////kopijavimas i device
-	vector<int>particle_indexes_from_device(kiekis*2-1);
-	vector<int>host_tree_with_connections(kiekis*7-4);
+	vector<int>particle_indexes_from_device(kiekis);
+	vector<int>host_tree_with_connections(kiekis);
 	//uzpildome daleliu masyva ju id
     compute::copy(coords.begin(), coords.end(), device_coords.begin(), compute::system::default_queue());
     compute::system::default_queue().finish();
@@ -138,7 +142,7 @@ int main(int, char *[])
     kernel.set_arg(3, device_particle_indexes);
     
 	//mortoncode kernel
-    boost::compute::system::default_queue().enqueue_1d_range_kernel(kernel, 0, kiekis, 0).wait();
+//    boost::compute::system::default_queue().enqueue_1d_range_kernel(kernel, 0, kiekis, 0).wait();
     
 	srand(time(0));       
     compute::stable_sort_by_key(mortoncodes.begin(), mortoncodes.end(), device_particle_indexes.begin(),  compute::system::default_queue()); // rusiavimas 2*kiekis-1 ir kiekis
@@ -150,7 +154,7 @@ int main(int, char *[])
     kernel2.set_arg(2, device_particle_indexes);
     kernel2.set_arg(3, kiekis);
     
-    compute::system::default_queue().enqueue_1d_range_kernel(kernel2, 0, kiekis, 0).wait();    
+  //  compute::system::default_queue().enqueue_1d_range_kernel(kernel2, 0, kiekis, 0).wait();    
     //cout << kiekis << endl;
     compute::stable_sort_by_key(mortoncodes.begin(), mortoncodes.end(),  device_particle_indexes.begin(),  compute::system::default_queue()); // rusiavimas 2*kiekis$
     compute::system::default_queue().finish();
@@ -169,7 +173,7 @@ int main(int, char *[])
     kernel3.set_arg(0, device_particle_indexes);
     kernel3.set_arg(1, device_tree_with_connections);
     kernel3.set_arg(2, kiekis);
-    boost::compute::system::default_queue().enqueue_1d_range_kernel(kernel3, 0, kiekis*2, 0).wait();
+    //boost::compute::system::default_queue().enqueue_1d_range_kernel(kernel3, 0, kiekis, 0).wait();
 
     iter=compute::unique(device_tree_with_connections.begin(), device_tree_with_connections.end(),  compute::system::default_queue());
     kiekis=distance(device_tree_with_connections.begin(), iter); //perrasau kieki su nauja pabaiga
@@ -180,8 +184,8 @@ int main(int, char *[])
     compute::copy(device_tree_with_connections.begin(), device_tree_with_connections.end() , host_tree_with_connections.begin()); //perkopijuoju elementus su nauja pabaiga
     compute::system::default_queue().finish();
 
-    for(int i=0;i<kiekis*7-4;i++){
-          cout << host_tree_with_connections[i] << " " ;
+    for(int i=0;i<kiekis;i++){
+//          cout << host_tree_with_connections[i] << " " ;
 }    
 
 
