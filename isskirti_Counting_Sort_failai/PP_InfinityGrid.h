@@ -11,11 +11,6 @@ public:
   virtual void PreExecuteModule(SimulationParameters &simulationParameters,
                                 Data &duomenys);
 
-  ULONG_ARRAY CELL_AND_PARTICLE_IDS;
-  ULONG_ARRAY NEW_CELL_AND_PARTICLE_IDS;
-  ULONG_ARRAY STARTAS;
-  ULONG_ARRAY ENDAS;
-
   INT_ARRAY IDS;
   INT_ARRAY OFFSET;
   INT_ARRAY GRID_COUNT;  
