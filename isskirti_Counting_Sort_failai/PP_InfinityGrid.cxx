@@ -4,6 +4,39 @@ using namespace std;
 PP_InfinityGrid::PP_InfinityGrid() {}
 void PP_InfinityGrid::Init(SimulationParameters &simulationParameters,
                            Data &duomenys) {
+
+  std::stringstream source;
+  simulationParameters.CONTACT_SEARCH.HASH_TABLE=duomenys.PARTICLES.NUMBER_OF_PARTICLES;
+
+simulationParameters.CONTACT_SEARCH.CELL_SIZE = simulationParameters.READER.MAX_RADIUS*2;
+
+
+  source << "__constant INT HASH_TABLE_SIZE="
+         << simulationParameters.CONTACT_SEARCH.HASH_TABLE << ";\n";
+  source << "__constant "
+         << " REAL CELL_SIZE="
+         << GetDoubleFloatString(simulationParameters.CONTACT_SEARCH.CELL_SIZE)
+         << ";\n";
+  source << "__constant "
+         << " REAL INV_CELL_SIZE="
+         << GetDoubleFloatString(1.0 /
+                                 simulationParameters.CONTACT_SEARCH.CELL_SIZE)
+         << ";\n";
+  source << "__constant "
+         << " REAL SKIN_SIZE="
+         << GetDoubleFloatString(simulationParameters.CONTACT_SEARCH.SKIN)
+         << ";\n";
+
+  Resource text = LOAD_RESOURCE(PP_InfinityGrid_cl);
+  source << std::string(text.data(), text.size());
+
+  Logger::getInstance()->LoggerBuild->info(std::string(
+      GetDefaultSources(simulationParameters, duomenys) + source.str()));
+  program = boost::compute::program::create_with_source(
+      GetDefaultSources(simulationParameters, duomenys) + source.str(),
+      boost::compute::system::default_context());
+  program.build(OPENCL_COMPILE_OPTIONS);
+  
   GRID_ADD = boost::compute::kernel(program, "GridAddition");
   GRID_COUNTSORT= boost::compute::kernel(program, "GridCountSort");   
   GRID_NEIGHBOUR_SEARCH= boost::compute::kernel(program, "NeighbourSearch");
@@ -48,17 +81,21 @@ void PP_InfinityGrid::Init(SimulationParameters &simulationParameters,
     GRID_NEIGHBOUR_SEARCH.set_arg(8, simulationParameters.READER.BOUNDS_MIN);
     GRID_NEIGHBOUR_SEARCH.set_arg(9, simulationParameters.READER.BOUNDS_MAX);
     GRID_NEIGHBOUR_SEARCH.set_arg(10,IDS);
+
 }
-#include <boost/compute/algorithm/detail/radix_sort.hpp>
 void PP_InfinityGrid::PostExecuteModule(
-    SimulationParameters &simulationParameters, Data &duomenys) {
+    SimulationParameters &simulationParameters, Data &duomenys) {     
      boost::compute::fill(GRID_COUNT.begin(), GRID_COUNT.end(),0);  
      boost::compute::system::default_queue().enqueue_1d_range_kernel(GRID_ADD , 0, duomenys.PARTICLES.NUMBER_OF_PARTICLES, 0).wait();
      boost::compute::exclusive_scan(GRID_COUNT.begin(), GRID_COUNT.end(), OFFSET.begin());
      boost::compute::system::default_queue().finish();
      boost::compute::fill(GRID_COUNT.begin(),GRID_COUNT.end(),0);
-     boost::compute::system::default_queue().finish();
-     
+     boost::compute::system::default_queue().finish();     
      boost::compute::system::default_queue().enqueue_1d_range_kernel(GRID_COUNTSORT, 0, duomenys.PARTICLES.NUMBER_OF_PARTICLES, 0).wait(); 
      boost::compute::system::default_queue().enqueue_1d_range_kernel(GRID_NEIGHBOUR_SEARCH, 0, duomenys.PARTICLES.NUMBER_OF_PARTICLES, 0).wait();
 }
+
+void PP_InfinityGrid::PreExecuteModule(
+    SimulationParameters &simulationParameters, Data &duomenys) {}
+	
+
