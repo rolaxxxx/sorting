@@ -4,27 +4,11 @@ using namespace std;
 PP_InfinityGrid::PP_InfinityGrid() {}
 void PP_InfinityGrid::Init(SimulationParameters &simulationParameters,
                            Data &duomenys) {
-
   std::stringstream source;
-  simulationParameters.CONTACT_SEARCH.HASH_TABLE=duomenys.PARTICLES.NUMBER_OF_PARTICLES;
-
-simulationParameters.CONTACT_SEARCH.CELL_SIZE = simulationParameters.READER.MAX_RADIUS*2;
-
-
-  source << "__constant INT HASH_TABLE_SIZE="
-         << simulationParameters.CONTACT_SEARCH.HASH_TABLE << ";\n";
+  simulationParameters.CONTACT_SEARCH.CELL_SIZE = simulationParameters.READER.MAX_RADIUS*2;
   source << "__constant "
          << " REAL CELL_SIZE="
          << GetDoubleFloatString(simulationParameters.CONTACT_SEARCH.CELL_SIZE)
-         << ";\n";
-  source << "__constant "
-         << " REAL INV_CELL_SIZE="
-         << GetDoubleFloatString(1.0 /
-                                 simulationParameters.CONTACT_SEARCH.CELL_SIZE)
-         << ";\n";
-  source << "__constant "
-         << " REAL SKIN_SIZE="
-         << GetDoubleFloatString(simulationParameters.CONTACT_SEARCH.SKIN)
          << ";\n";
 
   Resource text = LOAD_RESOURCE(PP_InfinityGrid_cl);
