@@ -1,0 +1,13 @@
+daleliu reiksmes turi buti [a, b] intervale
+F vektorius daleliu kurios sudaro jau ikeltas i erdve daleles kurios lieciasi viena su kita
+kiekviena sugeneruota dalele automatiskai ikeliama i vektoriu
+jeigu negalima ikelti i erdve sferos kuri yra tangentine elementui bei dviems jos kaimynams s() yra pasalinama is F
+s(c,r) - su C - centru bei R - radius . Kiekvienoje iteracijoje vis nauja sfera ipakuojama kuri kontaktuoja su atsitiktinai pasirinkta s() sfera bei dviejomis s() sferos kaimynemis. sios sferos yra kaimynes su s() tik tada kai atskirtis nuo ju yra mazesne nei 2R tai yra d(c(), ci)<= r() + ri + 2r (Euclidean distance )
+V tai s() kaimynu vektorius. taip pat V galime apibrezti kaip visas sferas kurios sutampa su Sv= s(c(), r() + 2R)
+
+
+
+
+
+
+
