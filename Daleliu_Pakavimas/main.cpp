@@ -1,26 +1,30 @@
-#include <vtkVersion.h>
-#include <vtkSmartPointer.h>
-#include <vtkSphereSource.h>
-#include <vtkPolyData.h>
-#include <vtkPoints.h>
-#include <vtkGlyph3D.h>
-#include <vtkCellArray.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkProperty.h>
-#include <vtkActor.h>
-#include <vtkRenderWindow.h>
-#include <vtkRenderer.h>
-#include <vtkRenderWindowInteractor.h>
-#include <vtkPointData.h>
-#include <vtkCubeSource.h>
-#include <vtkDoubleArray.h>
+#include <includes.h>
 
 int main(int, char *[])
 {
-  vtkSmartPointer<vtkPoints> points =
+
+
+  Geometry geometry;
+  geometry.skirstinioFormavimas();
+
+
+
+  /*vtkSmartPointer<vtkPoints> points =
    vtkSmartPointer<vtkPoints>::New();
   vtkSmartPointer<vtkDoubleArray> radius =
    vtkSmartPointer<vtkDoubleArray>::New();
+
+  points->InsertNextPoint(1,1,1);
+  radius->InsertNextTuple1(1);
+  points->InsertNextPoint(3,1,1);
+  radius->InsertNextTuple1(1);
+  points->InsertNextPoint(1.2,3.2,1);
+  radius->InsertNextTuple1(1.2);
+  points->InsertNextPoint(3,3.2,1);
+  radius->InsertNextTuple1(1);
+
+
+
 
   for(int i=0;i<19;i++){
       for(int j=0;j<19;j++){
@@ -30,6 +34,7 @@ int main(int, char *[])
 }
       }
   }
+
   vtkSmartPointer<vtkPolyData> polydata =
     vtkSmartPointer<vtkPolyData>::New();
   polydata->SetPoints(points);
@@ -61,7 +66,7 @@ polydata->GetPointData()->SetScalars(radius);
 
   vtkSmartPointer<vtkCubeSource> cubeSource =
     vtkSmartPointer<vtkCubeSource>::New();
-  cubeSource.Get()->SetBounds(0,20,0,20,0,20);
+  cubeSource.Get()->SetBounds(0,1,0,1,0,1);
   //cubeSource.GetProperty()->SetOpacity(.4);
   // Visualize
   vtkSmartPointer<vtkPolyDataMapper> mapper =
@@ -99,6 +104,7 @@ polydata->GetPointData()->SetScalars(radius);
   renderWindowInteractor->Start();
 
   return EXIT_SUCCESS;
+  */
 }
 
 

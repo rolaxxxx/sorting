@@ -1,9 +1,27 @@
-daleliu reiksmes turi buti [a, b] intervale
-F vektorius daleliu kurios sudaro jau ikeltas i erdve daleles kurios lieciasi viena su kita
-kiekviena sugeneruota dalele automatiskai ikeliama i vektoriu
-jeigu negalima ikelti i erdve sferos kuri yra tangentine elementui bei dviems jos kaimynams s() yra pasalinama is F
-s(c,r) - su C - centru bei R - radius . Kiekvienoje iteracijoje vis nauja sfera ipakuojama kuri kontaktuoja su atsitiktinai pasirinkta s() sfera bei dviejomis s() sferos kaimynemis. sios sferos yra kaimynes su s() tik tada kai atskirtis nuo ju yra mazesne nei 2R tai yra d(c(), ci)<= r() + ri + 2r (Euclidean distance )
-V tai s() kaimynu vektorius. taip pat V galime apibrezti kaip visas sferas kurios sutampa su Sv= s(c(), r() + 2R)
+D vektorius kuriame yra daleles kuriu koordinates yra tarp [a,b]
+F vektorius kuri reikes pildyti kaskart ikeliant ir bandant ideti nauja dalele
+s(c,r) REAL2 kintamasis apibreziantis dalele kiekvienoje iteracijoje
+s()=s(c(),r()) atsitiktinai pasirinkta dalele is F vektoriaus
+taip pat paimami ir s() kaimynai Si=s(ci, ri),  Si yra kaimynas tik tada jeigu ju atskirtis yra mazesne nei 2r arba d(c(),ci)<=r()+ri+2r 
+vektorius V visi kaimynai kuriu atskirtis tarp s() ir si yra mazesne nei 2R arba d(c(), ci)<=r()+ri+2r ( visos daleles kurioms nebegalima priskirti kaimynu)
+
+f vektorius visu daleliu kurios kontaktuoja su atsitiktinai paimtomis s1, s2, s3 yra 
+tarp G boundu ir neuzdengia nei vieno V elemento f(s1,s2,s3,G,V,R)
+
+Sv=s(c(), r() + 2R)
+kintamasis kuris apibrezia vieta kurioje bus ikeliama s() dalele c centras, R spindulys
+
+
+kaip randamas S0 kaimynas
+kaip persokama prie kito S0 jeigu jis perkeliamas i V vektoriu?
+kaip pasirenkama S0 vieta?
+
+
+
+
+
+
+
 
 
 
