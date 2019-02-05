@@ -1,15 +1,28 @@
-#include <includes.h>
-
+#include "includes.h"
+#include "geometry.h"
+#include "dalele.h"
+#include "grid_count.h"
+#include "map_bounds.h"
 int main(int, char *[])
 {
 
 
-  Geometry geometry;
-  geometry.skirstinioFormavimas();
+
+    Dalele particle;
+    particle.DalelesDuomenuApibrezimas();
+    MAP_BOUNDS boundai;
+    boundai.MAP_DUOMENYS(boundai.MAP_BOUNDS_MIN,boundai.MAP_BOUNDS_MAX,boundai.CELLSIZE, boundai.Nx, boundai.Ny, boundai.Nz);
+    Geometry geometrija;
+    geometrija.skirstinioFormavimas(particle);
+    particle.Triju_DaleliuGeneracija(particle.min, particle.max, boundai, particle);
+
+    for(int i=0;i<particle.Distribution.size();i++){
+        //cout << particle.Distribution[i] << endl;
+    }
 
 
-
-  /*vtkSmartPointer<vtkPoints> points =
+/*
+  vtkSmartPointer<vtkPoints> points =
    vtkSmartPointer<vtkPoints>::New();
   vtkSmartPointer<vtkDoubleArray> radius =
    vtkSmartPointer<vtkDoubleArray>::New();
@@ -104,7 +117,7 @@ polydata->GetPointData()->SetScalars(radius);
   renderWindowInteractor->Start();
 
   return EXIT_SUCCESS;
-  */
+ */
 }
 
 

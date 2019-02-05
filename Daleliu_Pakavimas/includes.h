@@ -79,8 +79,11 @@
 #include <vtkRenderWindowInteractor.h>
 #include <vtkPointData.h>
 #include <vtkCubeSource.h>
+#include <math.h>
+#include <stdlib.h>
+#include <time.h>
 #include <vtkDoubleArray.h>
-
+//#include "geometry.h"
 typedef boost::compute::double_ REAL;
 typedef boost::compute::double4_ REAL4;
 typedef boost::compute::uint_ UINT;
@@ -101,11 +104,5 @@ typedef CONTAINER_TYPE<INT2> INT2_ARRAY;
 typedef CONTAINER_TYPE<UINT4> UINT4_ARRAY;
 typedef CONTAINER_TYPE<ULONG> ULONG_ARRAY;
 typedef CONTAINER_TYPE<UCHAR> UCHAR_ARRAY;
-
-class includes
-{
-public:
-    includes();
-};
 
 #endif // INCLUDES_H

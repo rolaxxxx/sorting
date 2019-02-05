@@ -23,18 +23,17 @@ find_package(OpenCL)
 include_directories(${OpenCL_INCLUDE_DIR})
 
 set(SOURCE_FILES
-    dalele.cpp
-    dalele.h
-    main.cpp
     geometry.cpp
     geometry.h
+    main.cpp
+    includes.h
+    dalele.cpp
+    dalele.h
     grid_count.cpp
     grid_count.h
-    calculations.h
-    calculations.cpp
-    packing_algorithm.cpp
-    packing_algorithm.h
-    includes.h
+    map_bounds.h
+    map_bounds.cpp
+
 )
 find_package(Qt5Core)
 

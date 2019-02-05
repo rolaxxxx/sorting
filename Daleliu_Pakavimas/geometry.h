@@ -1,20 +1,13 @@
 #ifndef GEOMETRY_H
 #define GEOMETRY_H
-#include <includes.h>
+#include "includes.h"
+#include "dalele.h"
 typedef boost::compute::double_ REAL;
 class Geometry
 {
 public:
-    Geometry();
-    REAL newSpindulys;
-    REAL min,max;
-    void skirstinioFormavimas();
-};
-void Geometry::skirstinioFormavimas()
-{
-    Geometry geometry;
-    cout << "Iveskite skirstinio ribas  min   max   " << endl;
-    cin >> geometry.min >> geometry.max;
 
-}
+    void skirstinioFormavimas(Dalele &particle);
+};
+
 #endif // GEOMETRY_H
