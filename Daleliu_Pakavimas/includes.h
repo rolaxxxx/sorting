@@ -59,6 +59,7 @@
 #include <iostream>
 #include <boost/compute/utility/wait_list.hpp>
 #include <vector>
+#include <map>
 #include <chrono>
 #include <math.h>
 #include <boost/compute/system.hpp>
@@ -82,6 +83,8 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+using namespace std;
+#include <vector>
 #include <vtkDoubleArray.h>
 //#include "geometry.h"
 typedef boost::compute::double_ REAL;

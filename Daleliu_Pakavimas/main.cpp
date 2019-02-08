@@ -9,18 +9,31 @@ int main(int, char *[])
 
 
     Dalele particle;
-    particle.DalelesDuomenuApibrezimas();
-    MAP_BOUNDS boundai;
-    boundai.MAP_DUOMENYS(boundai.MAP_BOUNDS_MIN,boundai.MAP_BOUNDS_MAX,boundai.CELLSIZE, boundai.Nx, boundai.Ny, boundai.Nz);
     Geometry geometrija;
+    MAP_BOUNDS boundai;
+    GRID_COUNT gridas;
+    particle.DalelesDuomenuApibrezimas();
+    boundai.MAP_DUOMENYS(boundai.MAP_BOUNDS_MIN,boundai.MAP_BOUNDS_MAX,boundai.CELLSIZE, boundai.Nx, boundai.Ny, boundai.Nz);
     geometrija.skirstinioFormavimas(particle);
     particle.Triju_DaleliuGeneracija(particle.min, particle.max, boundai, particle);
-
-    for(int i=0;i<particle.Distribution.size();i++){
-        //cout << particle.Distribution[i] << endl;
-    }
-
-
+    gridas.GRIDAS(boundai.MAP_BOUNDS_MIN, boundai.MAP_BOUNDS_MAX, boundai.CELLSIZE, boundai.Nx, boundai.Ny, boundai.Nz, particle.F ,gridas.SUFORMUOTAS_GRIDAS);
+    map<INT, INT>::iterator itr;
+    for (itr = gridas.SUFORMUOTAS_GRIDAS.begin(); itr != gridas.SUFORMUOTAS_GRIDAS.end(); ++itr) {
+            cout << '\t' << itr->first
+                 << '\t' << itr->second << '\n';
+        }
+    //cout << gridas.SUFORMUOTAS_GRIDAS.size() << endl;
+   // for(auto const& pair: gridas.SUFORMUOTAS_GRIDAS){
+      //  cout << pair.first << " " << pair.second <<  " " << particle.F.size() << endl;
+   // }
+    //map<INT, INT> gquiz1;
+     //map<INT, INT>::iterator itr;
+    //gquiz1.insert(pair<INT, INT>(1, 40));
+    /*for (itr = gquiz1.begin(); itr != gquiz1.end(); ++itr) {
+            cout << '\t' << itr->first
+                 << '\t' << itr->second << '\n';
+        }
+*/
 /*
   vtkSmartPointer<vtkPoints> points =
    vtkSmartPointer<vtkPoints>::New();

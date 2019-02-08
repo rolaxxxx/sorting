@@ -3,12 +3,21 @@
 #include "includes.h"
 #include "dalele.h"
 #include "geometry.h"
+#include "map_bounds.h"
+
 class GRID_COUNT
 {
 public:
-
-    void GRIDAS(INT &Nx, INT &Ny, INT &Nz, INT &CELLSIZE, Geometry geometrija, Dalele particle);
-
+    map<INT, INT> SUFORMUOTAS_GRIDAS;
+    void GRIDAS(REAL4 MAP_BOUNDS_MIN, REAL4 MAP_BOUNDS_MAX, INT CELLSIZE, INT Nx, INT Ny, INT Nz, REAL4_ARRAY F, map<INT, INT> &SUFORMUOTAS_GRIDAS);
+    /*GRID_COUNT operator-()  {
+        REAL4 TEMP_PARTICLE_COORDS;
+        MAP_BOUNDS map_boundai;
+        REAL4 coord_rez;
+         coord_rez=TEMP_PARTICLE_COORDS-map_boundai.MAP_BOUNDS_MIN;
+                 return coord_rez;
+       }
+      */
 };
 
 #endif // GRID_COUNT_H

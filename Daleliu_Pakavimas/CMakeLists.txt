@@ -33,7 +33,12 @@ set(SOURCE_FILES
     grid_count.h
     map_bounds.h
     map_bounds.cpp
-
+    pakavimo_algoritmas.cpp
+    pakavimo_algoritmas.h
+    tasko_skaiciavimas.cpp
+    tasko_skaiciavimas.h
+    grid_neighbors.cpp
+    grid_neighbors.h
 )
 find_package(Qt5Core)
 

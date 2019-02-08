@@ -10,20 +10,58 @@ void Dalele::DalelesDuomenuApibrezimas()
 void Dalele::Triju_DaleliuGeneracija(INT min, INT max, MAP_BOUNDS map_boundai, Dalele particle){
     REAL4 tempDalele;
     INT idx;
-    tempDalele[0]=(map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2);
-    tempDalele[1]=(map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2);
-    tempDalele[2]=(map_boundai.MAP_BOUNDS_MAX[2]-map_boundai.MAP_BOUNDS_MAX[2]/2);
-    idx=rand()%particle.Distribution.size();
-    tempDalele[3]=particle.Distribution[idx];
-    cout << tempDalele[3] << endl;
-    particle.F.push_back(tempDalele);
-
     vtkSmartPointer<vtkPoints> points =
          vtkSmartPointer<vtkPoints>::New();
     vtkSmartPointer<vtkDoubleArray> radius =
          vtkSmartPointer<vtkDoubleArray>::New();
+    //cout << (map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2) <<" "<< (map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2)<< endl;
+
+
+
+
+
+    tempDalele[0]=((map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2));
+    tempDalele[1]=(map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2);
+    tempDalele[2]=((map_boundai.MAP_BOUNDS_MAX[2]-map_boundai.MAP_BOUNDS_MAX[2]/2));
+    idx=rand()%particle.Distribution.size();
+    tempDalele[3]=particle.Distribution[idx];
     points->InsertNextPoint(tempDalele[0],tempDalele[1],tempDalele[2]);
     radius->InsertNextTuple1(tempDalele[3]);
+    particle.F.push_back(tempDalele);
+
+    //cout <<((map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2)+idx) << endl;
+    //cout << map_boundai.MAP_BOUNDS_MAX[0]<< " " << map_boundai.MAP_BOUNDS_MAX[0]/2<< " " <<idx << endl;
+    tempDalele[0]=((map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2)+2*tempDalele[3]);
+    tempDalele[1]=(map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2);
+    tempDalele[2]=((map_boundai.MAP_BOUNDS_MAX[2]-map_boundai.MAP_BOUNDS_MAX[2]/2));
+    idx=rand()%particle.Distribution.size();
+    tempDalele[3]=particle.Distribution[idx];
+    //cout << tempDalele[3] << endl;
+    particle.F.push_back(tempDalele);
+    points->InsertNextPoint(tempDalele[0],tempDalele[1],tempDalele[2]);
+    radius->InsertNextTuple1(tempDalele[3]);
+
+     tempDalele[0]=(map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2+tempDalele[3]);
+     tempDalele[1]=(map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2+tempDalele[3]);
+     tempDalele[2]=(map_boundai.MAP_BOUNDS_MAX[2]-map_boundai.MAP_BOUNDS_MAX[2]/2+tempDalele[3]);
+     idx=rand()%particle.Distribution.size();
+     tempDalele[3]=particle.Distribution[idx];
+     particle.F.push_back(tempDalele);
+     points->InsertNextPoint(tempDalele[0],tempDalele[1],tempDalele[2]);
+     radius->InsertNextTuple1(tempDalele[3]);
+/*
+     tempDalele[0]=(map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2-tempDalele[3]);
+      tempDalele[1]=(map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2+tempDalele[3]);
+      tempDalele[2]=(map_boundai.MAP_BOUNDS_MAX[2]-map_boundai.MAP_BOUNDS_MAX[2]/2-tempDalele[3]);
+      idx=rand()%particle.Distribution.size();
+      tempDalele[3]=particle.Distribution[idx];
+      cout << tempDalele[3] << endl;
+      particle.F.push_back(tempDalele);
+      points->InsertNextPoint(tempDalele[0],tempDalele[1],tempDalele[2]);
+      radius->InsertNextTuple1(tempDalele[3]);
+      // ar teisingai ideta trecia dalele nes ji lieciasi siektiek su kitomis nors ir atstumas yra 3
+*/
+
     vtkSmartPointer<vtkPolyData> polydata =
       vtkSmartPointer<vtkPolyData>::New();
     polydata->SetPoints(points);
@@ -55,7 +93,8 @@ void Dalele::Triju_DaleliuGeneracija(INT min, INT max, MAP_BOUNDS map_boundai, D
 
     vtkSmartPointer<vtkCubeSource> cubeSource =
       vtkSmartPointer<vtkCubeSource>::New();
-    cubeSource.Get()->SetBounds(0, 100, 0, 100, 0 ,100);
+    cubeSource.Get()->SetBounds(map_boundai.MAP_BOUNDS_MIN[0], map_boundai.MAP_BOUNDS_MAX[0],
+            map_boundai.MAP_BOUNDS_MIN[1], map_boundai.MAP_BOUNDS_MAX[1], map_boundai.MAP_BOUNDS_MIN[2] ,map_boundai.MAP_BOUNDS_MAX[2]);
     //cubeSource.GetProperty()->SetOpacity(.4);
     // Visualize
     vtkSmartPointer<vtkPolyDataMapper> mapper =
