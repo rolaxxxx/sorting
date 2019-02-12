@@ -157,6 +157,126 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="jj">
+				<Option output="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/jj" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEBUG_INFORMATION"/>
+					<Add option="-DOPENCL_COMPILE_OPTIONS=&quot;-Werror&quot;"/>
+					<Add option="-DBOOST_COMPUTE_DEBUG_KERNEL_COMPILATION"/>
+					<Add option="-DBOOST_LOG_DYN_LINK=0"/>
+					<Add option="-DvtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)"/>
+					<Add option="-DvtkFiltersCore_AUTOINIT=1(vtkFiltersParallelDIY2)"/>
+					<Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)"/>
+					<Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)"/>
+					<Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)"/>
+					<Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)"/>
+					<Add option="-DvtkIOParallel_AUTOINIT=1(vtkIOMPIParallel)"/>
+					<Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)"/>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)"/>
+					<Add option="-DvtkRenderingLICOpenGL2_AUTOINIT=1(vtkRenderingParallelLIC)"/>
+					<Add option="-DvtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2)"/>
+					<Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2)"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add directory="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default"/>
+					<Add directory="/home/rolandas/Daleliu_Pakavimas"/>
+					<Add directory="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/jj_autogen/include"/>
+					<Add directory="/usr/include/vtk-7.1"/>
+					<Add directory="/usr/include/freetype2"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/opal/mca/event/libevent2022/libevent"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/opal/mca/event/libevent2022/libevent/include"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/usr/include/hdf5/openmpi"/>
+					<Add directory="/usr/include/jsoncpp"/>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/usr/include/tcl"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 jj"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="jj/fast">
+				<Option output="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/jj" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEBUG_INFORMATION"/>
+					<Add option="-DOPENCL_COMPILE_OPTIONS=&quot;-Werror&quot;"/>
+					<Add option="-DBOOST_COMPUTE_DEBUG_KERNEL_COMPILATION"/>
+					<Add option="-DBOOST_LOG_DYN_LINK=0"/>
+					<Add option="-DvtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)"/>
+					<Add option="-DvtkFiltersCore_AUTOINIT=1(vtkFiltersParallelDIY2)"/>
+					<Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)"/>
+					<Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)"/>
+					<Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)"/>
+					<Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)"/>
+					<Add option="-DvtkIOParallel_AUTOINIT=1(vtkIOMPIParallel)"/>
+					<Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)"/>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)"/>
+					<Add option="-DvtkRenderingLICOpenGL2_AUTOINIT=1(vtkRenderingParallelLIC)"/>
+					<Add option="-DvtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2)"/>
+					<Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2)"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add directory="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default"/>
+					<Add directory="/home/rolandas/Daleliu_Pakavimas"/>
+					<Add directory="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/jj_autogen/include"/>
+					<Add directory="/usr/include/vtk-7.1"/>
+					<Add directory="/usr/include/freetype2"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/opal/mca/event/libevent2022/libevent"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/opal/mca/event/libevent2022/libevent/include"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/openmpi/include"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/usr/include/hdf5/openmpi"/>
+					<Add directory="/usr/include/jsoncpp"/>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/usr/include/tcl"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 jj/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="Daleliu_Pakavimas_autogen">
 				<Option working_dir="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default"/>
 				<Option type="4"/>
@@ -167,57 +287,96 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="jj_autogen">
+				<Option working_dir="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 jj_autogen"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
+		<Unit filename="/home/rolandas/Daleliu_Pakavimas/coordinate_math.cpp">
+			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
+		</Unit>
+		<Unit filename="/home/rolandas/Daleliu_Pakavimas/coordinate_math.h">
+			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
+		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/dalele.cpp">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/dalele.h">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/geometry.cpp">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/geometry.h">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/grid_count.cpp">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/grid_count.h">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/grid_neighbors.cpp">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/grid_neighbors.h">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/includes.h">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/main.cpp">
 			<Option target="Daleliu_Pakavimas"/>
 		</Unit>
+		<Unit filename="/home/rolandas/Daleliu_Pakavimas/main2.cpp">
+			<Option target="jj"/>
+		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/map_bounds.cpp">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/map_bounds.h">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/pakavimo_algoritmas.cpp">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/pakavimo_algoritmas.h">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/tasko_skaiciavimas.cpp">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/tasko_skaiciavimas.h">
 			<Option target="Daleliu_Pakavimas"/>
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Daleliu_Pakavimas_autogen/mocs_compilation.cpp">
 			<Option target="Daleliu_Pakavimas"/>
+		</Unit>
+		<Unit filename="/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/jj_autogen/mocs_compilation.cpp">
+			<Option target="jj"/>
 		</Unit>
 		<Unit filename="/home/rolandas/Daleliu_Pakavimas/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

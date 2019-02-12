@@ -124,6 +124,19 @@ Daleliu_Pakavimas/fast:
 .PHONY : Daleliu_Pakavimas/fast
 
 #=============================================================================
+# Target rules for targets named jj
+
+# Build rule for target.
+jj: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jj
+.PHONY : jj
+
+# fast build rule for target.
+jj/fast:
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/build
+.PHONY : jj/fast
+
+#=============================================================================
 # Target rules for targets named Daleliu_Pakavimas_autogen
 
 # Build rule for target.
@@ -135,6 +148,19 @@ Daleliu_Pakavimas_autogen: cmake_check_build_system
 Daleliu_Pakavimas_autogen/fast:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas_autogen.dir/build.make CMakeFiles/Daleliu_Pakavimas_autogen.dir/build
 .PHONY : Daleliu_Pakavimas_autogen/fast
+
+#=============================================================================
+# Target rules for targets named jj_autogen
+
+# Build rule for target.
+jj_autogen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jj_autogen
+.PHONY : jj_autogen
+
+# fast build rule for target.
+jj_autogen/fast:
+	$(MAKE) -f CMakeFiles/jj_autogen.dir/build.make CMakeFiles/jj_autogen.dir/build
+.PHONY : jj_autogen/fast
 
 Daleliu_Pakavimas_autogen/mocs_compilation.o: Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o
 
@@ -163,6 +189,36 @@ Daleliu_Pakavimas_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.s
 .PHONY : Daleliu_Pakavimas_autogen/mocs_compilation.cpp.s
 
+coordinate_math.o: coordinate_math.cpp.o
+
+.PHONY : coordinate_math.o
+
+# target to build an object file
+coordinate_math.cpp.o:
+	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/coordinate_math.cpp.o
+.PHONY : coordinate_math.cpp.o
+
+coordinate_math.i: coordinate_math.cpp.i
+
+.PHONY : coordinate_math.i
+
+# target to preprocess a source file
+coordinate_math.cpp.i:
+	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.i
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/coordinate_math.cpp.i
+.PHONY : coordinate_math.cpp.i
+
+coordinate_math.s: coordinate_math.cpp.s
+
+.PHONY : coordinate_math.s
+
+# target to generate assembly for a file
+coordinate_math.cpp.s:
+	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.s
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/coordinate_math.cpp.s
+.PHONY : coordinate_math.cpp.s
+
 dalele.o: dalele.cpp.o
 
 .PHONY : dalele.o
@@ -170,6 +226,7 @@ dalele.o: dalele.cpp.o
 # target to build an object file
 dalele.cpp.o:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/dalele.cpp.o
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/dalele.cpp.o
 .PHONY : dalele.cpp.o
 
 dalele.i: dalele.cpp.i
@@ -179,6 +236,7 @@ dalele.i: dalele.cpp.i
 # target to preprocess a source file
 dalele.cpp.i:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/dalele.cpp.i
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/dalele.cpp.i
 .PHONY : dalele.cpp.i
 
 dalele.s: dalele.cpp.s
@@ -188,6 +246,7 @@ dalele.s: dalele.cpp.s
 # target to generate assembly for a file
 dalele.cpp.s:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/dalele.cpp.s
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/dalele.cpp.s
 .PHONY : dalele.cpp.s
 
 geometry.o: geometry.cpp.o
@@ -197,6 +256,7 @@ geometry.o: geometry.cpp.o
 # target to build an object file
 geometry.cpp.o:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/geometry.cpp.o
 .PHONY : geometry.cpp.o
 
 geometry.i: geometry.cpp.i
@@ -206,6 +266,7 @@ geometry.i: geometry.cpp.i
 # target to preprocess a source file
 geometry.cpp.i:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.i
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/geometry.cpp.i
 .PHONY : geometry.cpp.i
 
 geometry.s: geometry.cpp.s
@@ -215,6 +276,7 @@ geometry.s: geometry.cpp.s
 # target to generate assembly for a file
 geometry.cpp.s:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.s
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/geometry.cpp.s
 .PHONY : geometry.cpp.s
 
 grid_count.o: grid_count.cpp.o
@@ -224,6 +286,7 @@ grid_count.o: grid_count.cpp.o
 # target to build an object file
 grid_count.cpp.o:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_count.cpp.o
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_count.cpp.o
 .PHONY : grid_count.cpp.o
 
 grid_count.i: grid_count.cpp.i
@@ -233,6 +296,7 @@ grid_count.i: grid_count.cpp.i
 # target to preprocess a source file
 grid_count.cpp.i:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_count.cpp.i
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_count.cpp.i
 .PHONY : grid_count.cpp.i
 
 grid_count.s: grid_count.cpp.s
@@ -242,6 +306,7 @@ grid_count.s: grid_count.cpp.s
 # target to generate assembly for a file
 grid_count.cpp.s:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_count.cpp.s
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_count.cpp.s
 .PHONY : grid_count.cpp.s
 
 grid_neighbors.o: grid_neighbors.cpp.o
@@ -251,6 +316,7 @@ grid_neighbors.o: grid_neighbors.cpp.o
 # target to build an object file
 grid_neighbors.cpp.o:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.o
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_neighbors.cpp.o
 .PHONY : grid_neighbors.cpp.o
 
 grid_neighbors.i: grid_neighbors.cpp.i
@@ -260,6 +326,7 @@ grid_neighbors.i: grid_neighbors.cpp.i
 # target to preprocess a source file
 grid_neighbors.cpp.i:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.i
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_neighbors.cpp.i
 .PHONY : grid_neighbors.cpp.i
 
 grid_neighbors.s: grid_neighbors.cpp.s
@@ -269,7 +336,35 @@ grid_neighbors.s: grid_neighbors.cpp.s
 # target to generate assembly for a file
 grid_neighbors.cpp.s:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.s
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_neighbors.cpp.s
 .PHONY : grid_neighbors.cpp.s
+
+jj_autogen/mocs_compilation.o: jj_autogen/mocs_compilation.cpp.o
+
+.PHONY : jj_autogen/mocs_compilation.o
+
+# target to build an object file
+jj_autogen/mocs_compilation.cpp.o:
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o
+.PHONY : jj_autogen/mocs_compilation.cpp.o
+
+jj_autogen/mocs_compilation.i: jj_autogen/mocs_compilation.cpp.i
+
+.PHONY : jj_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+jj_autogen/mocs_compilation.cpp.i:
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.i
+.PHONY : jj_autogen/mocs_compilation.cpp.i
+
+jj_autogen/mocs_compilation.s: jj_autogen/mocs_compilation.cpp.s
+
+.PHONY : jj_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+jj_autogen/mocs_compilation.cpp.s:
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.s
+.PHONY : jj_autogen/mocs_compilation.cpp.s
 
 main.o: main.cpp.o
 
@@ -298,6 +393,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+main2.o: main2.cpp.o
+
+.PHONY : main2.o
+
+# target to build an object file
+main2.cpp.o:
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/main2.cpp.o
+.PHONY : main2.cpp.o
+
+main2.i: main2.cpp.i
+
+.PHONY : main2.i
+
+# target to preprocess a source file
+main2.cpp.i:
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/main2.cpp.i
+.PHONY : main2.cpp.i
+
+main2.s: main2.cpp.s
+
+.PHONY : main2.s
+
+# target to generate assembly for a file
+main2.cpp.s:
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/main2.cpp.s
+.PHONY : main2.cpp.s
+
 map_bounds.o: map_bounds.cpp.o
 
 .PHONY : map_bounds.o
@@ -305,6 +427,7 @@ map_bounds.o: map_bounds.cpp.o
 # target to build an object file
 map_bounds.cpp.o:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/map_bounds.cpp.o
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/map_bounds.cpp.o
 .PHONY : map_bounds.cpp.o
 
 map_bounds.i: map_bounds.cpp.i
@@ -314,6 +437,7 @@ map_bounds.i: map_bounds.cpp.i
 # target to preprocess a source file
 map_bounds.cpp.i:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/map_bounds.cpp.i
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/map_bounds.cpp.i
 .PHONY : map_bounds.cpp.i
 
 map_bounds.s: map_bounds.cpp.s
@@ -323,6 +447,7 @@ map_bounds.s: map_bounds.cpp.s
 # target to generate assembly for a file
 map_bounds.cpp.s:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/map_bounds.cpp.s
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/map_bounds.cpp.s
 .PHONY : map_bounds.cpp.s
 
 pakavimo_algoritmas.o: pakavimo_algoritmas.cpp.o
@@ -332,6 +457,7 @@ pakavimo_algoritmas.o: pakavimo_algoritmas.cpp.o
 # target to build an object file
 pakavimo_algoritmas.cpp.o:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/pakavimo_algoritmas.cpp.o
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o
 .PHONY : pakavimo_algoritmas.cpp.o
 
 pakavimo_algoritmas.i: pakavimo_algoritmas.cpp.i
@@ -341,6 +467,7 @@ pakavimo_algoritmas.i: pakavimo_algoritmas.cpp.i
 # target to preprocess a source file
 pakavimo_algoritmas.cpp.i:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/pakavimo_algoritmas.cpp.i
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.i
 .PHONY : pakavimo_algoritmas.cpp.i
 
 pakavimo_algoritmas.s: pakavimo_algoritmas.cpp.s
@@ -350,6 +477,7 @@ pakavimo_algoritmas.s: pakavimo_algoritmas.cpp.s
 # target to generate assembly for a file
 pakavimo_algoritmas.cpp.s:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/pakavimo_algoritmas.cpp.s
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.s
 .PHONY : pakavimo_algoritmas.cpp.s
 
 tasko_skaiciavimas.o: tasko_skaiciavimas.cpp.o
@@ -359,6 +487,7 @@ tasko_skaiciavimas.o: tasko_skaiciavimas.cpp.o
 # target to build an object file
 tasko_skaiciavimas.cpp.o:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/tasko_skaiciavimas.cpp.o
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o
 .PHONY : tasko_skaiciavimas.cpp.o
 
 tasko_skaiciavimas.i: tasko_skaiciavimas.cpp.i
@@ -368,6 +497,7 @@ tasko_skaiciavimas.i: tasko_skaiciavimas.cpp.i
 # target to preprocess a source file
 tasko_skaiciavimas.cpp.i:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/tasko_skaiciavimas.cpp.i
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.i
 .PHONY : tasko_skaiciavimas.cpp.i
 
 tasko_skaiciavimas.s: tasko_skaiciavimas.cpp.s
@@ -377,6 +507,7 @@ tasko_skaiciavimas.s: tasko_skaiciavimas.cpp.s
 # target to generate assembly for a file
 tasko_skaiciavimas.cpp.s:
 	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/tasko_skaiciavimas.cpp.s
+	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.s
 .PHONY : tasko_skaiciavimas.cpp.s
 
 # Help Target
@@ -388,10 +519,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Daleliu_Pakavimas"
 	@echo "... edit_cache"
+	@echo "... jj"
 	@echo "... Daleliu_Pakavimas_autogen"
+	@echo "... jj_autogen"
 	@echo "... Daleliu_Pakavimas_autogen/mocs_compilation.o"
 	@echo "... Daleliu_Pakavimas_autogen/mocs_compilation.i"
 	@echo "... Daleliu_Pakavimas_autogen/mocs_compilation.s"
+	@echo "... coordinate_math.o"
+	@echo "... coordinate_math.i"
+	@echo "... coordinate_math.s"
 	@echo "... dalele.o"
 	@echo "... dalele.i"
 	@echo "... dalele.s"
@@ -404,9 +540,15 @@ help:
 	@echo "... grid_neighbors.o"
 	@echo "... grid_neighbors.i"
 	@echo "... grid_neighbors.s"
+	@echo "... jj_autogen/mocs_compilation.o"
+	@echo "... jj_autogen/mocs_compilation.i"
+	@echo "... jj_autogen/mocs_compilation.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main2.o"
+	@echo "... main2.i"
+	@echo "... main2.s"
 	@echo "... map_bounds.o"
 	@echo "... map_bounds.i"
 	@echo "... map_bounds.s"

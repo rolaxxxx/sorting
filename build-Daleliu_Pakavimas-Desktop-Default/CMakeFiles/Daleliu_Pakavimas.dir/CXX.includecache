@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/rolandas/Daleliu_Pakavimas/coordinate_math.cpp
+coordinate_math.h
+/home/rolandas/Daleliu_Pakavimas/coordinate_math.h
+includes.h
+/home/rolandas/Daleliu_Pakavimas/includes.h
+dalele.h
+/home/rolandas/Daleliu_Pakavimas/dalele.h
+
+/home/rolandas/Daleliu_Pakavimas/coordinate_math.h
+dalele.h
+/home/rolandas/Daleliu_Pakavimas/dalele.h
+map_bounds.h
+/home/rolandas/Daleliu_Pakavimas/map_bounds.h
+includes.h
+/home/rolandas/Daleliu_Pakavimas/includes.h
+
 /home/rolandas/Daleliu_Pakavimas/dalele.cpp
 dalele.h
 /home/rolandas/Daleliu_Pakavimas/dalele.h

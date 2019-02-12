@@ -224,11 +224,14 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/Daleliu_Pakavimas_autogen.dir/AutogenInfo.cmake"
+  "CMakeFiles/jj_autogen.dir/AutogenInfo.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Daleliu_Pakavimas.dir/DependInfo.cmake"
+  "CMakeFiles/jj.dir/DependInfo.cmake"
   "CMakeFiles/Daleliu_Pakavimas_autogen.dir/DependInfo.cmake"
+  "CMakeFiles/jj_autogen.dir/DependInfo.cmake"
   )

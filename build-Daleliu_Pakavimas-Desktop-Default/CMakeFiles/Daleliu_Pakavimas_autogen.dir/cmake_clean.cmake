@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "Daleliu_Pakavimas_autogen"
   "CMakeFiles/Daleliu_Pakavimas_autogen.dir/AutogenOldSettings.cmake"
+  "jj_autogen"
+  "CMakeFiles/jj_autogen.dir/AutogenOldSettings.cmake"
   "CMakeFiles/Daleliu_Pakavimas_autogen"
 )
 

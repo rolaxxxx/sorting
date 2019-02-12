@@ -1,4 +1,6 @@
 /home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/rebuild_cache.dir
 /home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas.dir
 /home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/edit_cache.dir
+/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/jj.dir
 /home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas_autogen.dir
+/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/jj_autogen.dir

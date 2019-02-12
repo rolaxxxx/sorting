@@ -15,9 +15,10 @@ int main(int, char *[])
     particle.DalelesDuomenuApibrezimas();
     boundai.MAP_DUOMENYS(boundai.MAP_BOUNDS_MIN,boundai.MAP_BOUNDS_MAX,boundai.CELLSIZE, boundai.Nx, boundai.Ny, boundai.Nz);
     geometrija.skirstinioFormavimas(particle);
-    particle.Triju_DaleliuGeneracija(particle.min, particle.max, boundai, particle);
-    gridas.GRIDAS(boundai.MAP_BOUNDS_MIN, boundai.MAP_BOUNDS_MAX, boundai.CELLSIZE, boundai.Nx, boundai.Ny, boundai.Nz, particle.F ,gridas.SUFORMUOTAS_GRIDAS);
+    particle.Triju_DaleliuGeneracija(boundai,  particle.F, particle.Distribution);
+    gridas.GRIDAS(boundai, particle.F ,gridas.SUFORMUOTAS_GRIDAS);
     map<INT, INT>::iterator itr;
+    cout << gridas.SUFORMUOTAS_GRIDAS.size() << endl;
     for (itr = gridas.SUFORMUOTAS_GRIDAS.begin(); itr != gridas.SUFORMUOTAS_GRIDAS.end(); ++itr) {
             cout << '\t' << itr->first
                  << '\t' << itr->second << '\n';

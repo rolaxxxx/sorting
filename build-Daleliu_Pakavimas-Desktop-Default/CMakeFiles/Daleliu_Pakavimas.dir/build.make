@@ -57,33 +57,9 @@ include CMakeFiles/Daleliu_Pakavimas.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Daleliu_Pakavimas.dir/flags.make
 
-CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o: CMakeFiles/Daleliu_Pakavimas.dir/flags.make
-CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o: /home/rolandas/Daleliu_Pakavimas/geometry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o -c /home/rolandas/Daleliu_Pakavimas/geometry.cpp
-
-CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Daleliu_Pakavimas/geometry.cpp > CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.i
-
-CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Daleliu_Pakavimas/geometry.cpp -o CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.s
-
-CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.requires:
-
-.PHONY : CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.requires
-
-CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.provides: CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.provides.build
-.PHONY : CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.provides
-
-CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.provides.build: CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o
-
-
 CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o: CMakeFiles/Daleliu_Pakavimas.dir/flags.make
 CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o: /home/rolandas/Daleliu_Pakavimas/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o -c /home/rolandas/Daleliu_Pakavimas/main.cpp
 
 CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.i: cmake_force
@@ -103,6 +79,30 @@ CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o.provides: CMakeFiles/Daleliu_Pakavim
 .PHONY : CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o.provides
 
 CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o.provides.build: CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o
+
+
+CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o: CMakeFiles/Daleliu_Pakavimas.dir/flags.make
+CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o: /home/rolandas/Daleliu_Pakavimas/geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o -c /home/rolandas/Daleliu_Pakavimas/geometry.cpp
+
+CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Daleliu_Pakavimas/geometry.cpp > CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.i
+
+CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Daleliu_Pakavimas/geometry.cpp -o CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.s
+
+CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.requires:
+
+.PHONY : CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.requires
+
+CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.provides: CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.provides.build
+.PHONY : CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.provides
+
+CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.provides.build: CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o
 
 
 CMakeFiles/Daleliu_Pakavimas.dir/dalele.cpp.o: CMakeFiles/Daleliu_Pakavimas.dir/flags.make
@@ -249,9 +249,33 @@ CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.o.provides: CMakeFiles/Dalel
 CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.o.provides.build: CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.o
 
 
+CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o: CMakeFiles/Daleliu_Pakavimas.dir/flags.make
+CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o: /home/rolandas/Daleliu_Pakavimas/coordinate_math.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o -c /home/rolandas/Daleliu_Pakavimas/coordinate_math.cpp
+
+CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Daleliu_Pakavimas/coordinate_math.cpp > CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.i
+
+CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Daleliu_Pakavimas/coordinate_math.cpp -o CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.s
+
+CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o.requires:
+
+.PHONY : CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o.requires
+
+CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o.provides: CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o.provides.build
+.PHONY : CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o.provides
+
+CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o.provides.build: CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o
+
+
 CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o: CMakeFiles/Daleliu_Pakavimas.dir/flags.make
 CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o: Daleliu_Pakavimas_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o -c /home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Daleliu_Pakavimas_autogen/mocs_compilation.cpp
 
 CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.i: cmake_force
@@ -275,27 +299,29 @@ CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.
 
 # Object files for target Daleliu_Pakavimas
 Daleliu_Pakavimas_OBJECTS = \
-"CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o" \
 "CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o" \
+"CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o" \
 "CMakeFiles/Daleliu_Pakavimas.dir/dalele.cpp.o" \
 "CMakeFiles/Daleliu_Pakavimas.dir/grid_count.cpp.o" \
 "CMakeFiles/Daleliu_Pakavimas.dir/map_bounds.cpp.o" \
 "CMakeFiles/Daleliu_Pakavimas.dir/pakavimo_algoritmas.cpp.o" \
 "CMakeFiles/Daleliu_Pakavimas.dir/tasko_skaiciavimas.cpp.o" \
 "CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.o" \
+"CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o" \
 "CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o"
 
 # External object files for target Daleliu_Pakavimas
 Daleliu_Pakavimas_EXTERNAL_OBJECTS =
 
-Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o
 Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o
+Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o
 Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/dalele.cpp.o
 Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/grid_count.cpp.o
 Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/map_bounds.cpp.o
 Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/pakavimo_algoritmas.cpp.o
 Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/tasko_skaiciavimas.cpp.o
 Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.o
+Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o
 Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o
 Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/build.make
 Daleliu_Pakavimas: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.9.5
@@ -478,7 +504,7 @@ Daleliu_Pakavimas: /usr/lib/x86_64-linux-gnu/libvtksys-7.1.so.7.1.1
 Daleliu_Pakavimas: /usr/lib/x86_64-linux-gnu/libfreetype.so
 Daleliu_Pakavimas: /usr/lib/x86_64-linux-gnu/libvtkCommonCore-7.1.so.7.1.1
 Daleliu_Pakavimas: CMakeFiles/Daleliu_Pakavimas.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Daleliu_Pakavimas"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Daleliu_Pakavimas"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Daleliu_Pakavimas.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -486,14 +512,15 @@ CMakeFiles/Daleliu_Pakavimas.dir/build: Daleliu_Pakavimas
 
 .PHONY : CMakeFiles/Daleliu_Pakavimas.dir/build
 
-CMakeFiles/Daleliu_Pakavimas.dir/requires: CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.requires
 CMakeFiles/Daleliu_Pakavimas.dir/requires: CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o.requires
+CMakeFiles/Daleliu_Pakavimas.dir/requires: CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o.requires
 CMakeFiles/Daleliu_Pakavimas.dir/requires: CMakeFiles/Daleliu_Pakavimas.dir/dalele.cpp.o.requires
 CMakeFiles/Daleliu_Pakavimas.dir/requires: CMakeFiles/Daleliu_Pakavimas.dir/grid_count.cpp.o.requires
 CMakeFiles/Daleliu_Pakavimas.dir/requires: CMakeFiles/Daleliu_Pakavimas.dir/map_bounds.cpp.o.requires
 CMakeFiles/Daleliu_Pakavimas.dir/requires: CMakeFiles/Daleliu_Pakavimas.dir/pakavimo_algoritmas.cpp.o.requires
 CMakeFiles/Daleliu_Pakavimas.dir/requires: CMakeFiles/Daleliu_Pakavimas.dir/tasko_skaiciavimas.cpp.o.requires
 CMakeFiles/Daleliu_Pakavimas.dir/requires: CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.o.requires
+CMakeFiles/Daleliu_Pakavimas.dir/requires: CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o.requires
 CMakeFiles/Daleliu_Pakavimas.dir/requires: CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o.requires
 
 .PHONY : CMakeFiles/Daleliu_Pakavimas.dir/requires

@@ -1,0 +1,12 @@
+file(REMOVE_RECURSE
+  "Daleliu_Pakavimas_autogen"
+  "CMakeFiles/Daleliu_Pakavimas_autogen.dir/AutogenOldSettings.cmake"
+  "jj_autogen"
+  "CMakeFiles/jj_autogen.dir/AutogenOldSettings.cmake"
+  "CMakeFiles/jj_autogen"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/jj_autogen.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

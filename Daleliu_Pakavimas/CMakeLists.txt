@@ -25,7 +25,7 @@ include_directories(${OpenCL_INCLUDE_DIR})
 set(SOURCE_FILES
     geometry.cpp
     geometry.h
-    main.cpp
+
     includes.h
     dalele.cpp
     dalele.h
@@ -38,10 +38,18 @@ set(SOURCE_FILES
     tasko_skaiciavimas.cpp
     tasko_skaiciavimas.h
     grid_neighbors.cpp
+    coordinate_math.cpp
+    coordinate_math.h
     grid_neighbors.h
 )
 find_package(Qt5Core)
 
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+add_executable(${PROJECT_NAME}     main.cpp ${SOURCE_FILES})
 
 target_link_libraries(${PROJECT_NAME} Qt5::Core ${VTK_LIBRARIES} -lpthread -lboost_log -lstdc++fs -lOpenCL)
+
+
+
+add_executable(jj     main2.cpp ${SOURCE_FILES})
+
+target_link_libraries(jj Qt5::Core ${VTK_LIBRARIES} -lpthread -lboost_log -lstdc++fs -lOpenCL)
