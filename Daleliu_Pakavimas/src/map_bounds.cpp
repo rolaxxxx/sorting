@@ -1,0 +1,20 @@
+#include "map_bounds.h"
+
+void MAP_BOUNDS::MAP_DUOMENYS(REAL4 &MAP_BOUNDS_MIN, REAL4 &MAP_BOUNDS_MAX, REAL &CELLSIZE, INT &Nx, INT &Ny, INT &Nz){
+    REAL4 TEMP_MIN, TEMP_MAX;
+
+      //cin >> TEMP_MIN[0] >> TEMP_MIN[1] >> TEMP_MIN[2];
+        TEMP_MIN[0]=0;
+        TEMP_MAX[0]=10;
+
+        TEMP_MIN[1]=0;
+        TEMP_MAX[1]=10;
+
+        TEMP_MIN[2]=0;
+        TEMP_MAX[2]=10;
+    MAP_BOUNDS_MIN = TEMP_MIN;
+    MAP_BOUNDS_MAX = TEMP_MAX;
+    Nx=ceil((MAP_BOUNDS_MAX[0]-MAP_BOUNDS_MIN[0])/CELLSIZE);
+    Ny=ceil((MAP_BOUNDS_MAX[1]-MAP_BOUNDS_MIN[1])/CELLSIZE);
+    Nz=ceil((MAP_BOUNDS_MAX[2]-MAP_BOUNDS_MIN[2])/CELLSIZE);
+}

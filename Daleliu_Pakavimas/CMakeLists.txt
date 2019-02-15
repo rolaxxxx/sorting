@@ -23,33 +23,35 @@ find_package(OpenCL)
 include_directories(${OpenCL_INCLUDE_DIR})
 
 set(SOURCE_FILES
-    geometry.cpp
-    geometry.h
-
-    includes.h
-    dalele.cpp
-    dalele.h
-    grid_count.cpp
-    grid_count.h
-    map_bounds.h
-    map_bounds.cpp
-    pakavimo_algoritmas.cpp
-    pakavimo_algoritmas.h
-    tasko_skaiciavimas.cpp
-    tasko_skaiciavimas.h
-    grid_neighbors.cpp
-    coordinate_math.cpp
-    coordinate_math.h
-    grid_neighbors.h
+    src/geometry.cpp
+    src/geometry.h
+    src/includes.h
+    src/dalele.cpp
+    src/dalele.h
+    src/grid_count.cpp
+    src/grid_count.h
+    src/map_bounds.h
+    src/map_bounds.cpp
+    src/pakavimo_algoritmas.cpp
+    src/pakavimo_algoritmas.h
+    src/tasko_skaiciavimas.cpp
+    src/tasko_skaiciavimas.h
+    src/grid_neighbors.cpp
+    src/coordinate_math.cpp
+    src/coordinate_math.h
+    src/grid_neighbors.h
 )
-find_package(Qt5Core)
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/src)
 
-add_executable(${PROJECT_NAME}     main.cpp ${SOURCE_FILES})
-
-target_link_libraries(${PROJECT_NAME} Qt5::Core ${VTK_LIBRARIES} -lpthread -lboost_log -lstdc++fs -lOpenCL)
+add_library(Biblioteka STATIC ${SOURCE_FILES})
 
 
+add_executable(${PROJECT_NAME}     main.cpp)
 
-add_executable(jj     main2.cpp ${SOURCE_FILES})
+target_link_libraries(${PROJECT_NAME} ${VTK_LIBRARIES} -lpthread -lboost_log -lstdc++fs -lOpenCL Biblioteka)
 
-target_link_libraries(jj Qt5::Core ${VTK_LIBRARIES} -lpthread -lboost_log -lstdc++fs -lOpenCL)
+
+
+add_executable(jj     main2.cpp )
+
+target_link_libraries(jj  ${VTK_LIBRARIES} -lpthread -lboost_log -lstdc++fs -lOpenCL Biblioteka)

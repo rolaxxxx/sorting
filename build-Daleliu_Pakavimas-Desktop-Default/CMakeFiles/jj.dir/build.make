@@ -81,250 +81,15 @@ CMakeFiles/jj.dir/main2.cpp.o.provides: CMakeFiles/jj.dir/main2.cpp.o.requires
 CMakeFiles/jj.dir/main2.cpp.o.provides.build: CMakeFiles/jj.dir/main2.cpp.o
 
 
-CMakeFiles/jj.dir/geometry.cpp.o: CMakeFiles/jj.dir/flags.make
-CMakeFiles/jj.dir/geometry.cpp.o: /home/rolandas/Daleliu_Pakavimas/geometry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/jj.dir/geometry.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jj.dir/geometry.cpp.o -c /home/rolandas/Daleliu_Pakavimas/geometry.cpp
-
-CMakeFiles/jj.dir/geometry.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jj.dir/geometry.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Daleliu_Pakavimas/geometry.cpp > CMakeFiles/jj.dir/geometry.cpp.i
-
-CMakeFiles/jj.dir/geometry.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jj.dir/geometry.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Daleliu_Pakavimas/geometry.cpp -o CMakeFiles/jj.dir/geometry.cpp.s
-
-CMakeFiles/jj.dir/geometry.cpp.o.requires:
-
-.PHONY : CMakeFiles/jj.dir/geometry.cpp.o.requires
-
-CMakeFiles/jj.dir/geometry.cpp.o.provides: CMakeFiles/jj.dir/geometry.cpp.o.requires
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/geometry.cpp.o.provides.build
-.PHONY : CMakeFiles/jj.dir/geometry.cpp.o.provides
-
-CMakeFiles/jj.dir/geometry.cpp.o.provides.build: CMakeFiles/jj.dir/geometry.cpp.o
-
-
-CMakeFiles/jj.dir/dalele.cpp.o: CMakeFiles/jj.dir/flags.make
-CMakeFiles/jj.dir/dalele.cpp.o: /home/rolandas/Daleliu_Pakavimas/dalele.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/jj.dir/dalele.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jj.dir/dalele.cpp.o -c /home/rolandas/Daleliu_Pakavimas/dalele.cpp
-
-CMakeFiles/jj.dir/dalele.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jj.dir/dalele.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Daleliu_Pakavimas/dalele.cpp > CMakeFiles/jj.dir/dalele.cpp.i
-
-CMakeFiles/jj.dir/dalele.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jj.dir/dalele.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Daleliu_Pakavimas/dalele.cpp -o CMakeFiles/jj.dir/dalele.cpp.s
-
-CMakeFiles/jj.dir/dalele.cpp.o.requires:
-
-.PHONY : CMakeFiles/jj.dir/dalele.cpp.o.requires
-
-CMakeFiles/jj.dir/dalele.cpp.o.provides: CMakeFiles/jj.dir/dalele.cpp.o.requires
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/dalele.cpp.o.provides.build
-.PHONY : CMakeFiles/jj.dir/dalele.cpp.o.provides
-
-CMakeFiles/jj.dir/dalele.cpp.o.provides.build: CMakeFiles/jj.dir/dalele.cpp.o
-
-
-CMakeFiles/jj.dir/grid_count.cpp.o: CMakeFiles/jj.dir/flags.make
-CMakeFiles/jj.dir/grid_count.cpp.o: /home/rolandas/Daleliu_Pakavimas/grid_count.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/jj.dir/grid_count.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jj.dir/grid_count.cpp.o -c /home/rolandas/Daleliu_Pakavimas/grid_count.cpp
-
-CMakeFiles/jj.dir/grid_count.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jj.dir/grid_count.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Daleliu_Pakavimas/grid_count.cpp > CMakeFiles/jj.dir/grid_count.cpp.i
-
-CMakeFiles/jj.dir/grid_count.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jj.dir/grid_count.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Daleliu_Pakavimas/grid_count.cpp -o CMakeFiles/jj.dir/grid_count.cpp.s
-
-CMakeFiles/jj.dir/grid_count.cpp.o.requires:
-
-.PHONY : CMakeFiles/jj.dir/grid_count.cpp.o.requires
-
-CMakeFiles/jj.dir/grid_count.cpp.o.provides: CMakeFiles/jj.dir/grid_count.cpp.o.requires
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_count.cpp.o.provides.build
-.PHONY : CMakeFiles/jj.dir/grid_count.cpp.o.provides
-
-CMakeFiles/jj.dir/grid_count.cpp.o.provides.build: CMakeFiles/jj.dir/grid_count.cpp.o
-
-
-CMakeFiles/jj.dir/map_bounds.cpp.o: CMakeFiles/jj.dir/flags.make
-CMakeFiles/jj.dir/map_bounds.cpp.o: /home/rolandas/Daleliu_Pakavimas/map_bounds.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/jj.dir/map_bounds.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jj.dir/map_bounds.cpp.o -c /home/rolandas/Daleliu_Pakavimas/map_bounds.cpp
-
-CMakeFiles/jj.dir/map_bounds.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jj.dir/map_bounds.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Daleliu_Pakavimas/map_bounds.cpp > CMakeFiles/jj.dir/map_bounds.cpp.i
-
-CMakeFiles/jj.dir/map_bounds.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jj.dir/map_bounds.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Daleliu_Pakavimas/map_bounds.cpp -o CMakeFiles/jj.dir/map_bounds.cpp.s
-
-CMakeFiles/jj.dir/map_bounds.cpp.o.requires:
-
-.PHONY : CMakeFiles/jj.dir/map_bounds.cpp.o.requires
-
-CMakeFiles/jj.dir/map_bounds.cpp.o.provides: CMakeFiles/jj.dir/map_bounds.cpp.o.requires
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/map_bounds.cpp.o.provides.build
-.PHONY : CMakeFiles/jj.dir/map_bounds.cpp.o.provides
-
-CMakeFiles/jj.dir/map_bounds.cpp.o.provides.build: CMakeFiles/jj.dir/map_bounds.cpp.o
-
-
-CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o: CMakeFiles/jj.dir/flags.make
-CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o: /home/rolandas/Daleliu_Pakavimas/pakavimo_algoritmas.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o -c /home/rolandas/Daleliu_Pakavimas/pakavimo_algoritmas.cpp
-
-CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Daleliu_Pakavimas/pakavimo_algoritmas.cpp > CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.i
-
-CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Daleliu_Pakavimas/pakavimo_algoritmas.cpp -o CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.s
-
-CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o.requires:
-
-.PHONY : CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o.requires
-
-CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o.provides: CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o.requires
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o.provides.build
-.PHONY : CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o.provides
-
-CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o.provides.build: CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o
-
-
-CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o: CMakeFiles/jj.dir/flags.make
-CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o: /home/rolandas/Daleliu_Pakavimas/tasko_skaiciavimas.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o -c /home/rolandas/Daleliu_Pakavimas/tasko_skaiciavimas.cpp
-
-CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Daleliu_Pakavimas/tasko_skaiciavimas.cpp > CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.i
-
-CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Daleliu_Pakavimas/tasko_skaiciavimas.cpp -o CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.s
-
-CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o.requires:
-
-.PHONY : CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o.requires
-
-CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o.provides: CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o.requires
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o.provides.build
-.PHONY : CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o.provides
-
-CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o.provides.build: CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o
-
-
-CMakeFiles/jj.dir/grid_neighbors.cpp.o: CMakeFiles/jj.dir/flags.make
-CMakeFiles/jj.dir/grid_neighbors.cpp.o: /home/rolandas/Daleliu_Pakavimas/grid_neighbors.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/jj.dir/grid_neighbors.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jj.dir/grid_neighbors.cpp.o -c /home/rolandas/Daleliu_Pakavimas/grid_neighbors.cpp
-
-CMakeFiles/jj.dir/grid_neighbors.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jj.dir/grid_neighbors.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Daleliu_Pakavimas/grid_neighbors.cpp > CMakeFiles/jj.dir/grid_neighbors.cpp.i
-
-CMakeFiles/jj.dir/grid_neighbors.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jj.dir/grid_neighbors.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Daleliu_Pakavimas/grid_neighbors.cpp -o CMakeFiles/jj.dir/grid_neighbors.cpp.s
-
-CMakeFiles/jj.dir/grid_neighbors.cpp.o.requires:
-
-.PHONY : CMakeFiles/jj.dir/grid_neighbors.cpp.o.requires
-
-CMakeFiles/jj.dir/grid_neighbors.cpp.o.provides: CMakeFiles/jj.dir/grid_neighbors.cpp.o.requires
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_neighbors.cpp.o.provides.build
-.PHONY : CMakeFiles/jj.dir/grid_neighbors.cpp.o.provides
-
-CMakeFiles/jj.dir/grid_neighbors.cpp.o.provides.build: CMakeFiles/jj.dir/grid_neighbors.cpp.o
-
-
-CMakeFiles/jj.dir/coordinate_math.cpp.o: CMakeFiles/jj.dir/flags.make
-CMakeFiles/jj.dir/coordinate_math.cpp.o: /home/rolandas/Daleliu_Pakavimas/coordinate_math.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/jj.dir/coordinate_math.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jj.dir/coordinate_math.cpp.o -c /home/rolandas/Daleliu_Pakavimas/coordinate_math.cpp
-
-CMakeFiles/jj.dir/coordinate_math.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jj.dir/coordinate_math.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/Daleliu_Pakavimas/coordinate_math.cpp > CMakeFiles/jj.dir/coordinate_math.cpp.i
-
-CMakeFiles/jj.dir/coordinate_math.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jj.dir/coordinate_math.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/Daleliu_Pakavimas/coordinate_math.cpp -o CMakeFiles/jj.dir/coordinate_math.cpp.s
-
-CMakeFiles/jj.dir/coordinate_math.cpp.o.requires:
-
-.PHONY : CMakeFiles/jj.dir/coordinate_math.cpp.o.requires
-
-CMakeFiles/jj.dir/coordinate_math.cpp.o.provides: CMakeFiles/jj.dir/coordinate_math.cpp.o.requires
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/coordinate_math.cpp.o.provides.build
-.PHONY : CMakeFiles/jj.dir/coordinate_math.cpp.o.provides
-
-CMakeFiles/jj.dir/coordinate_math.cpp.o.provides.build: CMakeFiles/jj.dir/coordinate_math.cpp.o
-
-
-CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o: CMakeFiles/jj.dir/flags.make
-CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o: jj_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o -c /home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/jj_autogen/mocs_compilation.cpp
-
-CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/jj_autogen/mocs_compilation.cpp > CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.i
-
-CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/jj_autogen/mocs_compilation.cpp -o CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.s
-
-CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o.requires:
-
-.PHONY : CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o.requires
-
-CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o.provides: CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o.requires
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o.provides.build
-.PHONY : CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o.provides
-
-CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o.provides.build: CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o
-
-
 # Object files for target jj
 jj_OBJECTS = \
-"CMakeFiles/jj.dir/main2.cpp.o" \
-"CMakeFiles/jj.dir/geometry.cpp.o" \
-"CMakeFiles/jj.dir/dalele.cpp.o" \
-"CMakeFiles/jj.dir/grid_count.cpp.o" \
-"CMakeFiles/jj.dir/map_bounds.cpp.o" \
-"CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o" \
-"CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o" \
-"CMakeFiles/jj.dir/grid_neighbors.cpp.o" \
-"CMakeFiles/jj.dir/coordinate_math.cpp.o" \
-"CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o"
+"CMakeFiles/jj.dir/main2.cpp.o"
 
 # External object files for target jj
 jj_EXTERNAL_OBJECTS =
 
 jj: CMakeFiles/jj.dir/main2.cpp.o
-jj: CMakeFiles/jj.dir/geometry.cpp.o
-jj: CMakeFiles/jj.dir/dalele.cpp.o
-jj: CMakeFiles/jj.dir/grid_count.cpp.o
-jj: CMakeFiles/jj.dir/map_bounds.cpp.o
-jj: CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o
-jj: CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o
-jj: CMakeFiles/jj.dir/grid_neighbors.cpp.o
-jj: CMakeFiles/jj.dir/coordinate_math.cpp.o
-jj: CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o
 jj: CMakeFiles/jj.dir/build.make
-jj: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.9.5
 jj: /usr/lib/x86_64-linux-gnu/libfreetype.so
 jj: /usr/lib/x86_64-linux-gnu/libz.so
 jj: /usr/lib/x86_64-linux-gnu/libexpat.so
@@ -421,6 +186,7 @@ jj: /usr/lib/x86_64-linux-gnu/libvtkViewsContext2D-7.1.so.7.1.1
 jj: /usr/lib/x86_64-linux-gnu/libvtkViewsGeovis-7.1.so.7.1.1
 jj: /usr/lib/x86_64-linux-gnu/libvtkViewsInfovis-7.1.so.7.1.1
 jj: /usr/lib/x86_64-linux-gnu/libvtkWrappingJava-7.1.so.7.1.1
+jj: libBiblioteka.a
 jj: /usr/lib/x86_64-linux-gnu/libvtkDomainsChemistry-7.1.so.7.1.1
 jj: /usr/lib/x86_64-linux-gnu/libvtkFiltersFlowPaths-7.1.so.7.1.1
 jj: /usr/lib/x86_64-linux-gnu/libvtkIOGeometry-7.1.so.7.1.1
@@ -504,7 +270,7 @@ jj: /usr/lib/x86_64-linux-gnu/libvtksys-7.1.so.7.1.1
 jj: /usr/lib/x86_64-linux-gnu/libfreetype.so
 jj: /usr/lib/x86_64-linux-gnu/libvtkCommonCore-7.1.so.7.1.1
 jj: CMakeFiles/jj.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable jj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable jj"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/jj.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -513,15 +279,6 @@ CMakeFiles/jj.dir/build: jj
 .PHONY : CMakeFiles/jj.dir/build
 
 CMakeFiles/jj.dir/requires: CMakeFiles/jj.dir/main2.cpp.o.requires
-CMakeFiles/jj.dir/requires: CMakeFiles/jj.dir/geometry.cpp.o.requires
-CMakeFiles/jj.dir/requires: CMakeFiles/jj.dir/dalele.cpp.o.requires
-CMakeFiles/jj.dir/requires: CMakeFiles/jj.dir/grid_count.cpp.o.requires
-CMakeFiles/jj.dir/requires: CMakeFiles/jj.dir/map_bounds.cpp.o.requires
-CMakeFiles/jj.dir/requires: CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o.requires
-CMakeFiles/jj.dir/requires: CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o.requires
-CMakeFiles/jj.dir/requires: CMakeFiles/jj.dir/grid_neighbors.cpp.o.requires
-CMakeFiles/jj.dir/requires: CMakeFiles/jj.dir/coordinate_math.cpp.o.requires
-CMakeFiles/jj.dir/requires: CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o.requires
 
 .PHONY : CMakeFiles/jj.dir/requires
 

@@ -4,16 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/Daleliu_Pakavimas_autogen/mocs_compilation.cpp" "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o"
-  "/home/rolandas/Daleliu_Pakavimas/coordinate_math.cpp" "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o"
-  "/home/rolandas/Daleliu_Pakavimas/dalele.cpp" "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas.dir/dalele.cpp.o"
-  "/home/rolandas/Daleliu_Pakavimas/geometry.cpp" "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o"
-  "/home/rolandas/Daleliu_Pakavimas/grid_count.cpp" "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas.dir/grid_count.cpp.o"
-  "/home/rolandas/Daleliu_Pakavimas/grid_neighbors.cpp" "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.o"
   "/home/rolandas/Daleliu_Pakavimas/main.cpp" "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas.dir/main.cpp.o"
-  "/home/rolandas/Daleliu_Pakavimas/map_bounds.cpp" "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas.dir/map_bounds.cpp.o"
-  "/home/rolandas/Daleliu_Pakavimas/pakavimo_algoritmas.cpp" "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas.dir/pakavimo_algoritmas.cpp.o"
-  "/home/rolandas/Daleliu_Pakavimas/tasko_skaiciavimas.cpp" "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Daleliu_Pakavimas.dir/tasko_skaiciavimas.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -23,8 +14,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "BOOST_LOG_DYN_LINK=0"
   "DEBUG_INFORMATION"
   "OPENCL_COMPILE_OPTIONS=\"-Werror\""
-  "QT_CORE_LIB"
-  "QT_NO_DEBUG"
   "vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)"
   "vtkFiltersCore_AUTOINIT=1(vtkFiltersParallelDIY2)"
   "vtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)"
@@ -45,7 +34,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "."
   "/home/rolandas/Daleliu_Pakavimas"
-  "Daleliu_Pakavimas_autogen/include"
   "/usr/include/vtk-7.1"
   "/usr/include/freetype2"
   "/usr/include/x86_64-linux-gnu"
@@ -58,13 +46,12 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/jsoncpp"
   "/usr/include/libxml2"
   "/usr/include/tcl"
-  "/usr/include/x86_64-linux-gnu/qt5"
-  "/usr/include/x86_64-linux-gnu/qt5/QtCore"
-  "/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"
+  "/home/rolandas/Daleliu_Pakavimas/src"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/rolandas/build-Daleliu_Pakavimas-Desktop-Default/CMakeFiles/Biblioteka.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

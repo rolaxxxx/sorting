@@ -18,25 +18,15 @@ int main(int, char *[])
     particle.Triju_DaleliuGeneracija(boundai,  particle.F, particle.Distribution);
     gridas.GRIDAS(boundai, particle.F ,gridas.SUFORMUOTAS_GRIDAS);
     map<INT, INT>::iterator itr;
-    cout << gridas.SUFORMUOTAS_GRIDAS.size() << endl;
+    /*cout << gridas.SUFORMUOTAS_GRIDAS.size() << endl;
     for (itr = gridas.SUFORMUOTAS_GRIDAS.begin(); itr != gridas.SUFORMUOTAS_GRIDAS.end(); ++itr) {
             cout << '\t' << itr->first
                  << '\t' << itr->second << '\n';
         }
-    //cout << gridas.SUFORMUOTAS_GRIDAS.size() << endl;
-   // for(auto const& pair: gridas.SUFORMUOTAS_GRIDAS){
-      //  cout << pair.first << " " << pair.second <<  " " << particle.F.size() << endl;
-   // }
-    //map<INT, INT> gquiz1;
-     //map<INT, INT>::iterator itr;
-    //gquiz1.insert(pair<INT, INT>(1, 40));
-    /*for (itr = gquiz1.begin(); itr != gquiz1.end(); ++itr) {
-            cout << '\t' << itr->first
-                 << '\t' << itr->second << '\n';
-        }
 */
-/*
-  vtkSmartPointer<vtkPoints> points =
+
+
+ /* vtkSmartPointer<vtkPoints> points =
    vtkSmartPointer<vtkPoints>::New();
   vtkSmartPointer<vtkDoubleArray> radius =
    vtkSmartPointer<vtkDoubleArray>::New();
@@ -131,7 +121,7 @@ polydata->GetPointData()->SetScalars(radius);
   renderWindowInteractor->Start();
 
   return EXIT_SUCCESS;
- */
+*/
 }
 
 

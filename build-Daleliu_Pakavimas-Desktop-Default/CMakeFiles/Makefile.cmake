@@ -178,12 +178,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/lib/cmake/vtk-7.1/VTKTargets-none.cmake"
   "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"
   "/usr/lib/cmake/vtk-7.1/vtkModuleAPI.cmake"
-  "/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake"
-  "/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake"
-  "/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake"
-  "/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake"
-  "/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake"
-  "/usr/share/cmake-3.10/Modules/AutogenInfo.cmake.in"
   "/usr/share/cmake-3.10/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake"
@@ -191,7 +185,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.10/Modules/CMakeFindCodeBlocks.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake"
-  "/usr/share/cmake-3.10/Modules/CMakeParseArguments.cmake"
   "/usr/share/cmake-3.10/Modules/CMakePushCheckState.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake"
@@ -223,15 +216,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/Daleliu_Pakavimas_autogen.dir/AutogenInfo.cmake"
-  "CMakeFiles/jj_autogen.dir/AutogenInfo.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Daleliu_Pakavimas.dir/DependInfo.cmake"
   "CMakeFiles/jj.dir/DependInfo.cmake"
-  "CMakeFiles/Daleliu_Pakavimas_autogen.dir/DependInfo.cmake"
-  "CMakeFiles/jj_autogen.dir/DependInfo.cmake"
+  "CMakeFiles/Biblioteka.dir/DependInfo.cmake"
+  "CMakeFiles/Daleliu_Pakavimas.dir/DependInfo.cmake"
   )

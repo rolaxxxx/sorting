@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Daleliu_Pakavimas
-
-# Build rule for target.
-Daleliu_Pakavimas: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Daleliu_Pakavimas
-.PHONY : Daleliu_Pakavimas
-
-# fast build rule for target.
-Daleliu_Pakavimas/fast:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/build
-.PHONY : Daleliu_Pakavimas/fast
-
-#=============================================================================
 # Target rules for targets named jj
 
 # Build rule for target.
@@ -137,234 +124,30 @@ jj/fast:
 .PHONY : jj/fast
 
 #=============================================================================
-# Target rules for targets named Daleliu_Pakavimas_autogen
+# Target rules for targets named Biblioteka
 
 # Build rule for target.
-Daleliu_Pakavimas_autogen: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Daleliu_Pakavimas_autogen
-.PHONY : Daleliu_Pakavimas_autogen
+Biblioteka: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Biblioteka
+.PHONY : Biblioteka
 
 # fast build rule for target.
-Daleliu_Pakavimas_autogen/fast:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas_autogen.dir/build.make CMakeFiles/Daleliu_Pakavimas_autogen.dir/build
-.PHONY : Daleliu_Pakavimas_autogen/fast
+Biblioteka/fast:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/build
+.PHONY : Biblioteka/fast
 
 #=============================================================================
-# Target rules for targets named jj_autogen
+# Target rules for targets named Daleliu_Pakavimas
 
 # Build rule for target.
-jj_autogen: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 jj_autogen
-.PHONY : jj_autogen
+Daleliu_Pakavimas: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Daleliu_Pakavimas
+.PHONY : Daleliu_Pakavimas
 
 # fast build rule for target.
-jj_autogen/fast:
-	$(MAKE) -f CMakeFiles/jj_autogen.dir/build.make CMakeFiles/jj_autogen.dir/build
-.PHONY : jj_autogen/fast
-
-Daleliu_Pakavimas_autogen/mocs_compilation.o: Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o
-
-.PHONY : Daleliu_Pakavimas_autogen/mocs_compilation.o
-
-# target to build an object file
-Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o
-.PHONY : Daleliu_Pakavimas_autogen/mocs_compilation.cpp.o
-
-Daleliu_Pakavimas_autogen/mocs_compilation.i: Daleliu_Pakavimas_autogen/mocs_compilation.cpp.i
-
-.PHONY : Daleliu_Pakavimas_autogen/mocs_compilation.i
-
-# target to preprocess a source file
-Daleliu_Pakavimas_autogen/mocs_compilation.cpp.i:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.i
-.PHONY : Daleliu_Pakavimas_autogen/mocs_compilation.cpp.i
-
-Daleliu_Pakavimas_autogen/mocs_compilation.s: Daleliu_Pakavimas_autogen/mocs_compilation.cpp.s
-
-.PHONY : Daleliu_Pakavimas_autogen/mocs_compilation.s
-
-# target to generate assembly for a file
-Daleliu_Pakavimas_autogen/mocs_compilation.cpp.s:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/Daleliu_Pakavimas_autogen/mocs_compilation.cpp.s
-.PHONY : Daleliu_Pakavimas_autogen/mocs_compilation.cpp.s
-
-coordinate_math.o: coordinate_math.cpp.o
-
-.PHONY : coordinate_math.o
-
-# target to build an object file
-coordinate_math.cpp.o:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.o
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/coordinate_math.cpp.o
-.PHONY : coordinate_math.cpp.o
-
-coordinate_math.i: coordinate_math.cpp.i
-
-.PHONY : coordinate_math.i
-
-# target to preprocess a source file
-coordinate_math.cpp.i:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.i
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/coordinate_math.cpp.i
-.PHONY : coordinate_math.cpp.i
-
-coordinate_math.s: coordinate_math.cpp.s
-
-.PHONY : coordinate_math.s
-
-# target to generate assembly for a file
-coordinate_math.cpp.s:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/coordinate_math.cpp.s
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/coordinate_math.cpp.s
-.PHONY : coordinate_math.cpp.s
-
-dalele.o: dalele.cpp.o
-
-.PHONY : dalele.o
-
-# target to build an object file
-dalele.cpp.o:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/dalele.cpp.o
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/dalele.cpp.o
-.PHONY : dalele.cpp.o
-
-dalele.i: dalele.cpp.i
-
-.PHONY : dalele.i
-
-# target to preprocess a source file
-dalele.cpp.i:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/dalele.cpp.i
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/dalele.cpp.i
-.PHONY : dalele.cpp.i
-
-dalele.s: dalele.cpp.s
-
-.PHONY : dalele.s
-
-# target to generate assembly for a file
-dalele.cpp.s:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/dalele.cpp.s
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/dalele.cpp.s
-.PHONY : dalele.cpp.s
-
-geometry.o: geometry.cpp.o
-
-.PHONY : geometry.o
-
-# target to build an object file
-geometry.cpp.o:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.o
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/geometry.cpp.o
-.PHONY : geometry.cpp.o
-
-geometry.i: geometry.cpp.i
-
-.PHONY : geometry.i
-
-# target to preprocess a source file
-geometry.cpp.i:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.i
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/geometry.cpp.i
-.PHONY : geometry.cpp.i
-
-geometry.s: geometry.cpp.s
-
-.PHONY : geometry.s
-
-# target to generate assembly for a file
-geometry.cpp.s:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/geometry.cpp.s
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/geometry.cpp.s
-.PHONY : geometry.cpp.s
-
-grid_count.o: grid_count.cpp.o
-
-.PHONY : grid_count.o
-
-# target to build an object file
-grid_count.cpp.o:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_count.cpp.o
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_count.cpp.o
-.PHONY : grid_count.cpp.o
-
-grid_count.i: grid_count.cpp.i
-
-.PHONY : grid_count.i
-
-# target to preprocess a source file
-grid_count.cpp.i:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_count.cpp.i
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_count.cpp.i
-.PHONY : grid_count.cpp.i
-
-grid_count.s: grid_count.cpp.s
-
-.PHONY : grid_count.s
-
-# target to generate assembly for a file
-grid_count.cpp.s:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_count.cpp.s
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_count.cpp.s
-.PHONY : grid_count.cpp.s
-
-grid_neighbors.o: grid_neighbors.cpp.o
-
-.PHONY : grid_neighbors.o
-
-# target to build an object file
-grid_neighbors.cpp.o:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.o
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_neighbors.cpp.o
-.PHONY : grid_neighbors.cpp.o
-
-grid_neighbors.i: grid_neighbors.cpp.i
-
-.PHONY : grid_neighbors.i
-
-# target to preprocess a source file
-grid_neighbors.cpp.i:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.i
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_neighbors.cpp.i
-.PHONY : grid_neighbors.cpp.i
-
-grid_neighbors.s: grid_neighbors.cpp.s
-
-.PHONY : grid_neighbors.s
-
-# target to generate assembly for a file
-grid_neighbors.cpp.s:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/grid_neighbors.cpp.s
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/grid_neighbors.cpp.s
-.PHONY : grid_neighbors.cpp.s
-
-jj_autogen/mocs_compilation.o: jj_autogen/mocs_compilation.cpp.o
-
-.PHONY : jj_autogen/mocs_compilation.o
-
-# target to build an object file
-jj_autogen/mocs_compilation.cpp.o:
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.o
-.PHONY : jj_autogen/mocs_compilation.cpp.o
-
-jj_autogen/mocs_compilation.i: jj_autogen/mocs_compilation.cpp.i
-
-.PHONY : jj_autogen/mocs_compilation.i
-
-# target to preprocess a source file
-jj_autogen/mocs_compilation.cpp.i:
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.i
-.PHONY : jj_autogen/mocs_compilation.cpp.i
-
-jj_autogen/mocs_compilation.s: jj_autogen/mocs_compilation.cpp.s
-
-.PHONY : jj_autogen/mocs_compilation.s
-
-# target to generate assembly for a file
-jj_autogen/mocs_compilation.cpp.s:
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/jj_autogen/mocs_compilation.cpp.s
-.PHONY : jj_autogen/mocs_compilation.cpp.s
+Daleliu_Pakavimas/fast:
+	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/build
+.PHONY : Daleliu_Pakavimas/fast
 
 main.o: main.cpp.o
 
@@ -420,95 +203,221 @@ main2.cpp.s:
 	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/main2.cpp.s
 .PHONY : main2.cpp.s
 
-map_bounds.o: map_bounds.cpp.o
+src/coordinate_math.o: src/coordinate_math.cpp.o
 
-.PHONY : map_bounds.o
-
-# target to build an object file
-map_bounds.cpp.o:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/map_bounds.cpp.o
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/map_bounds.cpp.o
-.PHONY : map_bounds.cpp.o
-
-map_bounds.i: map_bounds.cpp.i
-
-.PHONY : map_bounds.i
-
-# target to preprocess a source file
-map_bounds.cpp.i:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/map_bounds.cpp.i
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/map_bounds.cpp.i
-.PHONY : map_bounds.cpp.i
-
-map_bounds.s: map_bounds.cpp.s
-
-.PHONY : map_bounds.s
-
-# target to generate assembly for a file
-map_bounds.cpp.s:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/map_bounds.cpp.s
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/map_bounds.cpp.s
-.PHONY : map_bounds.cpp.s
-
-pakavimo_algoritmas.o: pakavimo_algoritmas.cpp.o
-
-.PHONY : pakavimo_algoritmas.o
+.PHONY : src/coordinate_math.o
 
 # target to build an object file
-pakavimo_algoritmas.cpp.o:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/pakavimo_algoritmas.cpp.o
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.o
-.PHONY : pakavimo_algoritmas.cpp.o
+src/coordinate_math.cpp.o:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/coordinate_math.cpp.o
+.PHONY : src/coordinate_math.cpp.o
 
-pakavimo_algoritmas.i: pakavimo_algoritmas.cpp.i
+src/coordinate_math.i: src/coordinate_math.cpp.i
 
-.PHONY : pakavimo_algoritmas.i
+.PHONY : src/coordinate_math.i
 
 # target to preprocess a source file
-pakavimo_algoritmas.cpp.i:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/pakavimo_algoritmas.cpp.i
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.i
-.PHONY : pakavimo_algoritmas.cpp.i
+src/coordinate_math.cpp.i:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/coordinate_math.cpp.i
+.PHONY : src/coordinate_math.cpp.i
 
-pakavimo_algoritmas.s: pakavimo_algoritmas.cpp.s
+src/coordinate_math.s: src/coordinate_math.cpp.s
 
-.PHONY : pakavimo_algoritmas.s
+.PHONY : src/coordinate_math.s
 
 # target to generate assembly for a file
-pakavimo_algoritmas.cpp.s:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/pakavimo_algoritmas.cpp.s
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/pakavimo_algoritmas.cpp.s
-.PHONY : pakavimo_algoritmas.cpp.s
+src/coordinate_math.cpp.s:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/coordinate_math.cpp.s
+.PHONY : src/coordinate_math.cpp.s
 
-tasko_skaiciavimas.o: tasko_skaiciavimas.cpp.o
+src/dalele.o: src/dalele.cpp.o
 
-.PHONY : tasko_skaiciavimas.o
+.PHONY : src/dalele.o
 
 # target to build an object file
-tasko_skaiciavimas.cpp.o:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/tasko_skaiciavimas.cpp.o
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.o
-.PHONY : tasko_skaiciavimas.cpp.o
+src/dalele.cpp.o:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/dalele.cpp.o
+.PHONY : src/dalele.cpp.o
 
-tasko_skaiciavimas.i: tasko_skaiciavimas.cpp.i
+src/dalele.i: src/dalele.cpp.i
 
-.PHONY : tasko_skaiciavimas.i
+.PHONY : src/dalele.i
 
 # target to preprocess a source file
-tasko_skaiciavimas.cpp.i:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/tasko_skaiciavimas.cpp.i
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.i
-.PHONY : tasko_skaiciavimas.cpp.i
+src/dalele.cpp.i:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/dalele.cpp.i
+.PHONY : src/dalele.cpp.i
 
-tasko_skaiciavimas.s: tasko_skaiciavimas.cpp.s
+src/dalele.s: src/dalele.cpp.s
 
-.PHONY : tasko_skaiciavimas.s
+.PHONY : src/dalele.s
 
 # target to generate assembly for a file
-tasko_skaiciavimas.cpp.s:
-	$(MAKE) -f CMakeFiles/Daleliu_Pakavimas.dir/build.make CMakeFiles/Daleliu_Pakavimas.dir/tasko_skaiciavimas.cpp.s
-	$(MAKE) -f CMakeFiles/jj.dir/build.make CMakeFiles/jj.dir/tasko_skaiciavimas.cpp.s
-.PHONY : tasko_skaiciavimas.cpp.s
+src/dalele.cpp.s:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/dalele.cpp.s
+.PHONY : src/dalele.cpp.s
+
+src/geometry.o: src/geometry.cpp.o
+
+.PHONY : src/geometry.o
+
+# target to build an object file
+src/geometry.cpp.o:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/geometry.cpp.o
+.PHONY : src/geometry.cpp.o
+
+src/geometry.i: src/geometry.cpp.i
+
+.PHONY : src/geometry.i
+
+# target to preprocess a source file
+src/geometry.cpp.i:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/geometry.cpp.i
+.PHONY : src/geometry.cpp.i
+
+src/geometry.s: src/geometry.cpp.s
+
+.PHONY : src/geometry.s
+
+# target to generate assembly for a file
+src/geometry.cpp.s:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/geometry.cpp.s
+.PHONY : src/geometry.cpp.s
+
+src/grid_count.o: src/grid_count.cpp.o
+
+.PHONY : src/grid_count.o
+
+# target to build an object file
+src/grid_count.cpp.o:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/grid_count.cpp.o
+.PHONY : src/grid_count.cpp.o
+
+src/grid_count.i: src/grid_count.cpp.i
+
+.PHONY : src/grid_count.i
+
+# target to preprocess a source file
+src/grid_count.cpp.i:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/grid_count.cpp.i
+.PHONY : src/grid_count.cpp.i
+
+src/grid_count.s: src/grid_count.cpp.s
+
+.PHONY : src/grid_count.s
+
+# target to generate assembly for a file
+src/grid_count.cpp.s:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/grid_count.cpp.s
+.PHONY : src/grid_count.cpp.s
+
+src/grid_neighbors.o: src/grid_neighbors.cpp.o
+
+.PHONY : src/grid_neighbors.o
+
+# target to build an object file
+src/grid_neighbors.cpp.o:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/grid_neighbors.cpp.o
+.PHONY : src/grid_neighbors.cpp.o
+
+src/grid_neighbors.i: src/grid_neighbors.cpp.i
+
+.PHONY : src/grid_neighbors.i
+
+# target to preprocess a source file
+src/grid_neighbors.cpp.i:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/grid_neighbors.cpp.i
+.PHONY : src/grid_neighbors.cpp.i
+
+src/grid_neighbors.s: src/grid_neighbors.cpp.s
+
+.PHONY : src/grid_neighbors.s
+
+# target to generate assembly for a file
+src/grid_neighbors.cpp.s:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/grid_neighbors.cpp.s
+.PHONY : src/grid_neighbors.cpp.s
+
+src/map_bounds.o: src/map_bounds.cpp.o
+
+.PHONY : src/map_bounds.o
+
+# target to build an object file
+src/map_bounds.cpp.o:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/map_bounds.cpp.o
+.PHONY : src/map_bounds.cpp.o
+
+src/map_bounds.i: src/map_bounds.cpp.i
+
+.PHONY : src/map_bounds.i
+
+# target to preprocess a source file
+src/map_bounds.cpp.i:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/map_bounds.cpp.i
+.PHONY : src/map_bounds.cpp.i
+
+src/map_bounds.s: src/map_bounds.cpp.s
+
+.PHONY : src/map_bounds.s
+
+# target to generate assembly for a file
+src/map_bounds.cpp.s:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/map_bounds.cpp.s
+.PHONY : src/map_bounds.cpp.s
+
+src/pakavimo_algoritmas.o: src/pakavimo_algoritmas.cpp.o
+
+.PHONY : src/pakavimo_algoritmas.o
+
+# target to build an object file
+src/pakavimo_algoritmas.cpp.o:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/pakavimo_algoritmas.cpp.o
+.PHONY : src/pakavimo_algoritmas.cpp.o
+
+src/pakavimo_algoritmas.i: src/pakavimo_algoritmas.cpp.i
+
+.PHONY : src/pakavimo_algoritmas.i
+
+# target to preprocess a source file
+src/pakavimo_algoritmas.cpp.i:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/pakavimo_algoritmas.cpp.i
+.PHONY : src/pakavimo_algoritmas.cpp.i
+
+src/pakavimo_algoritmas.s: src/pakavimo_algoritmas.cpp.s
+
+.PHONY : src/pakavimo_algoritmas.s
+
+# target to generate assembly for a file
+src/pakavimo_algoritmas.cpp.s:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/pakavimo_algoritmas.cpp.s
+.PHONY : src/pakavimo_algoritmas.cpp.s
+
+src/tasko_skaiciavimas.o: src/tasko_skaiciavimas.cpp.o
+
+.PHONY : src/tasko_skaiciavimas.o
+
+# target to build an object file
+src/tasko_skaiciavimas.cpp.o:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/tasko_skaiciavimas.cpp.o
+.PHONY : src/tasko_skaiciavimas.cpp.o
+
+src/tasko_skaiciavimas.i: src/tasko_skaiciavimas.cpp.i
+
+.PHONY : src/tasko_skaiciavimas.i
+
+# target to preprocess a source file
+src/tasko_skaiciavimas.cpp.i:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/tasko_skaiciavimas.cpp.i
+.PHONY : src/tasko_skaiciavimas.cpp.i
+
+src/tasko_skaiciavimas.s: src/tasko_skaiciavimas.cpp.s
+
+.PHONY : src/tasko_skaiciavimas.s
+
+# target to generate assembly for a file
+src/tasko_skaiciavimas.cpp.s:
+	$(MAKE) -f CMakeFiles/Biblioteka.dir/build.make CMakeFiles/Biblioteka.dir/src/tasko_skaiciavimas.cpp.s
+.PHONY : src/tasko_skaiciavimas.cpp.s
 
 # Help Target
 help:
@@ -517,47 +426,40 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... Daleliu_Pakavimas"
 	@echo "... edit_cache"
 	@echo "... jj"
-	@echo "... Daleliu_Pakavimas_autogen"
-	@echo "... jj_autogen"
-	@echo "... Daleliu_Pakavimas_autogen/mocs_compilation.o"
-	@echo "... Daleliu_Pakavimas_autogen/mocs_compilation.i"
-	@echo "... Daleliu_Pakavimas_autogen/mocs_compilation.s"
-	@echo "... coordinate_math.o"
-	@echo "... coordinate_math.i"
-	@echo "... coordinate_math.s"
-	@echo "... dalele.o"
-	@echo "... dalele.i"
-	@echo "... dalele.s"
-	@echo "... geometry.o"
-	@echo "... geometry.i"
-	@echo "... geometry.s"
-	@echo "... grid_count.o"
-	@echo "... grid_count.i"
-	@echo "... grid_count.s"
-	@echo "... grid_neighbors.o"
-	@echo "... grid_neighbors.i"
-	@echo "... grid_neighbors.s"
-	@echo "... jj_autogen/mocs_compilation.o"
-	@echo "... jj_autogen/mocs_compilation.i"
-	@echo "... jj_autogen/mocs_compilation.s"
+	@echo "... Biblioteka"
+	@echo "... Daleliu_Pakavimas"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... main2.o"
 	@echo "... main2.i"
 	@echo "... main2.s"
-	@echo "... map_bounds.o"
-	@echo "... map_bounds.i"
-	@echo "... map_bounds.s"
-	@echo "... pakavimo_algoritmas.o"
-	@echo "... pakavimo_algoritmas.i"
-	@echo "... pakavimo_algoritmas.s"
-	@echo "... tasko_skaiciavimas.o"
-	@echo "... tasko_skaiciavimas.i"
-	@echo "... tasko_skaiciavimas.s"
+	@echo "... src/coordinate_math.o"
+	@echo "... src/coordinate_math.i"
+	@echo "... src/coordinate_math.s"
+	@echo "... src/dalele.o"
+	@echo "... src/dalele.i"
+	@echo "... src/dalele.s"
+	@echo "... src/geometry.o"
+	@echo "... src/geometry.i"
+	@echo "... src/geometry.s"
+	@echo "... src/grid_count.o"
+	@echo "... src/grid_count.i"
+	@echo "... src/grid_count.s"
+	@echo "... src/grid_neighbors.o"
+	@echo "... src/grid_neighbors.i"
+	@echo "... src/grid_neighbors.s"
+	@echo "... src/map_bounds.o"
+	@echo "... src/map_bounds.i"
+	@echo "... src/map_bounds.s"
+	@echo "... src/pakavimo_algoritmas.o"
+	@echo "... src/pakavimo_algoritmas.i"
+	@echo "... src/pakavimo_algoritmas.s"
+	@echo "... src/tasko_skaiciavimas.o"
+	@echo "... src/tasko_skaiciavimas.i"
+	@echo "... src/tasko_skaiciavimas.s"
 .PHONY : help
 
 

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libBiblioteka.a  CMakeFiles/Biblioteka.dir/src/geometry.cpp.o CMakeFiles/Biblioteka.dir/src/dalele.cpp.o CMakeFiles/Biblioteka.dir/src/grid_count.cpp.o CMakeFiles/Biblioteka.dir/src/map_bounds.cpp.o CMakeFiles/Biblioteka.dir/src/pakavimo_algoritmas.cpp.o CMakeFiles/Biblioteka.dir/src/tasko_skaiciavimas.cpp.o CMakeFiles/Biblioteka.dir/src/grid_neighbors.cpp.o CMakeFiles/Biblioteka.dir/src/coordinate_math.cpp.o
+/usr/bin/ranlib libBiblioteka.a
