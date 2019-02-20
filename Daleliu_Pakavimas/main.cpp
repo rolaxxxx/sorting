@@ -21,7 +21,7 @@ int main(int, char *[])
     kordinaciu_skaiciavimas.coordinate_math_(particle, boundai);
     particle.Triju_DaleliuGeneracija(boundai,  particle.F, particle.Distribution);
     gridas.GRIDAS(boundai, particle.F ,gridas.SUFORMUOTAS_GRIDAS);
-    map<INT, INT>::iterator itr;
+   // map<INT, INT>::iterator itr;
     /*cout << gridas.SUFORMUOTAS_GRIDAS.size() << endl;
     for (itr = gridas.SUFORMUOTAS_GRIDAS.begin(); itr != gridas.SUFORMUOTAS_GRIDAS.end(); ++itr) {
             cout << '\t' << itr->first

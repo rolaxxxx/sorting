@@ -50,7 +50,10 @@ void Dalele::Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL4_ARRAY &F, REA
         temp_dal=F[i];
      points->InsertNextPoint(temp_dal[0],temp_dal[1], temp_dal[2]);
      radius->InsertNextTuple1(temp_dal[3]);
+     //cout << temp_dal << endl;
     }
+
+
 /*
      tempDalele[0]=(map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2-tempDalele[3]);
       tempDalele[1]=(map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2+tempDalele[3]);
