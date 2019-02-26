@@ -53,6 +53,7 @@ REAL4 operator - (REAL4 A,  REAL4 B )
             A[3]-=B[3];
              return A;
 }
+
 REAL coordinate_math::dot_prod(REAL4 &vec_a, REAL4 &vec_b){
     REAL dot_prod_rez;
     dot_prod_rez=vec_a[0]*vec_b[0] + vec_a[1]*vec_b[1] + vec_a[2]*vec_b[2];
@@ -84,6 +85,7 @@ void coordinate_math::coordinate_math_(Dalele &particle, MAP_BOUNDS boundai)
     particle_coords[3]=particle.Distribution[spind];
     //cout << particle_coords[3] << endl;
     particle.F.push_back(particle_coords);
+   // cout << particle.F[] << endl;
 
     further_coords[0]=(boundai.MAP_BOUNDS_MAX[0]-(boundai.MAP_BOUNDS_MAX[0]/2))+2*particle_coords[3];
     further_coords[1]=(boundai.MAP_BOUNDS_MAX[1]-(boundai.MAP_BOUNDS_MAX[1]/2));
@@ -126,75 +128,68 @@ void coordinate_math::coordinate_math_(Dalele &particle, MAP_BOUNDS boundai)
 
     tetrahedron_top_coords[2]=sqrt(pow(tetrahedron_sides[0],2)-pow(tetrahedron_top_coords[0],2)-pow(tetrahedron_top_coords[1],2));
 // 3D skaiciavimai ////////////
+    REAL ds1, ds2, ds3;
     REAL4 S1, S2, S3;
     S1=particle_coords;
     S2=further_coords;
     S3=third_coords;
-
-
+    ds1=S1[3]+S1[3];
+    ds2=S2[3]+S2[3];
+    ds3=S3[3]+S3[3];
+    //cout << ds3 << " " << ds2 << " " << ds1 << endl;
     //cout << S1 << " " << S2 << " " << S3  << endl;
             //d^2=sqrt((x0-x1)^2+(y0-y1)^2+(z0-z1)^2)
     REAL4 vector_u, vector_v, vector_w;
-    vector_u=(S1-S2)/(sqrt(pow(S1[0]-S2[0],2)+pow(S1[1]-S2[1],2)+pow(S1[2]-S2[2],2)));
-    vector_v=(S1-S3)/(sqrt(pow(S1[0]-S3[0],2)+pow(S1[1]-S3[1],2)+pow(S1[2]-S3[2],2)));
+    REAL4 temporS1, temporS3;
 
-    //vector_w=-2*S1;
-    //vector_w=S1*-2;
-    vector_w=S1*-2;
-    //cout << S1 << " " << S1*-2 << endl;
-    REAL a, b, c;
-    //(√ax2 + ay2 + az2)
-    REAL result_calc_a, result_calc_b, result_calc_c_positive, result_calc_c_negative; // rezultatui skaiciuoti skirtos reiksmes alpha beta gamma
-    REAL4 vector_t;
-    REAL result_calc_d;// papildoma reiksme reikalinga skaiciavimams;
-    a=(pow(S2[3],2)-pow(S1[3],2)+pow(S1[0],2)-pow(S2[0],2)+pow(S1[1],2)-pow(S2[1],2)+pow(S1[2],2)-pow(S2[2],2))
-            /(2*sqrt(pow(S1[0]-S2[0],2)+pow(S1[1]-S2[1],2)+pow(S1[2]-S2[2],2)));
+    temporS1=S1-S2;
+    temporS3=S1-S3;
 
-    b=(pow(S3[3],2)-pow(S1[3],2)+pow(S1[0],2)-pow(S3[0],2)+pow(S1[1],2)-pow(S3[1],2)+pow(S1[2],2)-pow(S3[2],2))
-            /(2*sqrt(pow(S1[0]-S3[0],2)+pow(S1[1]-S3[1],2)+pow(S1[2]-S3[2],2)));
-
-    c=pow(S1[3],2)-pow(S1[0],2)-pow(S1[1],2)-pow(S1[2],2);
-
-    //cout << (pow(S3[3],2)-pow(S1[3],2)+pow(S1[0],2)-pow(S3[0],2)+pow(S1[1],2)-pow(S3[1],2)+pow(S1[2],2)-pow(S3[2],2))
-         //  / (2*sqrt(pow(S1[0]-S3[0],2)+pow(S1[1]-S3[1],2)+pow(S1[2]-S3[2],2))) << endl;
-    //cout << a << " " << b << " " << c  << endl;
-    REAL4 Xproduktas=cross_prod(vector_u, vector_v); // skaiciavimams skirto X produkto reiksme
-    //cout << Xproduktas << endl;
-    vector_t=Xproduktas/sqrt(pow(Xproduktas[0],2)+pow(Xproduktas[1],2)+pow(Xproduktas[2],2));
-    //cout << vector_u << " " << vector_v << " " << vector_t << endl;
+    vector_u=temporS1/(sqrt(pow(temporS1[0],2)+pow(temporS1[1],2)+pow(temporS1[2],2)));
+    vector_v=temporS3/(sqrt(pow(temporS3[0],2)+pow(temporS3[1],2)+pow(temporS3[2],2)));
     //cout << vector_u << " " << vector_v << endl;
-    //cout << cross_prod(vector_u, vector_v) << " " <<  Xproduktas << endl;
+    vector_w=S1*(-2);
+    //cout << vector_w << endl;
+    REAL calc_a, calc_b, calc_c;
+    calc_a=(pow(ds2,2)-pow(ds1,2)+pow(S1[0],2)-pow(S2[0],2)+pow(S1[1],2)-pow(S2[1],2)+pow(S1[2],2)-pow(S2[2],2))/
+            (2*sqrt(pow(temporS1[0],2)+pow(temporS1[1],2)+pow(temporS1[2],2)));
+    calc_b=(pow(ds3,2)-pow(ds1,2)+pow(S1[0],2)-pow(S3[0],2)+pow(S1[1],2)-pow(S3[1],2)+pow(S1[2],2)-pow(S3[2],2))/
+            (2*sqrt(pow(temporS3[0],2)+pow(temporS3[1],2)+pow(temporS3[2],2)));
+    calc_c=pow(ds1,2)-pow(S1[0],2)-pow(S1[1],2)-pow(S1[2],2);
+   //cout << calc_a << " " << calc_b <<"  "<< calc_c << endl;
 
-    //cout << vector_t << endl;
-    result_calc_a=(a-b*dot_prod(vector_u, vector_v))/(1-pow(dot_prod(vector_u, vector_v),2));
-    result_calc_b=(b-a*dot_prod(vector_u, vector_v))/(1-pow(dot_prod(vector_u, vector_v),2)); //virsuje ir apacioje . produktas tarp vektoriu
+// (x-5)^2+(y-5)^2+(z-0)^2=1
+// (x-7)^2+(y-5)^2+(z-0)^2=1
+// (x-6)^2+(y-6.73205)^2+(z-0)^2=1
+    REAL4 vector_t;
+    REAL4 xProd=cross_prod(vector_u, vector_v);
+    vector_t=xProd/(sqrt(pow(xProd[0],2)+pow(xProd[1],2)+pow(xProd[2],2)));
+    //cout << vector_t<< endl;
 
-    //cout << result_calc_a << " " << result_calc_b << endl;
-    //cout <<a-b*dot_prod(vector_u, vector_v)<< " " << 1-pow(dot_prod(vector_u, vector_v),2) << "  " << result_calc_b <<  endl;
-    //cout << dot_prod(vector_u, vector_v) << endl;
-    result_calc_d=pow(result_calc_a,2)+pow(result_calc_b,2)+2*result_calc_a*result_calc_b*dot_prod(vector_u, vector_v)
-            +result_calc_a*dot_prod(vector_u, vector_w)+result_calc_b*dot_prod(vector_v, vector_w)-c;
+    REAL rez_calc_a, rez_calc_b, rez_calc_c, rez_calc_d;
+    rez_calc_a=(calc_a-calc_b*dot_prod(vector_u, vector_v))/(1-pow(dot_prod(vector_u, vector_v),2));
+    rez_calc_b=(calc_b-calc_a*dot_prod(vector_u, vector_v))/(1-pow(dot_prod(vector_u, vector_v),2));
 
-    //cout << vector_u << " " << vector_w << " " << vector_v << endl;
-   //cout << pow(result_calc_a,2)<< "+" << pow(result_calc_b,2) << "+" << 2*result_calc_a*result_calc_b*dot_prod(vector_u, vector_v)
-     //   << "+" << result_calc_a<< "*" <<dot_prod(vector_u, vector_w)<< "+" <<result_calc_b*dot_prod(vector_v, vector_w)<< "-" << c << endl;
+    rez_calc_c=pow(rez_calc_a,2)+pow(rez_calc_b,2)+2*rez_calc_a*rez_calc_b*dot_prod(vector_u, vector_v)
+            +rez_calc_a*dot_prod(vector_u, vector_w)+rez_calc_b*dot_prod(vector_v, vector_w)-calc_c;
+    //cout << calc_c << endl;
 
-    //cout << 2<<" " << result_calc_a<<" " << result_calc_b<<" "<<dot_prod(vector_u, vector_v)<< endl;
-    //cout << dot_prod(vector_v, vector_t) << endl;
+    rez_calc_d=(1/2)*(-dot_prod(vector_w, vector_t)+sqrt(pow(dot_prod(vector_w, vector_t),2)-4*rez_calc_c));
+// rytoj pratesti cia nes gaunasi nulis ir nera Z koordinates
 
-    //cout << result_calc_d << endl;
-    result_calc_c_positive=1/2*(-dot_prod(vector_w, vector_t)+sqrt(pow(dot_prod(vector_w,vector_t),2)-4*result_calc_d));
-    result_calc_c_negative=1/2*(-dot_prod(vector_w, vector_t)-sqrt(pow(dot_prod(vector_w,vector_t),2)-4*result_calc_d));
 
-    //cout << result_calc_c_negative <<" " << result_calc_c_positive << endl;
-   //cout <<pow(dot_prod(vector_w,vector_t),2) << endl;
-  // cout << -dot_prod(vector_w, vector_t) << " " <<pow(dot_prod(vector_w,vector_t),2)<< " " << 4*result_calc_d << endl;
 
-    //cout <<result_calc_d<< endl;
-    //cout << result_calc_c_positive << " " << result_calc_c_negative << endl;
-    result_tetrahedron_coords=result_calc_a*vector_u+result_calc_b*vector_v+result_calc_c_positive*vector_t;
-    //cout << result_tetrahedron_coords << endl;
-    particle.F.push_back(result_tetrahedron_coords);
 
+    //cout << pow(dot_prod(vector_w, vector_t),2)-4*rez_calc_c << endl;
+
+    REAL4 rez_sphere_coords;
+    //rez_sphere_coords[0]=6;
+    //rez_sphere_coords[1]=5.536990880206932;
+    //rez_sphere_coords[2]=1.646706043765731;
+    //rez_sphere_coords[3]=1;
+    rez_sphere_coords=rez_calc_a*vector_u+rez_calc_b*vector_v+rez_calc_d*vector_t;
+    rez_sphere_coords[3]=1;
+    //cout << rez_sphere_coords << endl;
+    particle.F.push_back(rez_sphere_coords);
 
 }

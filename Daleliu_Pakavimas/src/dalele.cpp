@@ -8,9 +8,9 @@ void Dalele::DalelesDuomenuApibrezimas()
     max=5;
     daleliuKiekis=100;
 }
-void Dalele::Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL4_ARRAY &F, REAL_ARRAY &Distribution){
-    REAL4 tempDalele;
-    INT idx;
+void Dalele::Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL_ARRAY Distribution, REAL4_ARRAY F){
+
+    INT idx=Distribution[0];
     vtkSmartPointer<vtkPoints> points =
          vtkSmartPointer<vtkPoints>::New();
     vtkSmartPointer<vtkDoubleArray> radius =
@@ -45,13 +45,18 @@ void Dalele::Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL4_ARRAY &F, REA
      tempDalele[3]=Distribution[idx];
      F.push_back(tempDalele);
      */
-    REAL4 temp_dal;
+
+     REAL4 tempDalele;
+
+
     for(INT i=0;i<F.size();i++){
-        temp_dal=F[i];
-     points->InsertNextPoint(temp_dal[0],temp_dal[1], temp_dal[2]);
-     radius->InsertNextTuple1(temp_dal[3]);
-     //cout << temp_dal << endl;
+    tempDalele=F[i];
+     //cout << i<<"  "<<F.size()<<" "<<tempDalele << endl;
+     points->InsertNextPoint(tempDalele[0],tempDalele[1], tempDalele[2]);
+     radius->InsertNextTuple1(tempDalele[3]);
+     //cout << tempDalele << endl;
     }
+
 
 
 /*

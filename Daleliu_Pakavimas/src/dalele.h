@@ -15,7 +15,7 @@ public:
     REAL4_ARRAY F; // daleles salia kuriu dar galima kazka lipdyti
     REAL4_ARRAY V; // daleles kurios yra iskeltos is F ir jau turi visus kaimynus
     void DalelesDuomenuApibrezimas();
-    void Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL4_ARRAY &F, REAL_ARRAY &Distribution);
+    void Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL_ARRAY Distribution, REAL4_ARRAY F);
 };
 
 #endif // DALELE_H
