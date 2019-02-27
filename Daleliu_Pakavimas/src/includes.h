@@ -4,6 +4,9 @@
 #include <ctime>
 #include <chrono>
 #include <sstream>
+#include <cstdlib>
+#include <random>
+#include <ctime>
 #include <boost/compute/types.hpp>
 #include <boost/compute/core.hpp>
 #include <boost/compute/container/vector.hpp>
