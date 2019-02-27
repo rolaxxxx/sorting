@@ -25,12 +25,7 @@ void GRID_COUNT::GRIDAS(MAP_BOUNDS map_boundai, REAL4_ARRAY F, map<INT, INT> &SU
             else {
                 SUFORMUOTAS_GRIDAS.insert(pair<INT, INT>(TEMP_ID, indeksas));
                 SUFORMUOTAS_GRIDAS.find(TEMP_ID)->second++;
-                //cout <<SUFORMUOTAS_GRIDAS.find(TEMP_ID)->first << " " << SUFORMUOTAS_GRIDAS.find(TEMP_ID)->second << endl;
+                cout <<SUFORMUOTAS_GRIDAS.find(TEMP_ID)->first << " " << SUFORMUOTAS_GRIDAS.find(TEMP_ID)->second << endl;
          }
     }
-
-
-
-
-
 }

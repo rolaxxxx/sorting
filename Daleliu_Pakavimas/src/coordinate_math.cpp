@@ -53,7 +53,6 @@ REAL4 operator - (REAL4 A,  REAL4 B )
             A[3]-=B[3];
              return A;
 }
-
 REAL coordinate_math::dot_prod(REAL4 &vec_a, REAL4 &vec_b){
     REAL dot_prod_rez;
     dot_prod_rez=vec_a[0]*vec_b[0] + vec_a[1]*vec_b[1] + vec_a[2]*vec_b[2];
@@ -64,10 +63,8 @@ REAL4 coordinate_math::cross_prod(REAL4 &vec_a, REAL4 &vec_b){
     prod_rez[0]=vec_a[1]*vec_b[2]-vec_a[2]*vec_b[1];
     prod_rez[1]=vec_a[2]*vec_b[0]-vec_a[0]*vec_b[2];
     prod_rez[2]=vec_a[0]*vec_b[1]-vec_a[1]*vec_b[0];
-    //cout <<vec_a[0] << " " << vec_b[1] << " " << vec_b[1] << " " << vec_a[0] << endl;
     return prod_rez;
 }
-
 void coordinate_math::first_three_cells(Dalele &particle, MAP_BOUNDS boundai){
 
     REAL4 particle_coords, further_coords, third_coords, tetrahedron_top_coords; // S1 S2 S3 with radii at 4th coord
@@ -96,9 +93,7 @@ void coordinate_math::first_three_cells(Dalele &particle, MAP_BOUNDS boundai){
 
     spind=rand()%particle.Distribution.size();
 
-
     third_coords[3]=particle.Distribution[spind];
-
 
     third_coords[0]=particle_coords[0]+particle_coords[3]; //e
     third_coords[1]=particle_coords[0]+((particle_coords[3]*2)*sqrt(3)/2); // f
@@ -106,8 +101,7 @@ void coordinate_math::first_three_cells(Dalele &particle, MAP_BOUNDS boundai){
     //cout << third_coords[0] << " " << third_coords[1] << " " << third_coords[2] << endl;
     particle.F.push_back(third_coords);
     spind=rand()%particle.Distribution.size();
-    cout << particle.F.size() << endl;
-
+    //cout << particle.F.size() << endl;
 }
 void coordinate_math::coordinate_math_(Dalele &particle, MAP_BOUNDS boundai)
 {
@@ -124,9 +118,6 @@ void coordinate_math::coordinate_math_(Dalele &particle, MAP_BOUNDS boundai)
     ds2=S2[3]+S2[3];
     ds3=S3[3]+S3[3];
 
-    //cout << ds3 << " " << ds2 << " " << ds1 << endl;
-    //cout << S1 << " " << S2 << " " << S3  << endl;
-            //d^2=sqrt((x0-x1)^2+(y0-y1)^2+(z0-z1)^2)
     REAL4 vector_u, vector_v, vector_w;
     REAL4 temporS1, temporS3;
 
@@ -135,16 +126,15 @@ void coordinate_math::coordinate_math_(Dalele &particle, MAP_BOUNDS boundai)
 
     vector_u=temporS1/(sqrt(pow(temporS1[0],2)+pow(temporS1[1],2)+pow(temporS1[2],2)));
     vector_v=temporS3/(sqrt(pow(temporS3[0],2)+pow(temporS3[1],2)+pow(temporS3[2],2)));
-    //cout << vector_u << " " << vector_v << endl;
+
     vector_w=S1*(-2);
-    //cout << vector_w << endl;
+
     REAL calc_a, calc_b, calc_c;
     calc_a=(pow(ds2,2)-pow(ds1,2)+pow(S1[0],2)-pow(S2[0],2)+pow(S1[1],2)-pow(S2[1],2)+pow(S1[2],2)-pow(S2[2],2))/
             (2*sqrt(pow(temporS1[0],2)+pow(temporS1[1],2)+pow(temporS1[2],2)));
     calc_b=(pow(ds3,2)-pow(ds1,2)+pow(S1[0],2)-pow(S3[0],2)+pow(S1[1],2)-pow(S3[1],2)+pow(S1[2],2)-pow(S3[2],2))/
             (2*sqrt(pow(temporS3[0],2)+pow(temporS3[1],2)+pow(temporS3[2],2)));
     calc_c=pow(ds1,2)-pow(S1[0],2)-pow(S1[1],2)-pow(S1[2],2);
-   //cout << calc_a << " " << calc_b <<"  "<< calc_c << endl;
 
     REAL4 vector_t;
     REAL4 xProd=cross_prod(vector_u, vector_v);
@@ -164,8 +154,6 @@ void coordinate_math::coordinate_math_(Dalele &particle, MAP_BOUNDS boundai)
     rez_sphere_coords=rez_calc_a*vector_u+rez_calc_b*vector_v+rez_calc_d*vector_t;
     spind=rand()%particle.Distribution.size();
     rez_sphere_coords[3]=particle.Distribution[spind];
-     //cout << rez_sphere_coords << endl;
-    //cout << rez_sphere_coords << endl;
-    particle.F.push_back(rez_sphere_coords);
 
+    particle.F.push_back(rez_sphere_coords);
 }

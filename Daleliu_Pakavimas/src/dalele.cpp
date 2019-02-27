@@ -15,62 +15,13 @@ void Dalele::Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL_ARRAY Distribu
          vtkSmartPointer<vtkPoints>::New();
     vtkSmartPointer<vtkDoubleArray> radius =
          vtkSmartPointer<vtkDoubleArray>::New();
-    //cout << (map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2) <<" "<< (map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2)<< endl;
-
-    /*tempDalele[0]=((map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2));
-    tempDalele[1]=(map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2);
-    tempDalele[2]=((map_boundai.MAP_BOUNDS_MAX[2]-map_boundai.MAP_BOUNDS_MAX[2]/2));
-    idx=rand()%Distribution.size();
-    tempDalele[3]=Distribution[idx];
-    points->InsertNextPoint(tempDalele[0],tempDalele[1],tempDalele[2]);
-    radius->InsertNextTuple1(tempDalele[3]);
-    F.push_back(tempDalele);
-
-    //cout <<((map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2)+idx) << endl;
-    //cout << map_boundai.MAP_BOUNDS_MAX[0]<< " " << map_boundai.MAP_BOUNDS_MAX[0]/2<< " " <<idx << endl;
-    tempDalele[0]=((map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2)+2*tempDalele[3]);
-    tempDalele[1]=(map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2);
-    tempDalele[2]=((map_boundai.MAP_BOUNDS_MAX[2]-map_boundai.MAP_BOUNDS_MAX[2]/2));
-    idx=rand()%Distribution.size();
-    tempDalele[3]=Distribution[idx];
-    //cout << tempDalele[3] << endl;
-    F.push_back(tempDalele);
-    points->InsertNextPoint(tempDalele[0],tempDalele[1],tempDalele[2]);
-    radius->InsertNextTuple1(tempDalele[3]);
-
-     tempDalele[0]=(map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2+tempDalele[3]);
-     tempDalele[1]=(map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2+tempDalele[3]);
-     tempDalele[2]=(map_boundai.MAP_BOUNDS_MAX[2]-map_boundai.MAP_BOUNDS_MAX[2]/2+tempDalele[3]);
-     idx=rand()%Distribution.size();
-     tempDalele[3]=Distribution[idx];
-     F.push_back(tempDalele);
-     */
 
      REAL4 tempDalele;
-
-
     for(INT i=0;i<F.size();i++){
-    tempDalele=F[i];
-     //cout << i<<"  "<<F.size()<<" "<<tempDalele << endl;
+     tempDalele=F[i];
      points->InsertNextPoint(tempDalele[0],tempDalele[1], tempDalele[2]);
      radius->InsertNextTuple1(tempDalele[3]);
-     //cout << tempDalele << endl;
     }
-
-
-
-/*
-     tempDalele[0]=(map_boundai.MAP_BOUNDS_MAX[0]-map_boundai.MAP_BOUNDS_MAX[0]/2-tempDalele[3]);
-      tempDalele[1]=(map_boundai.MAP_BOUNDS_MAX[1]-map_boundai.MAP_BOUNDS_MAX[1]/2+tempDalele[3]);
-      tempDalele[2]=(map_boundai.MAP_BOUNDS_MAX[2]-map_boundai.MAP_BOUNDS_MAX[2]/2-tempDalele[3]);
-      idx=rand()%particle.Distribution.size();
-      tempDalele[3]=particle.Distribution[idx];
-      cout << tempDalele[3] << endl;
-      particle.F.push_back(tempDalele);
-      points->InsertNextPoint(tempDalele[0],tempDalele[1],tempDalele[2]);
-      radius->InsertNextTuple1(tempDalele[3]);
-      // ar teisingai ideta trecia dalele nes ji lieciasi siektiek su kitomis nors ir atstumas yra 3
-*/
 
    vtkSmartPointer<vtkPolyData> polydata =
       vtkSmartPointer<vtkPolyData>::New();
