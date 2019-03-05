@@ -18,7 +18,17 @@ int main(int, char *[])
     kordinaciu_skaiciavimas.first_three_cells(particle, boundai);
     kordinaciu_skaiciavimas.coordinate_math_(particle, boundai);
     particle.Triju_DaleliuGeneracija(boundai, particle.Distribution, particle.F);
-    gridas.GRIDAS(boundai, particle.F ,gridas.SUFORMUOTAS_GRIDAS, gridas.OFFSET, gridas.IDS);
+    gridas.GRIDAS_MAP_ADD(boundai, particle.F, gridas.SUFORMUOTAS_GRIDAS);
+    gridas.search_particle_id=1;
+    gridas.MAP_NEIGHBOR_SEARCH(boundai, particle.F, gridas.SUFORMUOTAS_GRIDAS, gridas.search_particle_id, gridas.rasti_kaimynu_indexai);
+    //gridas.Neighbor_Search(boundai, F, gridas.SUFORMUOTAS_GRIDAS, gridas.search_particle_id, gridas.rasti_kaimynu_indexai);
+    //cout << gridas.SUFORMUOTAS_GRIDAS.size() << endl;
+    //for (std::map<INT , vector<INT>>::iterator it=gridas.SUFORMUOTAS_GRIDAS.begin(); it!=gridas.SUFORMUOTAS_GRIDAS.end(); ++it)
+        //for(auto it2 = it->second.begin(); it2 != it->second.end(); ++it2)
+            //cout << *it2 << " ";
+    /*for(int i=0;i<particle.F.size();i++)
+    {
+        cout << particle.F[i] << endl;
+    }
+    */
 }
-
-
