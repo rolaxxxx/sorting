@@ -85,9 +85,9 @@ void Dalele::Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL_ARRAY Distribu
       vtkSmartPointer<vtkRenderWindowInteractor>::New();
     renderWindowInteractor->SetRenderWindow(renderWindow);
 
-    renderer->AddActor(Cubeactor);
+  //  renderer->AddActor(Cubeactor);
     renderer->AddActor(Glyphactor);
-    renderer->SetBackground(0, 0, 0); // Background color green
+    renderer->SetBackground(255, 255, 255); // Background color green
 
     renderWindow->Render();
     renderWindowInteractor->Start();
