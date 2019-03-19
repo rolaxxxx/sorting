@@ -15,7 +15,7 @@ void GRID_COUNT::GRIDAS_MAP_ADD(MAP_BOUNDS map_boundai, REAL4_ARRAY F, map<INT, 
         temp_coords[2]=floor((TEMP_PARTICLE_COORDS[2]-map_boundai.MAP_BOUNDS_MIN[2])/map_boundai.CELLSIZE);
         TEMP_ID=temp_coords[0]+temp_coords[1]*map_boundai.Nx+temp_coords[2]*map_boundai.Nx*map_boundai.Ny;\
 
-       // cout << temp_coords << " " << TEMP_ID << endl;
+        //cout << temp_coords << " " << TEMP_ID << endl;
         //cout << temp_coords << endl;
         //cout << TEMP_ID << endl;
         //cout << TEMP_PARTICLE_COORDS[0] << " " << TEMP_PARTICLE_COORDS[1] << " " << TEMP_PARTICLE_COORDS[2] << endl;
@@ -42,8 +42,10 @@ void GRID_COUNT::MAP_NEIGHBOR_SEARCH(MAP_BOUNDS map_boundai, REAL4_ARRAY F, map<
     coords[1]=floor((temp[1]-map_boundai.MAP_BOUNDS_MIN[1])/map_boundai.CELLSIZE);
     coords[2]=floor((temp[2]-map_boundai.MAP_BOUNDS_MIN[2])/map_boundai.CELLSIZE);
    // cout << CE
+    rasti_kaimynu_indexai.push_back(search_particle_index);
     temp_cur_rad=temp[3];
     temp[3]=0;
+
     //cout << coords << endl;
     for(INT x=coords[0]-1;x<=coords[0]+1;x++){ // pakeliau atstuma nes neradau kaimynu
         for(INT y=coords[1]-1;y<=coords[1]+1;y++){
@@ -68,19 +70,28 @@ void GRID_COUNT::MAP_NEIGHBOR_SEARCH(MAP_BOUNDS map_boundai, REAL4_ARRAY F, map<
                                     if(L<=2*temp_cur_rad){
                                        // cout << rasti_kaimynu_indexai[kiekis] << endl;
                                         rasti_kaimynu_indexai.push_back(pid);
+                                        //cout << L << " " << pid << endl;
                                         //cout << rasti_kaimynu_indexai.size() << endl;
                                         kiekis++;
                                         //cout << pid << endl;
+
                                     }
-                                    if(kiekis==3)
-                                        break;
+                                    cout << kiekis << endl;
+
+
+
+                                    }
                                      }
                       }
                 }
             }
         }
-    //cout << rasti_kaimynu_indexai.size() << endl;
-    }
+
+
+
+
+
+
 
 /*void GRID_COUNT::Neighbor_Search(MAP_BOUNDS map_boundai, REAL4_ARRAY F, map<INT, vector<INT>> SUFORMUOTAS_GRIDAS, INT search_particle_index, INT_ARRAY &rasti_kaimynu_indexai, INT_ARRAY OFFSET){
 

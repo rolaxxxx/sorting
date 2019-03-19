@@ -14,7 +14,7 @@ public:
     void first_three_cells(Dalele &particle, MAP_BOUNDS boundai);
     REAL4 cross_prod(REAL4 &vec_a, REAL4 &vec_b);
     REAL dot_prod(REAL4 &vec_a, REAL4 &vec_b);
-    void testine_matematika(REAL4 S1, REAL4 S2, REAL4 S3, REAL spindulys);
+    REAL4 testine_matematika(REAL4 S1, REAL4 S2, REAL4 S3, REAL spindulys);
 
 };
 

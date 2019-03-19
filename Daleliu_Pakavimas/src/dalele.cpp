@@ -19,6 +19,7 @@ void Dalele::Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL_ARRAY Distribu
      REAL4 tempDalele;
     for(INT i=0;i<F.size();i++){
      tempDalele=F[i];
+     //cout << tempDalele << endl;
      points->InsertNextPoint(tempDalele[0],tempDalele[1], tempDalele[2]);
      radius->InsertNextTuple1(tempDalele[3]);
     }

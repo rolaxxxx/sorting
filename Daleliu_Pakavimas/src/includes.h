@@ -84,6 +84,7 @@
 #include <vtkRenderWindowInteractor.h>
 #include <vtkPointData.h>
 #include <vtkCubeSource.h>
+#include <boost/compute/container/vector.hpp>
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
@@ -91,6 +92,7 @@ using namespace std;
 #include <vector>
 #include <vtkDoubleArray.h>
 //#include "geometry.h"
+#include <iomanip>
 typedef boost::compute::double_ REAL;
 typedef boost::compute::double4_ REAL4;
 typedef boost::compute::uint_ UINT;

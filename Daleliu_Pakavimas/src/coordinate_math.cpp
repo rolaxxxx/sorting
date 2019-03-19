@@ -94,9 +94,7 @@ void coordinate_math::first_three_cells(Dalele &particle, MAP_BOUNDS boundai){
     spind=rand()%particle.Distribution.size();
 
     third_coords[3]=particle.Distribution[spind];
-//1   1,73205   0  ///    0.375   2.24856     0.633012
-
-
+//1   1.73205   0  ///    0.375   2.24856     0.633012
 
     third_coords[0]=0.375; //e
     third_coords[1]=2.24856; // f
@@ -106,27 +104,27 @@ void coordinate_math::first_three_cells(Dalele &particle, MAP_BOUNDS boundai){
     spind=rand()%particle.Distribution.size();
     //cout << particle.F.size() << endl;
 }
-void coordinate_math::coordinate_math_(Dalele &particle, MAP_BOUNDS boundai, GRID_COUNT gridas)
+vector<REAL4> coordinate_math::coordinate_math_(vector<REAL4> coordinates)
 {
     INT spind;
 // 3D skaiciavimai ////////////
     REAL ds1, ds2, ds3;
     REAL4 S1, S2, S3;
+         REAL4 rez_sphere_coords_positive, rez_sphere_coords_negative;
+         REAL saved_R;
+         spind=rand()%particle.Distribution.size();
+         //rez_sphere_coords[3]=particle.Distribution[spind];
+         rez_sphere_coords_positive[3]=1;
+         rez_sphere_coords_negative[3]=1;
+         saved_R=rez_sphere_coords_positive[3];
 
-   // cout << gridas.rasti_kaimynu_indexai.size() << endl;
-    if(gridas.rasti_kaimynu_indexai.size()==3){
-        S1=particle.F[gridas.rasti_kaimynu_indexai[0]];
-        S2=particle.F[gridas.rasti_kaimynu_indexai[1]];
-        S3=particle.F[gridas.rasti_kaimynu_indexai[2]];
-    }
-    else{
-    S1=particle.F[0];
-    S2=particle.F[1];
-    S3=particle.F[2];
-}
-    ds1=S1[3]+S1[3];
-    ds2=S2[3]+S2[3];
-    ds3=S3[3]+S3[3];
+    S1=coordinates[0];
+    S2=coordinates[1];
+    S3=coordinates[2];
+
+    ds1=S1[3]+rez_sphere_coords_positive[3];
+    ds2=S2[3]+rez_sphere_coords_positive[3];
+    ds3=S3[3]+rez_sphere_coords_positive[3];
 
     //cout << S1 << " " << S2 << " " << S3 << endl;
     REAL4 vector_u, vector_v, vector_w;
@@ -149,32 +147,35 @@ void coordinate_math::coordinate_math_(Dalele &particle, MAP_BOUNDS boundai, GRI
             (2*sqrt(pow(temporS3[0],2)+pow(temporS3[1],2)+pow(temporS3[2],2)));
     calc_c=pow(ds1,2)-pow(S1[0],2)-pow(S1[1],2)-pow(S1[2],2);
 
-
-
     REAL4 vector_t;
     REAL4 xProd=cross_prod(vector_u, vector_v);
     vector_t=xProd/(sqrt(pow(xProd[0],2)+pow(xProd[1],2)+pow(xProd[2],2)));
     //cout << vector_t<< endl;
 
-    REAL rez_calc_a, rez_calc_b, rez_calc_c, rez_calc_d;
+    REAL rez_calc_a, rez_calc_b, rez_calc_c, rez_calc_d_positive, rez_calc_d_negative;
     rez_calc_a=(calc_a-calc_b*dot_prod(vector_u, vector_v))/(1-pow(dot_prod(vector_u, vector_v),2));
     rez_calc_b=(calc_b-calc_a*dot_prod(vector_u, vector_v))/(1-pow(dot_prod(vector_u, vector_v),2));
 
+    vector<REAL4>rezultatai;
     rez_calc_c=pow(rez_calc_a,2)+pow(rez_calc_b,2)+2*rez_calc_a*rez_calc_b*dot_prod(vector_u, vector_v)
             +rez_calc_a*dot_prod(vector_u, vector_w)+rez_calc_b*dot_prod(vector_v, vector_w)-calc_c;
 
-    rez_calc_d=(0.5)*(-dot_prod(vector_w, vector_t)+sqrt(pow(dot_prod(vector_w, vector_t),2)-4*rez_calc_c)); // ar reikia minusines reiksmes
+    rez_calc_d_positive=(0.5)*(-dot_prod(vector_w, vector_t)+sqrt(pow(dot_prod(vector_w, vector_t),2)-4*rez_calc_c)); // ar reikia minusines reiksmes
+    rez_calc_d_negative=(0.5)*(-dot_prod(vector_w, vector_t)-sqrt(pow(dot_prod(vector_w, vector_t),2)-4*rez_calc_c));
 
-    REAL4 rez_sphere_coords;
-    rez_sphere_coords=rez_calc_a*vector_u+rez_calc_b*vector_v+rez_calc_d*vector_t;
-    spind=rand()%particle.Distribution.size();
-    rez_sphere_coords[3]=particle.Distribution[spind];
-    //cout << rez_sphere_coords << endl;
-   // particle.F.push_back(rez_sphere_coords);
+    rez_sphere_coords_positive=rez_calc_a*vector_u+rez_calc_b*vector_v+rez_calc_d_positive*vector_t;
+    rez_sphere_coords_negative=rez_calc_a*vector_u+rez_calc_b*vector_v+rez_calc_d_negative*vector_t;
+
+
+    rezultatai.push_back(rez_sphere_coords_positive);
+    rezultatai.push_back(rez_sphere_coords_negative);
+
+    return rezultatai;
+
 }
 
 
-void coordinate_math::testine_matematika(REAL4 S1, REAL4 S2, REAL4 S3, REAL spindulys)
+REAL4 coordinate_math::testine_matematika(REAL4 S1, REAL4 S2, REAL4 S3, REAL spindulys)
 {
     INT spind;
 // 3D skaiciavimai ////////////
@@ -224,6 +225,6 @@ void coordinate_math::testine_matematika(REAL4 S1, REAL4 S2, REAL4 S3, REAL spin
     REAL4 rez_sphere_coords;
     rez_sphere_coords=rez_calc_a*vector_u+rez_calc_b*vector_v+rez_calc_d*vector_t;
     rez_sphere_coords[3]=spindulys;
-    cout << rez_sphere_coords << endl;
-   // particle.F.push_back(rez_sphere_coords);
+    return rez_sphere_coords;
+
 }

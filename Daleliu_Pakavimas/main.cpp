@@ -22,39 +22,27 @@ int main(int, char *[])
     //cout << gridas.rasti_kaimynu_indexai.size() << endl;
 
     vector<INT> testas;
-   /*for(auto it=gridas.SUFORMUOTAS_GRIDAS.begin();it!=gridas.SUFORMUOTAS_GRIDAS.end();it++)
-    {
-        testas=it->second;
-        for(auto it2=testas.begin();it2!=testas.end();it2++)
-        {
-            cout << *it2 << endl;
-        }
-    }
-*/
-    gridas.search_particle_id=1;
-    /*for(auto it=gridas.SUFORMUOTAS_GRIDAS.begin();it!=gridas.SUFORMUOTAS_GRIDAS.end();it++){
-        cout << it->first << endl;
-        for(vector<INT>::iterator it2=gridas.SUFORMUOTAS_GRIDAS.begin();it2!=gridas.SUFORMUOTAS_GRIDAS.end();it2++){
-            cout << *it2 << endl;
-        }
-    }
-    */
-    gridas.MAP_NEIGHBOR_SEARCH(boundai, particle.F, gridas.SUFORMUOTAS_GRIDAS, gridas.search_particle_id, gridas.rasti_kaimynu_indexai);
 
+    INT spind;
+    spind=rand()%particle.F.size(); // spindulio gavimas is pasiskirstymo. Kintamieji kolkas vienodi;
+
+    for(INT i=0 ;i<10;i++){
+    //cout << gridas.rasti_kaimynu_indexai.size() << endl;
+    INT_ARRAY tuscias;
+    gridas.rasti_kaimynu_indexai.clear();
+
+    //cout <<" po istrinimo " <<  gridas.rasti_kaimynu_indexai.size() << endl;
+    spind=rand()%particle.F.size();
+    //cout << spind << endl;
+    gridas.search_particle_id=spind;
+    //cout << gridas.rasti_kaimynu_indexai.size() << endl;
+    gridas.MAP_NEIGHBOR_SEARCH(boundai, particle.F, gridas.SUFORMUOTAS_GRIDAS, gridas.search_particle_id, gridas.rasti_kaimynu_indexai);
    // cout << gridas.rasti_kaimynu_indexai.size() << endl;
     kordinaciu_skaiciavimas.coordinate_math_(particle, boundai, gridas);
-
+    gridas.GRIDAS_MAP_ADD(boundai, particle.F, gridas.SUFORMUOTAS_GRIDAS);
     particle.Triju_DaleliuGeneracija(boundai, particle.Distribution, particle.F);
+    //cout << " gale for ciklo " << gridas.rasti_kaimynu_indexai.size() << endl;
 
-
-    //gridas.Neighbor_Search(boundai, F, gridas.SUFORMUOTAS_GRIDAS, gridas.search_particle_id, gridas.rasti_kaimynu_indexai);
-    //cout << gridas.SUFORMUOTAS_GRIDAS.size() << endl;
-    //for (std::map<INT , vector<INT>>::iterator it=gridas.SUFORMUOTAS_GRIDAS.begin(); it!=gridas.SUFORMUOTAS_GRIDAS.end(); ++it)
-        //for(auto it2 = it->second.begin(); it2 != it->second.end(); ++it2)
-            //cout << *it2 << " ";
-    for(int i=0;i<particle.F.size();i++)
-    {
-        //cout << particle.F[i] << endl;
     }
 
 }
