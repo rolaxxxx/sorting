@@ -15,6 +15,9 @@ public:
     REAL dot_prod(REAL4 &vec_a, REAL4 &vec_b);
     REAL4 testine_matematika(REAL4 S1, REAL4 S2, REAL4 S3, REAL spindulys);
 
+
+private:
+    Geometry geometrija;
 };
 
 #endif // COORDINATE_MATH_H

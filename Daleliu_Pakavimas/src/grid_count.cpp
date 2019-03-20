@@ -36,6 +36,7 @@ vector<INT> GRID_COUNT::MAP_NEIGHBOR_SEARCH( REAL4_ARRAY F, INT search_particle_
     nz=map_boundai.getNz();
 
     INT kiekis=0;
+
     temp=F[search_particle_index];
     coords[0]=floor((temp[0]-MAP_BOUNDS_MIN[0])/CELLSIZE);
     coords[1]=floor((temp[1]-MAP_BOUNDS_MIN[1])/CELLSIZE);

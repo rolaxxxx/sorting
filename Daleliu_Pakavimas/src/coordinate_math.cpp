@@ -65,9 +65,11 @@ REAL4 coordinate_math::cross_prod(REAL4 &vec_a, REAL4 &vec_b){ //  cross produkt
     prod_rez[2]=vec_a[0]*vec_b[1]-vec_a[1]*vec_b[0];
     return prod_rez;
 }
-void coordinate_math::add_cell(Dalele &particle, REAL4 cell){
-    cell[3]=particle.Distribution[rand()%particle.Distribution.size()];
+void coordinate_math::add_cell(REAL4 cell){
+    REAL temp_dist=geometrija.getDistribution();
+    cell[3]=temp_dist[rand()%geometrija.getDistribution().size()];
     particle.F.push_back(cell);
+
 }
 vector<REAL4> coordinate_math::coordinate_math_(vector<REAL4> coordinates, REAL radius)
 {
