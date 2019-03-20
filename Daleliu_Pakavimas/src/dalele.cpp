@@ -1,16 +1,8 @@
 #include "dalele.h"
 
+void Dalele::particle_Generator(REAL_ARRAY distribution){
 
-
-void Dalele::DalelesDuomenuApibrezimas()
-{
-    min=2;
-    max=5;
-    daleliuKiekis=100;
-}
-void Dalele::Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL_ARRAY Distribution, REAL4_ARRAY F){
-
-    INT idx=Distribution[0];
+   INT idx=1; // reikia keisti gali buti klaida
     vtkSmartPointer<vtkPoints> points =
          vtkSmartPointer<vtkPoints>::New();
     vtkSmartPointer<vtkDoubleArray> radius =
@@ -34,7 +26,7 @@ void Dalele::Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL_ARRAY Distribu
     // Create anything you want here, we will use a cube for the demo.
     vtkSmartPointer<vtkSphereSource> SphereSource =
         vtkSmartPointer<vtkSphereSource>::New();
-    SphereSource->SetRadius(Distribution[idx]);
+    SphereSource->SetRadius(distribution[1]);
     SphereSource->SetPhiResolution(30);
     SphereSource->SetThetaResolution(30);
     SphereSource.Get()->GetCenter();
@@ -51,12 +43,13 @@ void Dalele::Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL_ARRAY Distribu
     glyph3D->SetInputData(polydata);
   #endif
     glyph3D->Update();
-
+REAL4 MAP_BOUNDS_MIN=map_boundai.getMAP_BOUNDS_MIN();
+REAL4 MAP_BOUNDS_MAX=map_boundai.getMAP_BOUNDS_MAX();
 
     vtkSmartPointer<vtkCubeSource> cubeSource =
       vtkSmartPointer<vtkCubeSource>::New();
-    cubeSource.Get()->SetBounds(map_boundai.MAP_BOUNDS_MIN[0], map_boundai.MAP_BOUNDS_MAX[0],
-            map_boundai.MAP_BOUNDS_MIN[1], map_boundai.MAP_BOUNDS_MAX[1], map_boundai.MAP_BOUNDS_MIN[2] ,map_boundai.MAP_BOUNDS_MAX[2]);
+    cubeSource.Get()->SetBounds(MAP_BOUNDS_MIN[0], MAP_BOUNDS_MAX[0],
+            MAP_BOUNDS_MIN[1], MAP_BOUNDS_MAX[1], MAP_BOUNDS_MIN[2], MAP_BOUNDS_MAX[2]);
     //cubeSource.GetProperty()->SetOpacity(.4);
     // Visualize
     vtkSmartPointer<vtkPolyDataMapper> mapper =
@@ -95,3 +88,6 @@ void Dalele::Triju_DaleliuGeneracija(MAP_BOUNDS map_boundai, REAL_ARRAY Distribu
 
 
 }
+
+
+

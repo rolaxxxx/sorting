@@ -32,14 +32,8 @@ set(SOURCE_FILES
     src/grid_count.h
     src/map_bounds.h
     src/map_bounds.cpp
-    src/pakavimo_algoritmas.cpp
-    src/pakavimo_algoritmas.h
-    src/tasko_skaiciavimas.cpp
-    src/tasko_skaiciavimas.h
-    src/grid_neighbors.cpp
     src/coordinate_math.cpp
     src/coordinate_math.h
-    src/grid_neighbors.h
 )
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/src)
 

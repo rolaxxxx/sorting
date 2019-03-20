@@ -6,8 +6,12 @@ typedef boost::compute::double_ REAL;
 class Geometry
 {
 public:
+    void skirstinioFormavimas();
+    REAL_ARRAY getDistribution() const;
+    void setDistribution(const REAL_ARRAY &value);
 
-    void skirstinioFormavimas(Dalele &particle);
+private:
+    REAL_ARRAY distribution;
 };
 
 #endif // GEOMETRY_H

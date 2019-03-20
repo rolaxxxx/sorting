@@ -65,46 +65,11 @@ REAL4 coordinate_math::cross_prod(REAL4 &vec_a, REAL4 &vec_b){ //  cross produkt
     prod_rez[2]=vec_a[0]*vec_b[1]-vec_a[1]*vec_b[0];
     return prod_rez;
 }
-void coordinate_math::first_three_cells(Dalele &particle, MAP_BOUNDS boundai){
-
-    REAL4 particle_coords, further_coords, third_coords, tetrahedron_top_coords; // S1 S2 S3 with radii at 4th coord
-    REAL4 result_tetrahedron_coords;
-    REAL4 triangle_sides, tetrahedron_sides;
- // 0,0,0   ///  0.5 0.3 0.2
-    particle_coords[0]=0.5;
-    particle_coords[1]=0.3;
-    particle_coords[2]=0.2;
-    //cout << particle_coords[0] << particle_coords[1]<< particle_coords[2]  << endl;
-    INT spind;
-    spind=rand()%particle.Distribution.size(); // spindulio gavimas is pasiskirstymo. Kintamieji kolkas vienodi
-    particle_coords[3]=particle.Distribution[spind];
-    //cout << particle_coords[3] << endl;
-    particle.F.push_back(particle_coords);
-   // cout << particle.F[] << endl;
-    //cout << particle_coords << endl;
-//2,0,0     ///   1.75  1.599   -0.666
-    further_coords[0]=1.75;
-    further_coords[1]=1.599;
-    further_coords[2]=-0.666;
-    //cout <<[0] << particle_coords[1]<< particle_coords[2]  << endl;
-    spind=rand()%particle.Distribution.size();
-    further_coords[3]=1;
-    particle.F.push_back(further_coords);
-
-    spind=rand()%particle.Distribution.size();
-
-    third_coords[3]=particle.Distribution[spind];
-//1   1.73205   0  ///    0.375   2.24856     0.633012
-
-    third_coords[0]=0.375; //e
-    third_coords[1]=2.24856; // f
-    third_coords[2]=0.633012;
-    //cout << third_coords[0] << " " << third_coords[1] << " " << third_coords[2] << endl;
-    particle.F.push_back(third_coords);
-    spind=rand()%particle.Distribution.size();
-    //cout << particle.F.size() << endl;
+void coordinate_math::add_cell(Dalele &particle, REAL4 cell){
+    cell[3]=particle.Distribution[rand()%particle.Distribution.size()];
+    particle.F.push_back(cell);
 }
-vector<REAL4> coordinate_math::coordinate_math_(vector<REAL4> coordinates)
+vector<REAL4> coordinate_math::coordinate_math_(vector<REAL4> coordinates, REAL radius)
 {
     INT spind;
 // 3D skaiciavimai ////////////
@@ -112,7 +77,7 @@ vector<REAL4> coordinate_math::coordinate_math_(vector<REAL4> coordinates)
     REAL4 S1, S2, S3;
          REAL4 rez_sphere_coords_positive, rez_sphere_coords_negative;
          REAL saved_R;
-         spind=rand()%particle.Distribution.size();
+         spind=radius;
          //rez_sphere_coords[3]=particle.Distribution[spind];
          rez_sphere_coords_positive[3]=1;
          rez_sphere_coords_negative[3]=1;
@@ -169,9 +134,7 @@ vector<REAL4> coordinate_math::coordinate_math_(vector<REAL4> coordinates)
 
     rezultatai.push_back(rez_sphere_coords_positive);
     rezultatai.push_back(rez_sphere_coords_negative);
-
     return rezultatai;
-
 }
 
 

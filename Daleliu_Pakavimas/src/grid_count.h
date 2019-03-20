@@ -7,17 +7,14 @@
 
 class GRID_COUNT
 {
-public:
+    void GRIDAS_MAP_ADD(REAL4 add_particle);
+    vector<INT> MAP_NEIGHBOR_SEARCH(REAL4_ARRAY F, INT search_particle_id);
+    bool Neighbor_Search( REAL4_ARRAY F);
+
+private:
     map<INT, vector<INT>> SUFORMUOTAS_GRIDAS;
-    INT_ARRAY OFFSET;
-    INT_ARRAY IDS;
-    INT search_particle_id;
-    INT_ARRAY rasti_kaimynu_indexai;
-    void GRIDAS_MAP_ADD(MAP_BOUNDS map_boundai, REAL4_ARRAY F, map<INT, vector<INT>> &SUFORMUOTAS_GRIDAS);
-    void MAP_NEIGHBOR_SEARCH(MAP_BOUNDS map_boundai, REAL4_ARRAY F, map<INT, vector<INT>> &SUFORMUOTAS_GRIDAS, INT search_particle_id, INT_ARRAY &rasti_kaimynu_indexai);
-    void Neighbor_Search(MAP_BOUNDS map_boundai, REAL4_ARRAY F, map<INT, vector<INT>> SUFORMUOTAS_GRIDAS, INT search_particle_id, INT_ARRAY &rasti_kaimynu_indexai, INT_ARRAY OFFSET);
-
-
+    MAP_BOUNDS map_boundai;
+    Dalele particle;
 };
 
 #endif // GRID_COUNT_H
