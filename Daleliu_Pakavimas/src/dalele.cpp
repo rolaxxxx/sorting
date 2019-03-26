@@ -1,6 +1,6 @@
 #include "dalele.h"
 
-void Dalele::particle_Generator(REAL_ARRAY distribution){
+void Dalele::particle_Generator(REAL_ARRAY distribution, MAP_BOUNDS map_boundai){ //daleliu generacija paduodant F masyva
 
    INT idx=1; // reikia keisti gali buti klaida
     vtkSmartPointer<vtkPoints> points =
@@ -88,6 +88,30 @@ REAL4 MAP_BOUNDS_MAX=map_boundai.getMAP_BOUNDS_MAX();
 
 
 }
+
+vector<REAL4> Dalele::getF() const
+{
+    return F;
+}
+
+void Dalele::setFvec(const REAL4 value)
+{
+    F.push_back(value);
+}
+void Dalele::setF(const vector<REAL4> &value)
+{
+    F = value;
+}
+vector<REAL4> Dalele::getV() const
+{
+    return V;
+}
+
+void Dalele::setV(const vector<REAL4> &value)
+{
+    V = value;
+}
+
 
 
 
