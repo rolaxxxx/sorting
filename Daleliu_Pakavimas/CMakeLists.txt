@@ -23,13 +23,13 @@ find_package(OpenCL)
 include_directories(${OpenCL_INCLUDE_DIR})
 
 set(SOURCE_FILES
-    src/geometry.cpp
-    src/geometry.h
+    src/skirstinys.cpp
+    src/skirstinys.h
     src/includes.h
     src/dalele.cpp
     src/dalele.h
-    src/grid_count.cpp
-    src/grid_count.h
+    src/mapaddandparticlesearch.cpp
+    src/mapaddandparticlesearch.h
     src/map_bounds.h
     src/map_bounds.cpp
     src/coordinate_math.cpp

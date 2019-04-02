@@ -65,9 +65,9 @@ REAL4 coordinate_math::cross_prod(REAL4 &vec_a, REAL4 &vec_b){ //  cross produkt
     prod_rez[2]=vec_a[0]*vec_b[1]-vec_a[1]*vec_b[0];
     return prod_rez;
 }
-void coordinate_math::add_cell(Dalele &particle, REAL4 cell, REAL_ARRAY dist){
-    cell[3]=dist[rand()%dist.size()];
-    particle.setFvec(cell);
+void coordinate_math::add_cell(Dalele &particle, REAL4 cell, REAL spind){
+    cell[3]=spind;
+    particle.F.push_back(cell);
 }
 vector<REAL4> coordinate_math::coordinate_math_(vector<REAL4> coordinates, REAL radius)
 {
@@ -131,7 +131,8 @@ vector<REAL4> coordinate_math::coordinate_math_(vector<REAL4> coordinates, REAL 
     rez_sphere_coords_positive=rez_calc_a*vector_u+rez_calc_b*vector_v+rez_calc_d_positive*vector_t;
     rez_sphere_coords_negative=rez_calc_a*vector_u+rez_calc_b*vector_v+rez_calc_d_negative*vector_t;
 
-
+    rez_sphere_coords_positive[3]=1;
+    rez_sphere_coords_negative[3]=1;
     rezultatai.push_back(rez_sphere_coords_positive);
     rezultatai.push_back(rez_sphere_coords_negative);
     return rezultatai;

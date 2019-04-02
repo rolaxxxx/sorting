@@ -25,7 +25,7 @@ public:
 
     void MAP_DUOMENYS();
 
-private:
+
     REAL4 MAP_BOUNDS_MIN;
     REAL4 MAP_BOUNDS_MAX;
     REAL CELLSIZE=3;

@@ -1,6 +1,6 @@
 #include "dalele.h"
 
-void Dalele::particle_Generator(REAL_ARRAY distribution, MAP_BOUNDS map_boundai){ //daleliu generacija paduodant F masyva
+void Dalele::particle_Generator( MAP_BOUNDS map_boundai){ //daleliu generacija paduodant F masyva
 
    INT idx=1; // reikia keisti gali buti klaida
     vtkSmartPointer<vtkPoints> points =
@@ -9,12 +9,14 @@ void Dalele::particle_Generator(REAL_ARRAY distribution, MAP_BOUNDS map_boundai)
          vtkSmartPointer<vtkDoubleArray>::New();
 
      REAL4 tempDalele;
-    for(INT i=0;i<F.size();i++){
-     tempDalele=F[i];
+    for(INT i=0;i<V.size();i++){
+     tempDalele=V[i];
      //cout << tempDalele << endl;
      points->InsertNextPoint(tempDalele[0],tempDalele[1], tempDalele[2]);
      radius->InsertNextTuple1(tempDalele[3]);
     }
+    Skirstinys sk;
+
 
    vtkSmartPointer<vtkPolyData> polydata =
       vtkSmartPointer<vtkPolyData>::New();
@@ -26,7 +28,7 @@ void Dalele::particle_Generator(REAL_ARRAY distribution, MAP_BOUNDS map_boundai)
     // Create anything you want here, we will use a cube for the demo.
     vtkSmartPointer<vtkSphereSource> SphereSource =
         vtkSmartPointer<vtkSphereSource>::New();
-    SphereSource->SetRadius(distribution[1]);
+    SphereSource->SetRadius(sk.NextSpindulys());
     SphereSource->SetPhiResolution(30);
     SphereSource->SetThetaResolution(30);
     SphereSource.Get()->GetCenter();
